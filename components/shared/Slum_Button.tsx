@@ -27,11 +27,12 @@ function Button({
       className={clsx(
         "duration-300 flex justify-center items-center gap-2",
         variant === "circular-filled" &&
-        "py-[10px] px-[30px] rounded-full bg-primary hover:bg-primary_hover text-white font-sans duration-300",
+        "py-[10px] px-[28px] rounded-full bg-primary hover:bg-primary_hover text-white font-sans duration-300 font-semibold pill_filled_btn_shadow",
+        variant === "pill-outlined" &&
+        " rounded-full bg-snow_white text-primary border-b-2 border-primary bg-white py-2 pill_filled_btn_shadow font-semibold hover:text-white hover:bg-primary text-sm p-1 px-7 font-sans",
+
         variant === "pill-filled" &&
         " rounded-[15px] bg-primary pill_filled_btn_shadow text-white font-normal hover:bg-primary_hover text-[18px] lg:text-[22px] p-1 px-8 font-sans",
-        variant === "pill-outlined" &&
-        " rounded-[15px] bg-white text-primary border border-primary pill_filled_btn_shadow  font-normal hover:text-white hover:bg-primary text-[20px] p-1 px-7 font-sans",
         variant === "pill-ghost" &&
         " rounded-[15px] bg-[#F0EAE5] pill_filled_btn_shadow hover:text-white text-[#333333] font-normal hover:bg-primary_hover text-[18px] lg:text-[22px] p-2 px-8 font-sans",
         className

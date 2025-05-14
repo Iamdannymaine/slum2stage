@@ -1,5 +1,13 @@
+"use client"
 
-import { Header, HeroCarousel, Register_Form } from '@/components/shared'
+import {
+  Chidinma_Story,
+  Header,
+  HeroCarousel,
+  Offerings,
+  Our_programs,
+  Register_Form, Testimonial_Carousel, Who_We_Are, Partners
+} from '@/components/shared'
 import React from 'react'
 
 const HomeView = () => {
@@ -11,7 +19,12 @@ const HomeView = () => {
           <HeroCarousel />
         </div>
       </div>
-
+      <Who_We_Are />
+      <Chidinma_Story />
+      <Offerings />
+      <Our_programs />
+      <Testimonial_Carousel />
+      <Partners />
       <Register_Form />
     </>
   )

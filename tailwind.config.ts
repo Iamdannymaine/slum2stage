@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { heroui } = require("@heroui/react");
 
 const config: Config = {
   darkMode: ["class"],
@@ -8,6 +9,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./views/**/*.{js,ts,jsx,tsx,mdx}",
     "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -22,21 +24,20 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        snowWhite: "#F3FAFC",
-        smokeWhite: "#FFF8F5",
-        slumPeach: "#FFBB99",
-        lightPeach: "#FFEEE5",
-        slumGray200: "#EAECF0",
-        slumGray400: "#98A2B3",
-        slumGray600: "#475467",
-        slumGray800: "#1D2939",
-        slumGray900: "#101828",
-        tinyCyanBorder: "#44B5D0",
-
         background: "var(--background)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         primary_hover: "var(--primary-hover)",
+        snow_white: "var(--primary-snow-white)",
+        smoke_white: "var(--primary-smoke-white)",
+        slum_peach: "var(--primary-peach)",
+        slum_light_peach: "var(--primary-light-peach)",
+        slum_gray_200: "var(--primary-gray-200)",
+        slum_gray_400: "var(--primary-gray-400)",
+        slum_gray_600: "var(--primary-gray-600)",
+        slum_gray_800: "var(--primary-gray-800)",
+        slum_gray_900: "var(--primary-gray-900)",
+        primary_border: "var(--primary-border)",
         bullet_inactive: "var(--bullet-inactive)",
 
         foreground: "hsl(var(--foreground))",
@@ -77,6 +78,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), heroui()],
 };
 export default config;

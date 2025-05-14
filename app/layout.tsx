@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/shared/Footer';
+import { Providers } from '@/components/shared';
 
 
 const inter = Inter({
@@ -29,11 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${libreBaskerville.variable} ${inter.variable}`}>
-        <main>
-          {children}
-        </main>
-        <Footer />
+      <body className={`${libreBaskerville.variable} ${inter.variable} antialiased`}>
+        <Providers>
+          <main className="w-full">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

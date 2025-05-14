@@ -2,15 +2,16 @@ import React from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import Image from 'next/image'
+import { Image } from '@heroui/image'
+
 
 
 
 const Register_Form = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white">
+    <section className="flex flex-col min-h-screen bg-black text-white">
       {/* Main content */}
-      <div className="flex flex-col md:flex-row flex-1">
+      <div className="flex flex-col md:flex-row">
         {/* Form section */}
         <div className="w-full md:w-1/2 flex items-center justify-center p-6">
           <div className="w-full max-w-md bg-white text-black rounded-lg p-8">
@@ -62,18 +63,15 @@ const Register_Form = () => {
         </div>
 
         {/* Image section */}
-        <div className="w-full flex md:w-1/2 relative min-h-[200px] md:min-h-0 justify-self-end">
+        <div className="w-full flex md:w-1/2 relative justify-self-end h-full">
           <Image
             src="/assets/images/volunteer.png"
             alt="Children at school"
-
-            className="object-cover"
-            width={500}
-            height={500}
+            className="object-cover rounded-none h-full w-full flex justify-end"
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
