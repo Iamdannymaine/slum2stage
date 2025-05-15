@@ -19,10 +19,7 @@ const AboutView = () => {
   return (
     <>
       <div className='min-h-screen'>
-        <div className="relative">
-          <Header />
-          <AboutHero />
-        </div>
+        <AboutHero />
         <AfterHero />
         <About_Who_We_Are />
         <We_Do_This />

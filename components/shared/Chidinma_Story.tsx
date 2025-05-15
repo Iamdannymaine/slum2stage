@@ -19,6 +19,7 @@ const Chidinma_Story = () => {
           loading="lazy"
           src="/assets/images/chidinma-mobile.png"
           className="object-cover"
+          alt="chidinma-mobile"
         />
       </div>
 
@@ -27,6 +28,7 @@ const Chidinma_Story = () => {
           src="/assets/images/chidinma.png"
           radius="lg"
           className="object-cover"
+          alt="chidinma-mobile"
         />
       </div>
 

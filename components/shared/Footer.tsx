@@ -37,10 +37,10 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-start">
             <Link href="/" className="flex items-center gap-2">
-              loading="lazy"
               <Image
                 loading="lazy"
-                src="/assets/images/Logo.svg" alt="slum2stage logo" />
+                src="/assets/images/Logo.svg"
+                alt="slum2stage logo" />
             </Link>
           </div>
 
@@ -100,7 +100,7 @@ const Footer = () => {
               <span>Instagram</span>
             </Link>
 
-            <Link href="" className="p-2 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
+            <Link href="#" className="p-2 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
               <FaYoutube size={20} />
               <span>Youtube</span>
             </Link>

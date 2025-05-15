@@ -18,10 +18,7 @@ const HomeView = () => {
   return (
     <>
       <div className='min-h-screen'>
-        <div className="relative">
-          <Header />
-          <HeroCarousel />
-        </div>
+        <HeroCarousel />
       </div>
       <Who_We_Are />
       <Chidinma_Story />
