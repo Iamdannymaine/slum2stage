@@ -37,7 +37,10 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-start">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/assets/images/Logo.svg" alt="slum2stage logo" />
+              loading="lazy"
+              <Image
+                loading="lazy"
+                src="/assets/images/Logo.svg" alt="slum2stage logo" />
             </Link>
           </div>
 

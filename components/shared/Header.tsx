@@ -41,6 +41,7 @@ export function Header() {
 
         <Link href="/" className="flex items-center gap-2">
           <Image
+            loading="lazy"
             src={logo}
             alt="slum2stage logo"
             className="w-20 sm:w-28"

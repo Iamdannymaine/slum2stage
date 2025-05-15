@@ -63,6 +63,7 @@ export function HeroCarousel() {
         <SwiperSlide>
           <div className="relative h-[80vh] w-full">
             <Image
+              loading="lazy"
               src="/assets/images/slide-1.jpg?height=600&width=1200"
               alt="Every child deserves to be happy!"
               fill

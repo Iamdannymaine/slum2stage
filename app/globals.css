@@ -11,11 +11,16 @@
   --primary-peach: #FFBB99;
   --primary-light-peach: #FFEEE5;
   --primary-gray-200: #EAECF0;
+  --primary-gray-300: #D0D5DD,
   --primary-gray-400: #98A2B3;
   --priamary-gray-600: #475467;
   --primary-gray-800: #1D2939;
   --primary-gray-900: #101828;
   --primary-border: #44B5D0;
+  --primary-magenta: #9747FF;
+  --primary-pink:#EC3BC0;
+  --primary-orange: #FFC645;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,8 +120,12 @@ body::-webkit-scrollbar {
   border: 1px solid var(--primary-gray-200);
 }
 
-.pill_filled_btn_shadow{
-  box-shadow: 25.01px 23.47px 100.03px 0px #1b314221;
+
+
+.pill_filled_btn_shadow {
+   box-shadow: 25.01px 23.47px 100.03px 0px #1b314221,
+     inset -0.2em -0.2em 0.3em 0 var(--shadow-color, --secondary), 
+     2px 3px 4px #ffffff;
 }
 
 .swiper {
@@ -507,9 +516,9 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 640px) {
-  .testimonial-swiper .swiper-wrapper {
+  /* .testimonial-swiper .swiper-wrapper {
     padding: 0 20px;
-  }
+  } */
 
   .testimonial-card {
     max-width: 100%;

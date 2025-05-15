@@ -7,6 +7,7 @@ import "swiper/css"
 import "swiper/css/effect-coverflow"
 
 import { EffectCoverflow } from "swiper/modules"
+import Section_Heading from "./Section_Heading"
 
 export const Testimonial_Carousel = () => {
   const swiperRef = useRef<{ swiper: SwiperType } | null>(null)
@@ -45,10 +46,9 @@ export const Testimonial_Carousel = () => {
 
   return (
     <section className="w-full bg-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center justify-center mb-12">
-          <h2 className="text-4xl font-bold text-center text-gray-900">Testimonials</h2>
-        </div>
+      <div className="container mx-auto px-4 flex flex-col items-center justify-center">
+        <Section_Heading size="48px" title="Testimonial" />
+
         <Swiper
           ref={swiperRef}
           loop={true}

@@ -12,6 +12,7 @@ export default function VolunteerRegistration() {
         {/* Image section */}
         <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-0">
           <Image
+            loading="lazy"
             src="/placeholder.svg?height=800&width=600"
             alt="Children at school"
             fill

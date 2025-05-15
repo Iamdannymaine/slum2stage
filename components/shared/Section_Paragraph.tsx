@@ -1,10 +1,10 @@
 import React from "react";
 
 
-export const Section_Paragraph = ({ paragraph }: { paragraph: string }) => {
+export const Section_Paragraph = ({ paragraph, color, width }: { paragraph: string, color?: string | "slum_gray_900", width?: string | "70" }) => {
   return (
-    <div className="w-full lg:w-[70%]">
-      <p className="font-sans font-normal text-slum_gray_900 text-sm md:text-lg lg:text-xl leading-[40px]">
+    <div className={`w-full lg:w-${width}`}>
+      <p className={`font-sans font-normal text-${color} text-sm lg:text-base leading-[36px] lg:leading-[32px]`}>
         {paragraph.split("\n").map((line, index) => (
           <React.Fragment key={index}>
             {line}

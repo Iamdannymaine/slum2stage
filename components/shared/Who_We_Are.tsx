@@ -21,7 +21,7 @@ export const Who_We_Are = () => {
   return (
     <section className="min-h-screen bg-smoke_white w-full" ref={containerRef}>
 
-      <div className="flex flex-col md:flex-row relative ps-[12%]">
+      <div className="flex flex-col md:flex-row relative px-4 lg:px-0 lg:ps-[12%]">
 
         <div className="w-full md:w-1/2 space-y-8 lg:space-y-16 md:space-y-24 py-8 md:py-24">
 
@@ -56,6 +56,7 @@ export const Who_We_Are = () => {
             style={{ y }}
           >
             <Image
+              loading="lazy"
               src="/assets/images/who-we-are.png"
               alt="Dancers in colorful traditional attire in an artistic pose"
               width={500}

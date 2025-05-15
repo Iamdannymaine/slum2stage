@@ -6,7 +6,11 @@ import {
   HeroCarousel,
   Offerings,
   Our_programs,
-  Register_Form, Testimonial_Carousel, Who_We_Are, Partners
+  Register_Form,
+  Timeline,
+  Testimonial_Carousel,
+  Who_We_Are,
+  Partners
 } from '@/components/shared'
 import React from 'react'
 
@@ -23,6 +27,7 @@ const HomeView = () => {
       <Chidinma_Story />
       <Offerings />
       <Our_programs />
+      <Timeline />
       <Testimonial_Carousel />
       <Partners />
       <Register_Form />

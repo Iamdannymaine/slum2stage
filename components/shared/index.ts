@@ -9,6 +9,18 @@ import { Offerings } from "./Offerings";
 import Our_programs from "./Our_programs";
 import { Testimonial_Carousel } from "./Testimonial";
 import { Partners } from "./Partners";
+import Timeline from "./Timeline";
+
+// About
+import { AboutHero } from "./about_us/Hero";
+import { AfterHero } from "./about_us/AfterHero";
+import About_Who_We_Are from "./about_us/Who_We_Are";
+import We_Do_This from "./about_us/We_Do_This";
+import { Mission_Vision } from "./about_us/Mission_Vision";
+import { Why_We_Do_It } from "./about_us/Why_We_Do_It";
+import { CoreValues } from "./about_us/Core_Values";
+import Our_Story from "./about_us/Our_Story";
+import Presently from "./about_us/Presently";
 
 export {
   HeroCarousel,
@@ -21,4 +33,14 @@ export {
   Our_programs,
   Testimonial_Carousel,
   Partners,
+  Timeline,
+  AboutHero,
+  AfterHero,
+  About_Who_We_Are,
+  We_Do_This,
+  Mission_Vision,
+  Why_We_Do_It,
+  CoreValues,
+  Our_Story,
+  Presently,
 };
