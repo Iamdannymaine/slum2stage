@@ -22,6 +22,10 @@ import { CoreValues } from "./about_us/Core_Values";
 import Our_Story from "./about_us/Our_Story";
 import Presently from "./about_us/Presently";
 
+import { ImageGrid } from "./Dance_Register_Images";
+
+// Our Program
+import { Our_Program } from "./Our_Program";
 export {
   HeroCarousel,
   Header,
@@ -43,4 +47,6 @@ export {
   CoreValues,
   Our_Story,
   Presently,
+  ImageGrid,
+  Our_Program,
 };
