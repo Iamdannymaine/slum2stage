@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import Marquee from "react-fast-marquee"
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -38,6 +38,8 @@ export const Partners = () => {
               key={`partner-first-${index}`}
               src={partner.image}
               alt='partner-logo'
+              width={100}
+              height={100}
               className='object-contain w-full h-full'
             />
           ))}
@@ -49,6 +51,8 @@ export const Partners = () => {
               key={`partner-last-${index}`}
               src={partner.image}
               alt='partner-logo'
+              width={100}
+              height={100}
               className='object-contain w-full h-full'
             />
           ))}

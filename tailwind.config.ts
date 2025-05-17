@@ -35,6 +35,7 @@ const config: Config = {
         slum_gray_200: "var(--primary-gray-200)",
         slum_gray_300: "var(--primary-gray-300)",
         slum_gray_400: "var(--primary-gray-400)",
+        slum_gray_500: "var(--primary-gray-500)",
         slum_gray_600: "var(--primary-gray-600)",
         slum_gray_700: "var(--primary-gray-700)",
         slum_gray_800: "var(--primary-gray-800)",

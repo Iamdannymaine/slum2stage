@@ -26,6 +26,11 @@ import { ImageGrid } from "./Dance_Register_Images";
 
 // Our Program
 import { Our_Program } from "./Our_Program";
+
+//News
+import { BlogCard } from "./news/BlogCard";
+import { ImagesPlacement } from "./news/FormattedImages";
+
 export {
   HeroCarousel,
   Header,
@@ -49,4 +54,6 @@ export {
   Presently,
   ImageGrid,
   Our_Program,
+  BlogCard,
+  ImagesPlacement,
 };

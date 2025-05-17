@@ -64,11 +64,11 @@ export function HeroCarousel() {
           <div className="relative h-[80vh] w-full">
             <Image
               loading="lazy"
-              src="/assets/images/slide-1.jpg?height=600&width=1200"
+              src="/assets/images/slide-1.jpg"
               alt="Every child deserves to be happy!"
-              fill
-              priority
-              className="object-cover"
+              width={1280}
+              height={600}
+              className="object-cover w-full h-full"
             />
 
           </div>
@@ -98,11 +98,12 @@ export function HeroCarousel() {
         <SwiperSlide>
           <div className="relative h-[80vh] w-full">
             <Image
-              src="/assets/images/slide-1.jpg?height=600&width=1200"
+              loading="lazy"
+              src="/assets/images/slide-1.jpg"
               alt="Every child deserves to be happy!"
-              fill
-              priority
-              className="object-cover"
+              width={1280}
+              height={600}
+              className="object-cover w-full h-full"
             />
           </div>
 
@@ -136,11 +137,12 @@ export function HeroCarousel() {
           <SwiperSlide key={slide.id}>
             <div className="relative h-[80vh] w-full">
               <Image
+                loading="lazy"
                 src={slide.image || "/placeholder.svg"}
                 alt={`Slide ${index + 1}`}
-                fill
-                priority={index === 0}
-                className="object-cover"
+                width={1280}
+                height={600}
+                className="object-cover w-full h-full"
               />
             </div>
 
