@@ -8,6 +8,7 @@ import { SingleNewsPage } from "./SingleNewsView";
 
 //auth
 import { DanceRegistrationForm } from "./auth/Register";
+import { TeamsView } from "./TeamsView";
 
 export {
   HomeView,
@@ -18,4 +19,5 @@ export {
   Our_ProgramsView,
   NewsView,
   SingleNewsPage,
+  TeamsView,
 };
