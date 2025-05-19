@@ -4,10 +4,16 @@ import React from 'react'
 import Section_Heading from './Section_Heading'
 import { Program_Card } from './Card'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
 
 
 
@@ -57,8 +63,23 @@ const Our_programs = () => {
             />
           ))}
         </div>
-
-        <div className='flex md:hidden w-full mt-4'>
+        <Carousel className="lg:hidden mt-4">
+          <CarouselContent>
+            {programs.map((program, index) => (
+              <CarouselItem
+                key={`partner-slide-${index}`}
+                className="basis-10/12">
+                <Program_Card key={program.id}
+                  image={program.image}
+                  title={program.title}
+                  bgColor={program.bgColor}
+                  description={program.description}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        {/* <div className='flex md:hidden w-full mt-4'>
           <Swiper
             slidesPerView={1.2}
             centeredSlides={true}
@@ -79,7 +100,7 @@ const Our_programs = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> */}
       </div>
     </section>
   )

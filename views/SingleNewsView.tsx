@@ -65,6 +65,7 @@ export function SingleNewsPage({ post }: BlogPostPageProps) {
               width={868}
               height={431}
               className="w-full h-full object-cover rounded-[8px]"
+            // style={{ maxWidth: "100%" }}
             />
           </div>
         )}
@@ -83,7 +84,8 @@ export function SingleNewsPage({ post }: BlogPostPageProps) {
           {showDoubleImage ? (
             <ImagesPlacement content={post.content} />
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: (post.content) }} />
+            <div className="leading-[40px] text-slum_gray_800"
+              dangerouslySetInnerHTML={{ __html: (post.content) }} />
 
           )}
 

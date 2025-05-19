@@ -1,4 +1,6 @@
 // Home
+import Section_Heading from "./Section_Heading";
+import { Section_Paragraph } from "./Section_Paragraph";
 import { HeroCarousel } from "./HeroBanner";
 import { Header } from "./Header";
 import Register_Form from "./Register_Form";
@@ -31,7 +33,13 @@ import { Our_Program } from "./Our_Program";
 import { BlogCard } from "./news/BlogCard";
 import { ImagesPlacement } from "./news/FormattedImages";
 
+//Team
+import { TeamCard } from "./team/TeamCard";
+import { TeamTabs } from "./team/TeamTabs";
+
 export {
+  Section_Heading,
+  Section_Paragraph,
   HeroCarousel,
   Header,
   Register_Form,
@@ -56,4 +64,6 @@ export {
   Our_Program,
   BlogCard,
   ImagesPlacement,
+  TeamCard,
+  TeamTabs,
 };

@@ -3,5 +3,8 @@ export interface TeamType {
   name: string;
   slug: string;
   image: string;
+  role: string;
+  position: string;
+  hoverText: string;
   content: string;
 }

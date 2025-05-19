@@ -37,7 +37,7 @@ export function ImagesPlacement({ content }: ImagesPlacementProps) {
       {paragraphs.map((para, index) => (
         <div
           key={index}
-          className="relative z-10"
+          className="relative z-10 leading-[40px] text-slum_gray_800"
           dangerouslySetInnerHTML={{ __html: `${para}</p>` }}
         />
       ))}
