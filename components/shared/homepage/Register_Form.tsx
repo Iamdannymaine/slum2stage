@@ -3,7 +3,7 @@
 import React from 'react'
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import Button from './Slum_Button'
+import Button from '../Slum_Button'
 import Image from 'next/image'
 
 const Register_Form = () => {

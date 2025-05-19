@@ -1,7 +1,6 @@
 "use client"
 
 import {
-  Header,
   AboutHero,
   AfterHero,
   About_Who_We_Are,

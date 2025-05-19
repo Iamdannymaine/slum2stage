@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import Button from './Slum_Button';
+import Button from '../Slum_Button';
 import Image from 'next/image';
-import Section_Heading from './Section_Heading';
-import { Section_Paragraph } from './Section_Paragraph';
+import Section_Heading from '../Section_Heading';
+import { Section_Paragraph } from '../Section_Paragraph';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Who_We_Are = () => {

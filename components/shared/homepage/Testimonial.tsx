@@ -7,7 +7,7 @@ import "swiper/css"
 import "swiper/css/effect-coverflow"
 
 import { EffectCoverflow } from "swiper/modules"
-import Section_Heading from "./Section_Heading"
+import Section_Heading from "../Section_Heading"
 
 export const Testimonial_Carousel = () => {
   const swiperRef = useRef<{ swiper: SwiperType } | null>(null)

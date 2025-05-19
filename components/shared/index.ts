@@ -1,17 +1,18 @@
 // Home
 import Section_Heading from "./Section_Heading";
 import { Section_Paragraph } from "./Section_Paragraph";
-import { HeroCarousel } from "./HeroBanner";
-import { Header } from "./Header";
-import Register_Form from "./Register_Form";
-import { Who_We_Are } from "./Who_We_Are";
+import { HeroSlider } from "./homepage/HeroBanner";
+import { Header } from "./navigation/Header";
+import Footer from "./navigation/Footer";
+import Register_Form from "./homepage/Register_Form";
+import { Who_We_Are } from "./homepage/Who_We_Are";
 import { Providers } from "./Provider";
-import Chidinma_Story from "./Chidinma_Story";
-import { Offerings } from "./Offerings";
-import Our_programs from "./Our_programs";
-import { Testimonial_Carousel } from "./Testimonial";
-import { Partners } from "./Partners";
-import Timeline from "./Timeline";
+import Chidinma_Story from "./homepage/Chidinma_Story";
+import { Offerings } from "./homepage/Offerings";
+import Our_programs from "./homepage/Our_programs";
+import { Testimonial_Carousel } from "./homepage/Testimonial";
+import { Partners } from "./homepage/Partners";
+import Timeline from "./homepage/Timeline";
 
 // About
 import { AboutHero } from "./about_us/Hero";
@@ -40,8 +41,9 @@ import { TeamTabs } from "./team/TeamTabs";
 export {
   Section_Heading,
   Section_Paragraph,
-  HeroCarousel,
+  HeroSlider,
   Header,
+  Footer,
   Register_Form,
   Who_We_Are,
   Providers,

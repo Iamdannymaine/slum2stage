@@ -2,24 +2,21 @@
 
 import {
   Chidinma_Story,
-  Header,
-  HeroCarousel,
   Offerings,
   Our_programs,
   Register_Form,
   Timeline,
   Testimonial_Carousel,
   Who_We_Are,
-  Partners
+  Partners,
+  HeroSlider
 } from '@/components/shared'
 import React from 'react'
 
 const HomeView = () => {
   return (
     <>
-      <div className='min-h-screen'>
-        <HeroCarousel />
-      </div>
+      <HeroSlider />
       <Who_We_Are />
       <Chidinma_Story />
       <Offerings />

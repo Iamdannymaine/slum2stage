@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import Section_Heading from './Section_Heading'
+import Section_Heading from '../Section_Heading'
 import { useInView } from 'framer-motion'
 
 const stats = [

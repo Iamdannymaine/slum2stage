@@ -3,9 +3,10 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import Button from "./Slum_Button"
+import Button from "../Slum_Button"
 import { Menu, X } from "lucide-react"
-import logo from "../../public/assets/images/Logo.svg"
+import logo from "../../../public/assets/images/Logo.svg"
+
 
 const navigation = [
   { title: "About us", route: "/about-us" },
@@ -72,7 +73,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow sticky top-24 md:top-28 w-[80%] rounded-md">
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow relative top-24 md:top-28 w-[80%] rounded-md">
           <ul className="flex flex-col items-start gap-4 p-4">
             {navigation.map((item, index) => (
               <li key={index} className="uppercase text-sm text-slum_gray_800">

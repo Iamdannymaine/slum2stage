@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from '@heroui/image'
 import { Chidinma_Paragraph } from './Chidinma_Paragraph'
-import Button from './Slum_Button'
+import Button from '../Slum_Button'
 import { useRouter } from 'next/navigation'
 
 

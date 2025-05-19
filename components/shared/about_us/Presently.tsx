@@ -24,7 +24,7 @@ const Presently = () => {
       </div>
       <div className='flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto py-12 px-4 lg:px-0'>
         <div className='mb-4 lg:mb-0'><Section_Heading title='Presently' /></div>
-        <div className='ps-0 lg:ps-[33.3%] px-8 lg:px-0'>
+        <div className='ps-4 lg:ps-[33.3%]'>
           <ol className='space-y-6 list-decimal'>
             {lists.map((list, index) => (
               <li key={index} className='font-sans text-sm lg:text-base leading-[32px]'>
