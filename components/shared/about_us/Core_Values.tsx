@@ -1,15 +1,18 @@
 import { Users, Paintbrush, Flag, Droplet, Diamond, CircleUser, Heart } from "lucide-react"
+import { PiUsersThree } from "react-icons/pi";
+import { TbBrush } from "react-icons/tb";
 import Section_Heading from "../Section_Heading"
 
 export function CoreValues() {
   const values = [
-    { name: "Teamwork", icon: <Users className="h-5 w-5 text-cyan-500" /> },
-    { name: "Creativity", icon: <Paintbrush className="h-5 w-5 text-teal-500" /> },
-    { name: "Perseverance", icon: <Flag className="h-5 w-5 text-sky-500" /> },
-    { name: "Discipline", icon: <Droplet className="h-5 w-5 text-blue-500" /> },
-    { name: "Integrity", icon: <Diamond className="h-5 w-5 text-cyan-500" /> },
-    { name: "Self-esteem", icon: <CircleUser className="h-5 w-5 text-sky-500" /> },
-    { name: "Love", icon: <Heart className="h-5 w-5 text-pink-500" /> },
+    { name: "Teamwork", icon: <PiUsersThree className="h-5 w-5 text-primary" /> },
+    { name: "Creativity", icon: <TbBrush className="h-5 w-5 text-primary" /> },
+    { name: "Perseverance", icon: <Flag className="h-5 w-5 text-primary" /> },
+    { name: "Love", icon: <Heart className="h-5 w-5 text-primary" /> },
+    { name: "Discipline", icon: <Droplet className="h-5 w-5 text-primary" /> },
+    { name: "Integrity", icon: <Diamond className="h-5 w-5 text-primary" /> },
+    { name: "Self-esteem", icon: <CircleUser className="h-5 w-5 text-primary" /> },
+    { name: "Growth", icon: <Heart className="h-5 w-5 text-primary" /> },
   ]
 
   // Split values into two groups for desktop layout

@@ -22,8 +22,8 @@ export const Why_We_Do_It = () => {
             <div className="relative mx-auto">
               <blockquote className="relative text-lg font-serif italic text-primary leading-relaxed flex">
                 {/* Left quote (superscript) */}
-                <sup className=" mr-1">
-                  <FaQuoteLeft className="w-4 h-4 text-primary opacity-70 flex-shrink-0" />
+                <sup className="mr-0 lg:mr-1">
+                  <FaQuoteLeft className="w-2 h-2 lg:w-4 lg:h-4 text-primary opacity-70 flex-shrink-0" />
                 </sup>
 
                 {/* Quote text */}
@@ -33,7 +33,7 @@ export const Why_We_Do_It = () => {
                   can achieve better academic success.
                   {/* Right quote (subscript) - appears immediately after the full stop */}
                   <sub className="-mb-1 ml-1 inline-block">
-                    <FaQuoteRight className="w-4 h-4 text-primary opacity-70" />
+                    <FaQuoteRight className="w-2 h-2 lg:w-4 lg:h-4 text-primary opacity-70" />
                   </sub>
                 </span>
               </blockquote>

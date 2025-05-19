@@ -1,5 +1,7 @@
 "use client"
-import Image from 'next/image'
+
+import { Image } from "@heroui/react";
+import NextImage from "next/image";
 import React from 'react'
 import Section_Heading from '../Section_Heading'
 import { Section_Paragraph } from '../Section_Paragraph'
@@ -26,14 +28,16 @@ const About_Who_We_Are = () => {
 
         </div>
 
-        <div className="lg:w-1/2 h-full lg:h-full order-1 lg:order-2">
+        <div className="w-full lg:w-1/2 h-full order-1 lg:order-2">
           <Image
             loading="lazy"
+            as={NextImage}
             src="/assets/images/about-us/who-we-are.png"
             alt="Dancers in colorful traditional attire in an artistic pose"
-            className="w-full h-full rounded-none"
             width={500}
             height={500}
+            className="w-full h-[100px] md:h-[400px] lg:h-full object-cover rounded-none items-center justify-center"
+            style={{ maxWidth: "100%" }}
           />
         </div>
       </div>

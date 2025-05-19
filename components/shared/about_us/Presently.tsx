@@ -11,8 +11,8 @@ const lists = [
 
 const Presently = () => {
   return (
-    <section className='w-full flex flex-col space-y-12'>
-      <div>
+    <section className='w-full flex flex-col space-y-8 lg:space-y-12'>
+      <div className='w-full h-full px-0'>
         <Image
           loading='lazy'
           src="/assets/images/about-us/illimi-danc-education.png"
@@ -22,9 +22,9 @@ const Presently = () => {
           height={1000}
         />
       </div>
-      <div className='flex items-start justify-between max-w-7xl mx-auto py-12 px-4 lg:px-0'>
-        <div><Section_Heading title='Presently' /></div>
-        <div className='ps-[33.3%]'>
+      <div className='flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto py-12 px-4 lg:px-0'>
+        <div className='mb-4 lg:mb-0'><Section_Heading title='Presently' /></div>
+        <div className='ps-0 lg:ps-[33.3%] px-8 lg:px-0'>
           <ol className='space-y-6 list-decimal'>
             {lists.map((list, index) => (
               <li key={index} className='font-sans text-sm lg:text-base leading-[32px]'>

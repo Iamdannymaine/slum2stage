@@ -50,11 +50,9 @@ export default function We_Do_This() {
             <div className="flex flex-col items-start">
               <div className="text-slum_orange mb-4 rotate-90">
                 <BiSolidCircleHalf fill="#FFC645" className="text-slum_orange h-8 w-8 lg:w-6 lg:h-6" />
-
-
               </div>
               <h2 className="text-2xl font-bold mb-3 font-serif">Thorough Curriculum</h2>
-              <p className="text-slum_gray_600 font-sans font-normal text-sm lg:text-lg leading- w-full lg:w-[60%]">
+              <p className="text-slum_gray_600 font-sans font-normal text-sm lg:text-lg leading-[36px] w-full lg:w-[80%]">
                 Working with schools to develop their teaching curriculum to inculcate social - emotional and behavioral
                 skills, in other to create a better learning environment for children.
               </p>
@@ -70,7 +68,7 @@ export default function We_Do_This() {
                 <FaCertificate fill="#EC3BC0" className="text-slum_pink h-6 w-6" />
               </div>
               <h2 className="text-2xl font-bold mb-3 font-serif">After school Programs</h2>
-              <p className="text-slum_gray_600 font-sans font-normal text-sm lg:text-lg leading-relaxed w-full lg:w-[80%]">
+              <p className="text-slum_gray_600 font-sans font-normal text-sm lg:text-lg leading-[36px] w-full lg:w-[80%]">
                 Creating After-School programs to follow up on and support the academic learning progress of our
                 students.
               </p>

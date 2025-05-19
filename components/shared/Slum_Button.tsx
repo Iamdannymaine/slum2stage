@@ -33,7 +33,7 @@ function Button({
         variant === "pill-filled" &&
         " rounded-full bg-secondary border-b-2 border-primary pill_filled_btn_shadow text-white font-semibold hover:bg-primary hover:text-white text-sm py-2 p-1 px-8 font-sans",
         variant === "pill-ghost" &&
-        `rounded-full bg-secondary/10 pill_filled_btn_shadow hover:text-white text-primary font-semibold hover:bg-primary_hover text-sm py-2 p-1 px-8 font-sans [--shadow-color:#1b3142]`,
+        `rounded-full bg-secondary pill_filled_btn_shadow hover:text-white text-primary font-semibold hover:bg-primary_hover text-sm py-2 p-1 px-8 font-sans [--shadow-color:#1b3142]`,
         className
       )}
       disabled={disabled}

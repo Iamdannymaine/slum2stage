@@ -4,7 +4,7 @@ import Link from "next/link"
 import { TeamType } from "@/types"
 import { Card, Image, CardFooter } from "@heroui/react"
 import { Button } from "@/components/ui/button"
-
+import NextImage from "next/image";
 interface TeamCardProps {
   team: TeamType
   onHover?: (team: TeamType) => void
@@ -22,6 +22,7 @@ export function TeamCard({ team, onHover, onLeave }: TeamCardProps) {
         <div className="overflow-hidden">
           <Image
             loading="lazy"
+            as={NextImage}
             src={team.image || "/placeholder.svg"}
             alt={team.name}
             width={400}

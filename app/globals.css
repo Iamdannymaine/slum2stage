@@ -126,8 +126,8 @@ body::-webkit-scrollbar {
 
 .pill_filled_btn_shadow {
    box-shadow: 25.01px 23.47px 100.03px 0px #1b314221,
-     inset -0.2em -0.2em 0.3em 0 var(--shadow-color, --secondary), 
-     2px 3px 4px #ffffff;
+     inset -0.2em -0.2em 0.3em 0 var(--shadow-color), 
+     2px 3px 4px var(--secondary);
 }
 
 .swiper {

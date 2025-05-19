@@ -15,7 +15,7 @@ interface YearSectionProps {
   icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   iconColor?: string;
   svgPosition?: 'top-right' | 'top-left' | 'bottom-right';
-  badgeText?: string;
+  svgPositionMobile?: 'bottom-right' | 'top-right' | 'bottom-left';
 }
 
 const YearSection: React.FC<YearSectionProps> = ({
@@ -26,29 +26,35 @@ const YearSection: React.FC<YearSectionProps> = ({
   icon: Icon = PiStarFourFill,
   iconColor = "#EC3BC0",
   svgPosition = 'top-right',
-  badgeText
+  svgPositionMobile = 'bottom-right'
 }) => {
   const positionClasses = {
     'top-right': '-top-4 -right-5',
     'top-left': '-top-4 -left-2',
-    'bottom-right': 'lg:bottom-16 -bottom-4 -right-2'
+    'bottom-right': '-bottom-16 -right-2',
+  };
+
+  const mobilePositionClasses = {
+    'top-right': '-top-4 -right-5',
+    'bottom-right': '-bottom-4 -right-2',
+    'bottom-left': '-bottom-4 -left-2',
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start order-2 lg:order-1">
       <div>
         <h2 className="text-6xl font-bold mb-6 font-serif ">{year}.</h2>
         <ul className="space-y-3">
           {items.map((item, index) => (
-            <li key={index} className="flex items-start font-sans font-normal text-sm lg:text-base lg:leading-[32px]">
+            <li key={index} className="flex items-start font-sans font-normal text-sm lg:text-base leading-[36px] lg:leading-[32px]">
               <span className="mr-2">•</span>
               <p>{item}</p>
             </li>
           ))}
         </ul>
       </div>
-      <div className="relative w-full h-full overflow-visible">
-        <div className={`absolute ${positionClasses[svgPosition]} rounded-full shadow-lg z-50`}>
+      <div className="relative w-full h-full overflow-visible order-1 lg:order-2">
+        <div className={`absolute ${mobilePositionClasses[svgPositionMobile]}  lg:${positionClasses[svgPosition]} z-50`}>
           <Icon
             className={`icon h-12 w-12 text-${iconColor} z-50`}
             fill={iconColor}
@@ -73,7 +79,8 @@ interface YearData {
   imageAlt: string;
   icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   iconColor?: string;
-  svgPosition: 'top-right' | 'top-left' | 'bottom-right';
+  svgPosition: "top-right" | "top-left" | "bottom-right";
+  svgPositionMobile: "bottom-right" | "top-right" | "bottom-left";
   badgeText?: string;
 }
 
@@ -92,7 +99,8 @@ const Our_Story: React.FC = () => {
       imageAlt: "2022 accomplishments",
       icon: PiStarFourFill,
       iconColor: "#EC3BC0",
-      svgPosition: "top-right"
+      svgPosition: "top-right",
+      svgPositionMobile: "bottom-right"
     },
     {
       year: "2023",
@@ -107,7 +115,8 @@ const Our_Story: React.FC = () => {
       imageAlt: "2023 accomplishments",
       icon: FaCertificate,
       iconColor: "#95D5E4",
-      svgPosition: "top-left"
+      svgPosition: "top-left",
+      svgPositionMobile: "top-right"
     },
     {
       year: "2024",
@@ -122,6 +131,7 @@ const Our_Story: React.FC = () => {
       imageSrc: "/assets/images/about-us/2024.png",
       imageAlt: "2024 accomplishments",
       svgPosition: "bottom-right",
+      svgPositionMobile: "bottom-left",
       icon: PiPentagonFill,
       iconColor: "#9747FF",
       badgeText: "Deserves More"
@@ -131,7 +141,7 @@ const Our_Story: React.FC = () => {
   return (
     <section className='bg-white w-full py-20'>
       <div className='flex flex-col space-y-12 px-4 lg:px-0 items-center justify-center'>
-        <Section_Heading title='Our Story' />
+        <Section_Heading size='' title='Our Story' />
         <div className="max-w-6xl mx-auto py-8 space-y-20">
           {yearData.map((data, index) => (
             <YearSection key={index} {...data} />
