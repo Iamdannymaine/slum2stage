@@ -1,5 +1,6 @@
 "use client"
 
+import { Image } from "@heroui/image"
 import React from "react"
 
 interface ImagesPlacementProps {
@@ -20,7 +21,8 @@ export function ImagesPlacement({ content }: ImagesPlacementProps) {
     <div className="relative space-y-6">
       {/* Absolute image overlays */}
       {imageBlocks.map((src, i) => (
-        <img
+        <Image
+          loading="lazy"
           key={i}
           src={src}
           alt={`News visual ${i + 1}`}

@@ -1,5 +1,5 @@
 import React from 'react'
-import Section_Heading from './Section_Heading'
+import Section_Heading from '../Section_Heading'
 
 const Our_Impacts = () => {
   return (

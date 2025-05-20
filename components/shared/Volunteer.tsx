@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Register_Form from "./Register_Form"
+import Register_Form from "./homepage/Register_Form"
 
 export default function VolunteerRegistration() {
   return (
