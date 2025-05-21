@@ -21,7 +21,7 @@ export const Program_Card = ({
 
       {/* Header */}
       <CardHeader className="absolute z-20 top-1 flex-col !items-start p-4">
-        <p className="text-tiny text-white uppercase font-bold">{title}</p>
+        <p className="text-base lg:text-lg text-white uppercase font-bold font-sans">{title}</p>
       </CardHeader>
 
       {/* Background Image */}

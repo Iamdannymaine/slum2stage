@@ -26,7 +26,7 @@ export const Who_We_Are = () => {
         <div className="w-full md:w-1/2 space-y-8 lg:space-y-16 md:space-y-24 py-8 md:py-24">
 
           <div className="space-y-6 py-16 lg:py-32 ">
-            <Section_Heading title="Who we are" />
+            <Section_Heading size='72px' title="Who we are" />
             <Section_Paragraph
               paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
           \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`} />
@@ -36,7 +36,7 @@ export const Who_We_Are = () => {
           </div>
 
           <div className="space-y-6">
-            <Section_Heading title="What we do" />
+            <Section_Heading size='72px' title="What we do" />
             <Section_Paragraph
               paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
             \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`} />

@@ -1,6 +1,7 @@
 'use client'
 
-import Image from 'next/image'
+import { Image } from '@heroui/image';
+import NextImage from 'next/image';
 import React from 'react'
 import Marquee from "react-fast-marquee"
 import 'swiper/css';
@@ -13,7 +14,7 @@ const partners: { image: string }[] = [
   { image: "/assets/images/partners/twirl-africa.svg" },
   { image: "/assets/images/partners/cmf.svg" },
   { image: "/assets/images/partners/transcorp-hilton.svg" },
-  { image: "/assets/images/partners/intitute-francias.svg" },
+  { image: "/assets/images/partners/institute-francias.svg" },
 
   { image: "/assets/images/partners/shushi.svg" },
   { image: "/assets/images/partners/asvol.svg" },
@@ -29,12 +30,14 @@ export const Partners = () => {
 
   return (
     <section className='w-full py-20'>
-      <div className='max-w-6xl mx-auto flex flex-col items-center justify-center px-4 lg:px-0'>
-        <h1 className='font-serif font-bold text-slum_gray_800 text-[28px]'>We are grateful <br />for our partners</h1>
+      <div className='max-w-6xl mx-auto flex flex-col items-center justify-center px-4 lg:px-0 space-y-8 lg:space-y-12'>
+        <h1 className='font-serif font-bold text-slum_gray_800 text-[28px] mb-8'>We are grateful <br />for our partners</h1>
         {/* Desktop Grids */}
-        <div className='hidden sm:grid grid-cols-4 gap-4 mb-8 items-center justify-center mx-auto'>
+        <div className='hidden sm:grid grid-cols-4 gap-12 mb-20 items-center justify-center mx-auto'>
           {firstFour.map((partner, index) => (
             <Image
+              loading='lazy'
+              as={NextImage}
               key={`partner-first-${index}`}
               src={partner.image}
               alt='partner-logo'
@@ -45,9 +48,11 @@ export const Partners = () => {
           ))}
         </div>
 
-        <div className='hidden sm:grid grid-cols-5 gap-4 items-center justify-center mx-auto'>
+        <div className='hidden sm:grid grid-cols-5 gap-16 items-center justify-center mx-auto'>
           {lastFive.map((partner, index) => (
             <Image
+              loading='lazy'
+              as={NextImage}
               key={`partner-last-${index}`}
               src={partner.image}
               alt='partner-logo'
@@ -78,7 +83,7 @@ export const Partners = () => {
                   alt={`partner logo`}
                   width={160}
                   height={50}
-                  quality={100}
+                  // quality={100}
                   data-nimg="1"
                   className="pointer-events-none"
                   style={{ color: "transparent", objectFit: "contain" }}

@@ -6,12 +6,13 @@ import Image from "next/image"
 import Button from "../Slum_Button"
 import { Menu, X } from "lucide-react"
 import logo from "../../../public/assets/images/Logo.svg"
+import { useRouter } from "next/navigation"
 
 
 const navigation = [
   { title: "About us", route: "/about-us" },
   { title: "Team", route: "/team" },
-  { title: "Program", route: "/program" },
+  { title: "Program", route: "/our-program" },
   { title: "News", route: "/news" },
   { title: "Contact Us", route: "/contact-us" },
 ]
@@ -21,6 +22,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +34,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleDonate = () => {
+    router.push("/donate")
+  }
   return (
     <header
       className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-center bg-transparent"
@@ -61,7 +66,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex">
-          <Button variant="circular-filled" text="DONATE" />
+          <Button variant="circular-filled" text="DONATE" onClick={handleDonate} />
         </div>
 
         {/* Mobile menu toggle */}
@@ -82,7 +87,7 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <Button variant="circular-filled" text="DONATE" />
+            <Button variant="circular-filled" text="DONATE" onClick={handleDonate} />
           </ul>
         </div>
       )}

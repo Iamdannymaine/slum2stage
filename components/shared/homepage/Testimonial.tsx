@@ -46,8 +46,8 @@ export const Testimonial_Carousel = () => {
 
   return (
     <section className="w-full bg-white py-20">
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center">
-        <Section_Heading size="48px" title="Testimonial" />
+      <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-8 lg:space-y-12">
+        <Section_Heading size="48px" title="Testimonials" />
 
         <Swiper
           ref={swiperRef}

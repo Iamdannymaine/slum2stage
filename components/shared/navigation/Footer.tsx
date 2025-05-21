@@ -8,16 +8,16 @@ import { Image } from '@heroui/image'
 
 const company = [
   { label: "Team", href: "/team" },
-  { label: "Program", href: "/program" },
+  { label: "Program", href: "/our-program" },
   { label: "News", href: "/news" },
-  { label: "Register", href: "/register" }
+  { label: "Register", href: "/auth/register" }
 ]
 
 
 const mobileLink = [
   { label: "About Us", href: "/about-us" },
   { label: "Team", href: "/team" },
-  { label: "Program", href: "/program" },
+  { label: "Program", href: "/our-program" },
   { label: "News", href: "/news" },
   { label: "Contact Us", href: "/contact-us" }
 ]

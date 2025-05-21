@@ -32,7 +32,7 @@ export function SingleNewsPage({ post }: BlogPostPageProps) {
 
       {showDoubleImage && (
         <div className="flex justify-between gap-2">
-          <div className="w-[800px] h-[400px] overflow-hidden rounded-none">
+          <div className="w-full h-[400px] overflow-hidden rounded-none">
             <Image
               loading="lazy"
               src={post.imageUrl || "/placeholder.svg"}
@@ -42,7 +42,7 @@ export function SingleNewsPage({ post }: BlogPostPageProps) {
               className="w-full h-full object-cover rounded-none"
             />
           </div>
-          <div className="hidden lg:flex w-[800px] h-[400px] overflow-hidden rounded-none">
+          <div className="hidden lg:flex w-full h-[400px] overflow-hidden rounded-none">
             <Image
               loading="lazy"
               src="/assets/images/news-secondary.png"

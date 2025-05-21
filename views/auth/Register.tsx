@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Label } from "@/components/ui/label"
+import { RadioGroup } from "@/components/shared/form/Radio_Group"
 import FormField from "@/components/shared/form/Form_Field"
 import Button from "@/components/shared/Slum_Button"
 import { ImageGrid } from "@/components/shared"
+import { Label } from "@/components/ui/label"
 
 export function DanceRegistrationForm() {
   const [formData, setFormData] = useState({
@@ -22,17 +23,37 @@ export function DanceRegistrationForm() {
     setFormData({ ...formData, [field]: e.target.value })
   }
 
+
+  const updateFormData = (field: string, value: string) => {
+    setFormData({ ...formData, [field]: value })
+  }
+
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Form submitted:", formData)
   }
 
+  const categoryOptions = [
+    { id: "adult", value: "Adult", label: "Adult" },
+    { id: "kids", value: "Kids and Teens", label: "Kids and Teens" },
+  ]
+
+
+  // Dance style options
+  const danceStyleOptions = [
+    { id: "ballet", value: "Ballet", label: "Ballet" },
+    { id: "contemporary", value: "Contemporary", label: "Contemporary" },
+    { id: "hiphop", value: "Hip-Hop", label: "Hip-Hop" },
+    { id: "afro", value: "Afro dance", label: "Afro dance" },
+  ]
+
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-screen pt-40">
       {/* Form Section */}
-      <div className="w-full lg:w-1/2 p-8 bg-white pb-20">
+      <div className="w-full lg:w-1/2 px-4 py-8 lg:p-8 bg-white pb-20 lg:px-12">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">Tiny Feet, Big Moves</h1>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-10">
           Join our dance school and give your child the opportunity to learn, grow, and perform. Classes available for
           all ages and skill levels.
         </p>
@@ -123,7 +144,7 @@ export function DanceRegistrationForm() {
           </div>
           <div className="space-y-2">
             <FormField
-              label="Email (Parent's/Guardian's)"
+              label="Email (Personal/Parent/Guardian)"
               reqValue="*"
               htmlFor="email"
               type="email"
@@ -140,49 +161,29 @@ export function DanceRegistrationForm() {
 
           <div className="space-y-2">
             <Label>Category</Label>
-            <div className="flex flex-wrap gap-4">
-              {["adults", "kids"].map((style) => (
-                <FormField
-                  key={style}
-                  label={style.charAt(0).toUpperCase() + style.slice(1)}
-                  reqValue="*"
-                  htmlFor={style}
-                  type="radio"
-                  id={style}
-                  variant="bordered"
-                  isInvalid={false}
-                  errorMessage=""
-                  size="sm"
-                  onChange={() => setFormData({ ...formData, danceStyle: style })}
-                  required
-                />
+            <div className="flex gap-4">
+              {categoryOptions.map((category) => (
+                <button key={category.id} className="border border-gray-200 p-3 px-6 rounded-full">
+                  {category.label}
+                </button>
               ))}
             </div>
+
           </div>
 
           <div className="space-y-2">
-            <Label>Dance Style</Label>
-            <div className="flex flex-wrap gap-4">
-              {["ballet", "contemporary", "hipHop", "afroDance"].map((style) => (
-                <FormField
-                  key={style}
-                  label={style.charAt(0).toUpperCase() + style.slice(1)}
-                  reqValue="*"
-                  htmlFor={style}
-                  type="radio"
-                  id={style}
-                  variant="bordered"
-                  isInvalid={false}
-                  errorMessage=""
-                  size="sm"
-                  onChange={() => setFormData({ ...formData, danceStyle: style })}
-                  required
-                />
+            <Label>Category</Label>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {danceStyleOptions.map((category) => (
+                <button key={category.id} className=" border border-gray-200 p-3 rounded-full">
+                  {category.label}
+                </button>
               ))}
             </div>
+
           </div>
 
-          <div>
+          <div className="flex items-center justify-center lg:items-start lg:justify-start">
             <Button variant="circular-filled" text="REGISTER" />
           </div>
         </form>

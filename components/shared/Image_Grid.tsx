@@ -7,7 +7,7 @@ export function ImageGrid() {
 
 
   return (
-    <div className="w-full lg:w-1/2 gallery bg-[#FFDAB9] rounded-none">
+    <div className="w-full lg:w-1/2 gallery bg-[#FFEEE5] rounded-none px-4">
       {imagesData.map((src, index) => (
         <Card
           key={index}

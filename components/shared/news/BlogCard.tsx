@@ -10,7 +10,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <Card className="bg-white rounded-lg overflow-hidden border-none">
+    <Card className="bg-white overflow-hidden border-none">
       <Link href={`/news/${post.slug}`} className="group block">
         <div className="overflow-hidden">
           <Image

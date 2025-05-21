@@ -1,6 +1,6 @@
 import React from 'react'
 import Section_Heading from '../Section_Heading'
-import { JigsawPuzzle } from '../Jigsaw_Puzzle'
+import { JigsawPuzzle } from './Jigsaw_Puzzle'
 
 export const Offerings = () => {
   return (

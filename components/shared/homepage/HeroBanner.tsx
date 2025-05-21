@@ -64,7 +64,7 @@ export const HeroSlider = () => {
                 <h1 className="hidden lg:block text-6xl font-serif font-normal
                    leading-tight whitespace-pre-line text-start text-slum_gray_800">
                   Every child <br />deserves <br /> to be happy!
-                  <span className="hidden lg:block h-4 w-[24rem] bg-primary_border -mt-4 ml-1"></span>
+                  <span className="hidden lg:block h-4 w-[21rem] bg-primary_border -mt-4 ml-1"></span>
                 </h1>
               </div>
               <div className="md:w-1/2">
@@ -104,10 +104,10 @@ export const HeroSlider = () => {
                   Bring{" "}
                   <span className="relative inline-block">
                     <span className="relative z-10">dance & joy</span>
-                    <span className="hidden lg:absolute left-0 bottom-1 w-full h-4 bg-primary_border z-0"></span>
+                    <span className="absolute left-0 bottom-1 w-full h-4 bg-primary_border z-0"></span>
                   </span>
                   <br />
-                  to government <br /> school
+                  to government <br /> school.
                 </h1>
               </div>
               <div className="md:w-1/2">
@@ -139,14 +139,13 @@ export const HeroSlider = () => {
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal
                    leading-tight whitespace-pre-line text-start text-slum_gray_800">
-                  Partnership with <br />French Embassy
-                  <span className={`hidden lg:block h-4 w-[34rem] bg-primary_border -mt-4 ml-1`}></span>
+                  Partnership with <br />French Embassy.
                 </h1>
 
                 <h1 className="hidden lg:block text-6xl font-serif font-normal
                    leading-tight whitespace-pre-line text-start text-slum_gray_800">
-                  Partnership with <br />French Embassy
-                  <span className={`hidden lg:block h-4 w-[34rem] bg-primary_border -mt-4 ml-1`}></span>
+                  Partnership with <br />French Embassy.
+                  <span className={`hidden lg:block h-4 w-[30rem] bg-primary_border -mt-4 ml-1`}></span>
                 </h1>
               </div>
               <div className="md:w-1/2">
@@ -184,8 +183,8 @@ export const HeroSlider = () => {
 
                 <h1 className="hidden lg:block text-6xl font-serif font-normal
                    leading-tight whitespace-pre-line text-start text-slum_gray_800">
-                  Slum 2 Stage <br />dance production
-                  <span className={`hidden lg:block h-4 w-[32rem] bg-primary_border -mt-4 ml-1`}></span>
+                  Slum 2 Stage <br />dance production!
+                  <span className={`hidden lg:block h-4 w-[30rem] bg-primary_border -mt-4 ml-1`}></span>
                 </h1>
               </div>
               <div className="md:w-1/2">

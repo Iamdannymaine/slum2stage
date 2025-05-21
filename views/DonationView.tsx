@@ -1,5 +1,4 @@
 import React from 'react'
-import Section_Heading from '@/components/shared/Section_Heading'
 import { Section_Paragraph } from '@/components/shared/Section_Paragraph'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import Image from 'next/image'
