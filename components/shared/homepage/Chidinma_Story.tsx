@@ -23,21 +23,21 @@ const Chidinma_Story = () => {
         />
       </div>
 
-      <div className="hidden lg:flex relative w-full aspect-square -mt-4 mb-20">
+      <div className="hidden lg:flex relative w-full overflow-hidden -mt-4 -ml-4 -mb-10">
         <Image
           src="/assets/images/chidinma.png"
           radius="lg"
-          className="object-cover"
-          alt="chidinma-mobile"
+          className="object-cover h-[80%]"
+          alt="chidinma-mobile h-auto"
         />
       </div>
 
 
-      <div className="flex flex-col col-span-2 p-4 lg:p-8 pt-0 lg:pt-32 items-start justify-start">
+      <div className="flex flex-col col-span-2 p-4 lg:p-8 pt-0 lg:py-32 items-start justify-start">
         <div className="flex flex-col space-y-2 lg:space-y-8">
           <h3 className="font-sans font-bold text-sm lg:text-xl text-white">Why we do it?</h3>
-          <p className="font-serif font-normal text-lg lg:text-[56px] text-white">Chidinma&apos;s story</p>
-          <p className="font-sans font-bold text-sm lg:text-xl text-white">- a student in the program</p>
+          <p className="font-serif font-bold text-lg lg:text-[56px] text-white">Chidinma&apos;s story</p>
+          <p className="font-sans font-normal text-sm lg:text-xl text-white">- a student in the program</p>
         </div>
 
         <div className="block lg:hidden mt-4 mb-8 lg:mt-8 space-y-4">

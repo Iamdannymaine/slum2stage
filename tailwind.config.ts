@@ -79,7 +79,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-libre-baskerville)", "serif"],
+        serif: ["Libre", "serif"],
         sans: ["var(--font-inter)", "sans-serif"],
       },
     },

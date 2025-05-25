@@ -6,7 +6,7 @@ export function JigsawPuzzle() {
       <div className="grid grid-cols-2 gap-0 relative w-full max-w-[22rem] lg:max-w-2xl">
         {/* Top Left - Community */}
         <div className="relative">
-          <div className="bg-[#4AAFC8] text-white p-4 lg:py-8 py-8
+          <div className="bg-[#4AAFC8] text-white p-4 py-10
           lg:p-10 rounded-lg h-full border-2 border-white min-h-[200px] lg:min-h-[300px]">
             <div className="relative z-10 h-full flex flex-col">
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 font-serif">Community</h3>
@@ -28,8 +28,9 @@ export function JigsawPuzzle() {
 
         {/* Top Right - Education */}
         <div className="relative">
-          <div className="bg-[#F9B69C] text-white p-4 lg:p-8 py-8 rounded-lg h-full border-2 border-white min-h-[200px] lg:min-h-[300px]">
-            <div className="relative z-10 h-full flex flex-col pl-4">
+          <div className="bg-[#F9B69C] text-white p-4 lg:p-8 py-8 rounded-lg 
+          h-full border-2 border-white min-h-[200px] lg:min-h-[300px]">
+            <div className="relative z-10 h-full flex flex-col pl-4 py-4">
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 font-serif">Education</h3>
               <p className="text-sm lg:text-base font-sans leading-normal lg:leading-[32px] font-medium flex-grow ">
                 We use choreography to enhance focus and concentration, leading to better academic performance
@@ -46,8 +47,9 @@ export function JigsawPuzzle() {
 
         {/* Bottom Left - Health */}
         <div className="relative">
-          <div className="bg-[#F9B69C] text-white p-4 lg:p-8 py-8 rounded-lg h-full border-2 border-r-4 border-white min-h-[200px] lg:min-h-[300px]">
-            <div className="relative z-10 h-full flex flex-col">
+          <div className="bg-[#F9B69C] text-white p-4 lg:p-8 py-10 rounded-lg
+           h-full border-2 border-r-4 border-white min-h-[150px] lg:min-h-[300px]">
+            <div className="relative z-10 h-full flex flex-col py-4">
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 font-serif">Health</h3>
               <p className="text-sm lg:text-base font-sans leading-normal lg:leading-[32px] font-medium flex-grow">
                 Our rigorous dance classes improve cardiovascular health, flexibility and strength, reduce stress and
@@ -65,8 +67,8 @@ export function JigsawPuzzle() {
 
         {/* Bottom Right - Behaviors */}
         <div className="relative">
-          <div className="bg-[#4AAFC8] text-white p-4 py-8 lg:px-10 lg:py-12 rounded-lg h-full 
-          border-r-4 border-b-4 border-t-2 border-white min-h-[200px] lg:min-h-[300px]">
+          <div className="bg-[#4AAFC8] text-white p-4 pt-14 lg:px-10 lg:py-14 rounded-lg h-full 
+          border-r-4 border-b-4 border-t-2 border-white min-h-[150px] lg:min-h-[300px]">
             <div className="relative z-10 h-full flex flex-col">
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 font-serif">Behaviors</h3>
               <p className="text-sm lg:text-base font-sans leading-normal lg:leading-[32px] font-medium flex-grow">

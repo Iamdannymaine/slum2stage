@@ -52,7 +52,8 @@ export const HeroSlider = () => {
           </div>
 
           <div className="flex items-start justify-start">
-            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-0">
+            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col 
+            md:flex-row gap-8 md:gap-16 mb-8 px-4 lg:px-0">
               <div className="w-full lg:w-1/2">
 
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal

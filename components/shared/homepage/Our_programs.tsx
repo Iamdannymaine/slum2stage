@@ -30,11 +30,13 @@ const programs: Program[] = [
   {
     id: 1,
     image: "/assets/images/dance.jpg",
+    description: "Our Visit programs help to establish strong, positive communications between our team members, coordinators and our sponsored children’s parents",
     title: "Dance",
   },
   {
     id: 2,
     image: "/assets/images/after-school.png",
+    description: "Our Visit programs help to establish strong, positive communications between our team members, coordinators and our sponsored children’s parents",
     title: "After School",
   },
   {
@@ -49,8 +51,9 @@ const Our_programs = () => {
 
 
   return (
-    <section className="w-full bg-smoke_white py-20">
-      <div className="max-w-5xl mx-auto flex flex-col items-center justify-center space-y-12 px-4 lg:px-0">
+    <section className="w-full bg-[#FFEEE5] py-20">
+      <div className="max-w-5xl mx-auto flex flex-col items-center 
+      justify-center space-y-12 px-4 lg:px-0">
         <Section_Heading size='48px' title="Our Programs" />
 
         <div className="hidden lg:grid lg:grid-cols-3 gap-6">

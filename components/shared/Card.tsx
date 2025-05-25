@@ -15,13 +15,14 @@ export const Program_Card = ({
   description?: string
 }) => {
   return (
-    <Card className="relative h-[400px] rounded-md overflow-hidden" style={{ backgroundColor: bgColor }}>
+    <Card className={`relative h-[400px] overflow-hidden cursor-pointer group`}
+      style={{ backgroundColor: bgColor }}>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-black/20 z-10"></div>
 
       {/* Header */}
       <CardHeader className="absolute z-20 top-1 flex-col !items-start p-4">
-        <p className="text-base lg:text-lg text-white uppercase font-bold font-sans">{title}</p>
+        <p className="text-base lg:text-lg text-white uppercase font-bold font-sans rounded-md ">{title}</p>
       </CardHeader>
 
       {/* Background Image */}
@@ -36,7 +37,7 @@ export const Program_Card = ({
       )}
 
       {/* Footer */}
-      <CardFooter className="absolute bottom-0 z-20 text-white p-4">
+      <CardFooter className="absolute bottom-0 z-20 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {description}
       </CardFooter>
     </Card>

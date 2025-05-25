@@ -26,22 +26,32 @@ export const Who_We_Are = () => {
         <div className="w-full md:w-1/2 space-y-8 lg:space-y-16 md:space-y-24 py-8 md:py-24">
 
           <div className="space-y-6 py-16 lg:py-32 ">
-            <Section_Heading size='72px' title="Who we are" />
-            <Section_Paragraph
-              paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
+            <Section_Heading title="Who we are" />
+            <div className='w-full lg:max-w-sm'>
+              <Section_Paragraph
+                paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
           \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`} />
-            <div>
-              <Button variant="circular-filled" text="Learn More" />
+              <div>
+
+              </div>
+              <div className='pt-10'>
+                <Button variant="circular-filled" text="Learn More" />
+              </div>
             </div>
           </div>
 
           <div className="space-y-6">
             <Section_Heading size='72px' title="What we do" />
-            <Section_Paragraph
-              paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
+            <div className='w-full lg:max-w-sm'>
+              <Section_Paragraph
+                size='lg'
+                paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
             \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`} />
 
-            <div className="flex items-center justify-between">
+
+            </div>
+
+            <div className="pt-10">
               <Button variant="circular-filled" text="Learn More" />
             </div>
           </div>

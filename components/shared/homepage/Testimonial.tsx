@@ -8,6 +8,8 @@ import "swiper/css/effect-coverflow"
 
 import { EffectCoverflow } from "swiper/modules"
 import Section_Heading from "../Section_Heading"
+import { Avatar } from "@heroui/react"
+
 
 export const Testimonial_Carousel = () => {
   const swiperRef = useRef<{ swiper: SwiperType } | null>(null)
@@ -84,15 +86,22 @@ export const Testimonial_Carousel = () => {
             return (
               <SwiperSlide key={index} className="testimonial-slide">
                 <div className="p-4">
-                  <div className={`testimonial-card ${position}-position`}>
+                  <div className={`testimonial-card ${position}-position shadow-md`}>
                     <div className="testimonial-content">
                       {testimonial.content.split("\n\n").map((paragraph, i) => (
-                        <p key={i} className="mb-4">
+                        <p key={i} className="mb-4 font-sans font-normal text-sm lg:text-base text-slum_gray_600 leading-8">
                           {paragraph}
                         </p>
                       ))}
                     </div>
-                    <div className="testimonial-author">{testimonial.author}</div>
+                    <div className="testimonial-author flex space-x-4">
+                      <Avatar
+                        size="sm"
+                        isBordered
+                        src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+                        name={testimonial.author.slice(0, 4)} />
+                      <span> {testimonial.author}</span>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>

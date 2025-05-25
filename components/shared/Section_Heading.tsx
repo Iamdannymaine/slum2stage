@@ -14,7 +14,7 @@ const Section_Heading = ({
   return (
     <div>
       <h2
-        className={`font-serif font-bold text-${color} text-[28px] md:text-[32px] lg:text-[${size}]`}
+        className={`font-serif font-bold text-${color} text-[28px] md:text-[32px] lg:text-[72px]`}
       >
         {title}
       </h2>

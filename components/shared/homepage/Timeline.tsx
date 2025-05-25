@@ -22,7 +22,7 @@ const stats = [
   },
   {
     number: 25,
-    description: "Actively participate in our program",
+    description: "",
     position: "left",
   },
 ]
@@ -61,15 +61,32 @@ const Timeline = () => {
   return (
     <section ref={sectionRef} className='w-full bg-snow_white min-h-screen py-32'>
       <div className='flex flex-col items-center justify-center space-y-12'>
-        <Section_Heading size="48px" title='Timeline' />
+        <div>
+          <h1 className='font-serif font-bold text-slum_gray_800 text-[56px] flex flex-col leading-snug'>
+            <span className='capitalize'>Our impact</span>
+            <span className=''>in numbers</span>
+          </h1>
+
+        </div>
 
         <div className="grid grid-cols-1 gap-16 px-4 lg:hidden place-items-center mx-auto">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <h2 className="text-5xl font-bold text-secondary mb-2 relative z-10">
+              <h2 className="text-5xl font-bold mb-2 relative z-10 font-serif uppercase text-[#056980]">
                 <AnimatedNumber targetNumber={stat.number} trigger={inView} />
               </h2>
-              <p className="text-sm text-slum_gray-800 max-w-xs">{stat.description}</p>
+              <p className="text-sm text-slum_gray-600 max-w-xs font-sans font-normal">
+                {index === 3 ? (
+                  <>
+                    Actively participate
+                    <br />
+                    in our program
+                  </>
+                ) : (
+                  stat.description
+                )}
+              </p>
+
             </div>
           ))}
         </div>
@@ -89,14 +106,25 @@ const Timeline = () => {
                   <div className="w-1/2" />
                   <div
                     className={`w-1/2 pt-7 ${stat.position === "left"
-                      ? "pr-12 text-right flex flex-col items-end"
-                      : "pl-12 text-left flex flex-col items-start"
+                      ? "pr-12 text-end flex flex-col items-end"
+                      : "pl-12 text-start flex flex-col items-start"
                       }`}
                   >
-                    <h2 className="text-5xl md:text-6xl font-bold text-secondary mb-2 relative z-10">
+                    <h2 className="text-5xl md:text-6xl font-bold text-[#056980] mb-2 relative z-10 font-serif uppercase">
                       <AnimatedNumber targetNumber={stat.number} trigger={inView} />
                     </h2>
-                    <p className="text-sm md:text-lg text-slum_gray-800 text-center max-w-xs">{stat.description}</p>
+                    <p className="text-sm md:text-lg text-slum_gray-600 max-w-xs font-sans font-normal">
+                      {index === 3 ? (
+                        <>
+                          Actively participate
+                          <br />
+                          in our program
+                        </>
+                      ) : (
+                        stat.description
+                      )}
+                    </p>
+
                   </div>
                 </div>
               </div>
