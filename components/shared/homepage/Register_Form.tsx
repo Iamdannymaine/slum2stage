@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const Register_Form = () => {
   return (
-    <section className="relative bg-black text-white">
+    <section className="relative bg-black min-h-screen text-white">
       {/* Mobile Background Image */}
       <div className="md:hidden absolute inset-0 z-0 h-[100dvh]">
         <div className="absolute inset-0 bg-black/10"></div>
