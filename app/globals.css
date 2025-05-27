@@ -404,8 +404,30 @@ body::-webkit-scrollbar {
 
 
 
+/* Our Pograms */
+
+ q {
+	quotes: "“" "”" "‘" "’";
+	
+	&::before {
+		font-family: Georgia, serif;
+    font-size: 2rem;
+		
+	}
+	&::after {
+		font-family: Georgia, serif;
+    font-size: 2rem;
+	}
+}
 
 
+hr {
+    height: 0;
+    /* color: inherit; */
+    background: #26272b;
+    color: #26272B;
+    border-top-width: 0.5px;
+}
 /* Keyframes for marquee animation */
 
 

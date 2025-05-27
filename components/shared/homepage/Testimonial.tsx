@@ -49,7 +49,7 @@ export const Testimonial_Carousel = () => {
   return (
     <section className="w-full bg-white py-20">
       <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-8 lg:space-y-12">
-        <Section_Heading size="48px" title="Testimonials" />
+        <Section_Heading size="56px" title="Testimonials" />
 
         <Swiper
           ref={swiperRef}
@@ -73,7 +73,7 @@ export const Testimonial_Carousel = () => {
           coverflowEffect={{
             rotate: -20,
             stretch: 0,
-            depth: 150,
+            depth: 100,
             modifier: 1.5,
             slideShadows: false,
           }}

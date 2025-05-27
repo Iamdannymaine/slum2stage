@@ -5,15 +5,14 @@ import React from 'react'
 
 export const Our_ProgramsView = () => {
   return (
-    <section className="bg-slum_smoke_white w-full pt-48 pb-20">
-      <div className="max-w-7xl mx-auto flex flex-col px-4 lg:px-0 space-y-8 lg:space-y-20">
+    <section className="bg-[#FFF8F5] w-full">
+      <div className="flex flex-col px-4 lg:px-0 pt-48">
         <Our_Program
           heading="Dance"
           spanText="Program"
-          bgColor='slum_smoke_white'
+          bgColor='#FFF8F5'
           image="/assets/images/our-program/our-program-1.png"
-          quote={`With access to the Slum to Stage program, I get to pursue my passion for dancing, the teachers in my dance class are encouraging and the classes are free. 
-            \nI don’t know that I would have been able to afford it if it was not so. At the Slum to Stage dance classes, I get to exercise my physical body as well as develop my mind`}
+          quote={`With access to the Slum to Stage program, I get to pursue my passion for dancing, the teachers in my dance class are encouraging and the classes are free. ,\n\nI don’t know that I would have been able to afford it if it was not so. At the Slum to Stage dance classes, I get to exercise my physical body as well as develop my mind`}
           description={`Dance as an art form can be a tool for entertainment, sports, or even a vehicle for social impact.
 \nWith a curriculum structured by skilled dance teachers, choreographers and psychologists with both the physical and mental wellbeing of our students in mind, Slum to Stage offers free dance trainings to children. Our classes are rigorous yet super fun to ensure that children enjoy their time in class while developing their dance techniques. Supported by a rich international community of professional ballet dancers, our students receive high-quality guidance on how to succeed in their dance journey.
 \nThrough its classes that happen every Saturday, performances and events, our dance programs fosters the socio-emotional and behavioral growth of our students, while ensuring cultural exchange and community engagement in our stakeholders.
@@ -21,12 +20,12 @@ export const Our_ProgramsView = () => {
 At Slum to Stage we don't just aim to be a consortium of 40 dancers and a world renowned artistic organization, but we aim to be a source of civic pride in Nigeria and an engine for educational development.`}
           quoteColor="#662200"
           author="Vanya, Slum 2 Stage Student"
-        />
 
+        />
         <Our_Program
           heading="After School"
           spanText="Program"
-          bgColor='slum_snow_white'
+          bgColor='#44B5D00D'
           image="/assets/images/our-program/our-program-2.png"
           quote={`This focuses on helping students with extra academic support.`}
           description={`There is a 17 year old boy in the Slum to Stage program who can hardly spell or write correct sentences. He attends a public school. We conducted a writing exercise and compared his outputs with a 6 year old girl from a private school, the difference was clear, the 6 year old child performed Incredibly better. 
@@ -47,8 +46,8 @@ At Slum to Stage we don't just aim to be a consortium of 40 dancers and a world 
             \nWhen our coordinators learn about the  children more personal, i.e the road paths the child take when coming to the training centers from their homes , their morning routine , their school work progress, even their neighbors or friends, we become better-equipped to provide each child in our program with the exact support that they desperately need. 
             \nAdditionally; when our coordinators visit the homes of our sponsored children, we, in turn get a better idea of what tremendous impact our programs are  having in the lives of the kids we help to support.`}
           quoteColor="#056980"
+          borderColor='#000000'
         />
-
 
       </div>
     </section>

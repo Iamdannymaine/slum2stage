@@ -31,7 +31,11 @@ export const Partners = () => {
   return (
     <section className='w-full py-20'>
       <div className='max-w-6xl mx-auto flex flex-col items-center justify-center px-4 lg:px-0 space-y-8 lg:space-y-12'>
-        <h1 className='font-serif font-bold text-slum_gray_800 text-[28px] mb-8'>We are grateful <br />for our partners</h1>
+        <h1 className='font-serif font-bold text-slum_gray_800 
+        text-[28px] md:text-[32px] lg:text-[56px] mb-8 leading-snug'>
+          We are grateful <br />for our partners
+        </h1>
+
         {/* Desktop Grids */}
         <div className='hidden sm:grid grid-cols-4 gap-12 mb-20 items-center justify-center mx-auto'>
           {firstFour.map((partner, index) => (

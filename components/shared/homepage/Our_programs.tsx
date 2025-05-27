@@ -42,6 +42,7 @@ const programs: Program[] = [
   {
     id: 3,
     title: "Home Visits",
+    image: "/assets/images/our-program/our-program-3.png",
     description: "Our Visit programs help to establish strong, positive communications between our team members, coordinators and our sponsored children’s parents",
     bgColor: "#44B5D0"
   }
@@ -54,7 +55,7 @@ const Our_programs = () => {
     <section className="w-full bg-[#FFEEE5] py-20">
       <div className="max-w-5xl mx-auto flex flex-col items-center 
       justify-center space-y-12 px-4 lg:px-0">
-        <Section_Heading size='48px' title="Our Programs" />
+        <Section_Heading title="Our Programs" />
 
         <div className="hidden lg:grid lg:grid-cols-3 gap-6">
           {programs.map((program) => (

@@ -23,33 +23,34 @@ export const Who_We_Are = () => {
 
       <div className="flex flex-col md:flex-row relative px-4 lg:px-0 lg:ps-[12%]">
 
-        <div className="w-full md:w-1/2 space-y-8 lg:space-y-16 md:space-y-24 py-8 md:py-24">
+        <div className="w-full md:w-1/2 space-y-8 lg:gap-16 py-8 md:py-24">
 
           <div className="space-y-6 py-16 lg:py-32 ">
             <Section_Heading title="Who we are" />
-            <div className='w-full lg:max-w-sm'>
-              <Section_Paragraph
-                paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
-          \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`} />
-              <div>
 
-              </div>
-              <div className='pt-10'>
-                <Button variant="circular-filled" text="Learn More" />
-              </div>
-            </div>
+            <Section_Paragraph
+
+              size='lg'
+              paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
+          \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`}
+            />
+
+            <Button variant="circular-filled" text="Learn More" />
+
           </div>
 
+
           <div className="space-y-6">
-            <Section_Heading size='72px' title="What we do" />
-            <div className='w-full lg:max-w-sm'>
-              <Section_Paragraph
-                size='lg'
-                paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
+            <Section_Heading title="What we do" />
+
+            <Section_Paragraph
+
+              size='lg'
+              paragraph={`Slum to Stage provides preliminary and intermediate dance training for children and young adults in developing areas in Abuja.
             \nThrough performing and creative arts programs that enhance both their academic and artistic performance.`} />
 
 
-            </div>
+
 
             <div className="pt-10">
               <Button variant="circular-filled" text="Learn More" />
@@ -75,7 +76,7 @@ export const Who_We_Are = () => {
             />
           </motion.div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   )
 }

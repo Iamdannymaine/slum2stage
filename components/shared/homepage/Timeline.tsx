@@ -62,7 +62,7 @@ const Timeline = () => {
     <section ref={sectionRef} className='w-full bg-snow_white min-h-screen py-32'>
       <div className='flex flex-col items-center justify-center space-y-12'>
         <div>
-          <h1 className='font-serif font-bold text-slum_gray_800 text-[56px] flex flex-col leading-snug'>
+          <h1 className='font-serif font-bold text-slum_gray_800 text-[28px] md:text-[32px] lg:text-[56px] flex flex-col leading-snug'>
             <span className='capitalize'>Our impact</span>
             <span className=''>in numbers</span>
           </h1>

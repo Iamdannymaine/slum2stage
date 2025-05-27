@@ -80,7 +80,7 @@ export function SingleNewsPage({ post }: BlogPostPageProps) {
           </div>
         </div>
 
-        <div className="prose prose-slate max-w-none lg:prose-lg blog-content">
+        <div className="prose prose-slate max-w-none lg:prose-lg blog-content font-sans">
           {showDoubleImage ? (
             <ImagesPlacement content={post.content} />
           ) : (

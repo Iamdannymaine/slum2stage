@@ -42,7 +42,8 @@ export function Header() {
       className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 flex items-center justify-center bg-transparent"
         }`}
     >
-      <div className={`mx-auto fixed top-8 max-w-[80%] lg:max-w-4xl w-full px-4 py-2 flex items-center justify-between bg-white rounded-full 
+      <div className={`mx-auto fixed top-8 max-w-[80%] lg:max-w-4xl w-full px-4
+       py-2 flex items-center justify-between bg-white rounded-[40px] border border-gray-100
          ${isScrolled ? "header_shadow" : ""}`}>
 
         <Link href="/" className="flex items-center gap-2">
@@ -58,7 +59,7 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center space-x-6">
             {navigation.map((item, index) => (
-              <li key={index} className="uppercase text-sm text-slum_gray_800">
+              <li key={index} className="uppercase text-sm text-slum_gray_800 font-sans font-normal">
                 <Link href={item.route}>{item.title}</Link>
               </li>
             ))}
@@ -81,7 +82,7 @@ export function Header() {
         <div className="lg:hidden bg-white border-t border-gray-200 shadow relative top-24 md:top-28 w-[80%] rounded-md">
           <ul className="flex flex-col items-start gap-4 p-4">
             {navigation.map((item, index) => (
-              <li key={index} className="uppercase text-sm text-slum_gray_800">
+              <li key={index} className="uppercase text-sm text-slum_gray_800 font-sans font-normal">
                 <Link href={item.route} onClick={() => setIsMenuOpen(false)}>
                   {item.title}
                 </Link>

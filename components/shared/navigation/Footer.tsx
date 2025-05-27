@@ -25,13 +25,13 @@ const mobileLink = [
 
 const contact = [
   { label: "info@slum2stage.org", href: "mailto:info@slum2stage.org" },
-  { label: "Phone no", href: "tel: +234 (817 623 1834)" },
+  { label: "+234 (817 623 1834)", href: "tel: +234 (817 623 1834)" },
   { label: "Contact Us", href: "/contact-us" },
 ]
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-12 md:py-12  w-full" >
+    <footer className="bg-black text-white pt-12 lg:pb-4 w-full" >
       <div className="max-w-7xl mx-auto flex flex-col px-4">
         <div className="flex flex-col md:flex-row justify-between py-16">
           {/* Logo */}
@@ -61,11 +61,12 @@ const Footer = () => {
           <div className="hidden md:grid md:grid-cols-2 gap-4">
             {/* Company links */}
             <div>
-              <h3 className="text-sm font-sans font-normal mb-4">COMPANY</h3>
-              <ul className="space-y-2">
+              <h3 className="text-sm font-sans font-normal mb-4 text-white">COMPANY</h3>
+              <ul className="space-y-4">
                 {company.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className='text-slum_gray_400 hover:text-white font-sans font-normal text-sm'>
+                    <Link href={link.href} className='text-[#667085] hover:text-white 
+                    font-sans font-normal text-sm'>
                       {link.label}
                     </Link>
                   </li>
@@ -75,11 +76,11 @@ const Footer = () => {
 
             {/* Contact info */}
             <div>
-              <h3 className="text-sm font-bold mb-4">CONTACT</h3>
+              <h3 className="text-sm font-normal mb-4 font-sans text-white">CONTACT</h3>
               <ul className="space-y-2">
                 {contact.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href} className='text-slum_gray-400 hover:text-white font-sans font-normal text-sm'>
+                    <Link href={link.href} className='text-[#667085] hover:text-white font-sans font-normal text-sm'>
                       {link.label}
                     </Link>
                   </li>
@@ -89,25 +90,26 @@ const Footer = () => {
           </div>
 
         </div>
-        <hr className="hidden md:block bg-slum_gray_800 h-[1px]" />
+        <hr className="hidden md:block border-t border-[#26272B] border-opacity-20" />
         <div className="hidden md:flex justify-between py-16">
           <div>
             <p className="font-sans text-sm font-normal text-slum_gray_200">© 2025 Slum2stage· All rights reserved</p>
           </div>
           <div className="flex gap-x-4 ">
-            <Link href="" className="p-2 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
+            <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
               <FaInstagram size={20} />
               <span>Instagram</span>
             </Link>
 
-            <Link href="#" className="p-2 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
+            <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
               <FaYoutube size={20} />
               <span>Youtube</span>
             </Link>
           </div>
         </div>
       </div>
-      <hr className="block md:hidden bg-slum_gray_800 h-[1px]" />
+      <hr className="block md:hidden bg-[#26272B] h-[1px]" />
+
     </footer >
   )
 }

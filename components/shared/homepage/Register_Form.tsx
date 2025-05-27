@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const Register_Form = () => {
   return (
-    <section className="relative bg-black min-h-screen text-white">
+    <section className="relative bg-black minh-screen text-white">
       {/* Mobile Background Image */}
       <div className="md:hidden absolute inset-0 z-0 h-[100dvh]">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -23,10 +23,10 @@ const Register_Form = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col md:flex-row pt-12 lg:pt-0">
+      <div className="relative z-10 flex flex-col md:flex-row pt-12 lg:pt-10">
         {/* Form section */}
         <div className="w-full md:w-1/2 flex items-center justify-center p-4 lg:p-6">
-          <div className="w-full max-w-md bg-white text-black rounded-lg p-8 md:bg-opacity-100 bg-opacity-90">
+          <div className="w-full max-w-md bg-white text-black rounded-xl p-8 md:bg-opacity-100 bg-opacity-90">
             <h1 className="flex flex-col lg:hidden text-3xl font-serif mb-8 text-slum_gray-800">
               Become a
               <span className='font-semibold'>Dancer | Teacher</span>

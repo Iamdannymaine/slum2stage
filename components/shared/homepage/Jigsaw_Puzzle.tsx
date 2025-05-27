@@ -17,11 +17,12 @@ export function JigsawPuzzle() {
             </div>
 
             {/* Right connector */}
-            <div className="absolute top-1/2 right-[-14px] transform translate-x-1/2 -translate-y-1/2 w-8 h-16
+            <div className="absolute top-1/2 right-[-14px] lg:right-[-26px] transform translate-x-1/2 -translate-y-1/2 w-8 h-16 lg:w-14 lg:h-20
              bg-[#4AAFC8] border-r-4 border-t-4 border-b-4 border-white z-20 rounded-r-full"></div>
 
             {/* Bottom connector */}
-            <div className="absolute bottom-[-18px] left-1/2 transform -translate-x-1/2 translate-y-1/2 w-16 h-10 bg-[#4AAFC8]
+            <div className="absolute bottom-[-18px] lg:bottom-[-26px] left-1/2 transform 
+            -translate-x-1/2 translate-y-1/2 w-16 h-10 lg:w-20 lg:h-14 bg-[#4AAFC8]
              border-b-4 border-r-4 border-l-4 border-white z-20 rounded-b-full"></div>
           </div>
         </div>
@@ -30,7 +31,7 @@ export function JigsawPuzzle() {
         <div className="relative">
           <div className="bg-[#F9B69C] text-white p-4 lg:p-8 py-8 rounded-lg 
           h-full border-2 border-white min-h-[200px] lg:min-h-[300px]">
-            <div className="relative z-10 h-full flex flex-col pl-4 py-4">
+            <div className="relative z-10 h-full flex flex-col pl-4 lg:pl-8 py-4">
               <h3 className="text-xl lg:text-2xl font-semibold mb-2 lg:mb-4 font-serif">Education</h3>
               <p className="text-sm lg:text-base font-sans leading-normal lg:leading-[32px] font-medium flex-grow ">
                 We use choreography to enhance focus and concentration, leading to better academic performance
@@ -78,11 +79,12 @@ export function JigsawPuzzle() {
             </div>
 
             {/* Left indent for connector */}
-            <div className="absolute top-1/2 -left-4 transform -translate-x-1/2 -translate-y-1/2 w-8 h-16 bg-[#4AAFC8] z-0
+            <div className="absolute top-1/2 -left-4 lg:left-[-28px] transform -translate-x-1/2 -translate-y-1/2 w-8 h-16 lg:w-14 lg:h-20 bg-[#4AAFC8] z-0
             rounded-l-full border-l-4 border-b-4 border-t-4 border-white"></div>
 
             {/* Top indent for connector */}
-            <div className="absolute top-[-18px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-10 bg-[#4AAFC8] z-0
+            <div className="absolute top-[-18px] lg:top-[-26px] left-1/2 transform
+             -translate-x-1/2 -translate-y-1/2 w-16 h-10 lg:w-20 lg:h-14 bg-[#4AAFC8] z-0
             rounded-t-full border-t-4 border-r-4 border-l-4 border-white"></div>
           </div>
         </div>

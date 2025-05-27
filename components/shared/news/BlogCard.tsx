@@ -10,7 +10,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <Card className="bg-white overflow-hidden border-none">
+    <Card className="bg-white overflow-hidden border-none shadow-none">
       <Link href={`/news/${post.slug}`} className="group block">
         <div className="overflow-hidden">
           <Image
@@ -23,9 +23,9 @@ export function BlogCard({ post }: BlogCardProps) {
           />
         </div>
         <div className="p-5">
-          <h2 className="text-xl font-normal text-black font-sans mb-2 line-clamp-2 hover:text-primary">{post.title}</h2>
-          {/* <p className="text-slate-600 line-clamp-3 mb-3">{post.excerpt}</p>
-          <div className="flex justify-between items-center text-sm text-slate-500">
+          <h2 className="text-lg font-normal text-slum_gray_800 font-sans line-clamp-2 hover:text-primary">{post.title}</h2>
+          {/* <p className="text-slum_gray_400 line-clamp-3 mb-3">{post.excerpt}</p> */}
+          {/*  <div className="flex justify-between items-center text-sm text-slate-500">
             <span>{post.date}</span>
             <span className="text-teal-600 font-medium">Read more</span>
           </div> */}
