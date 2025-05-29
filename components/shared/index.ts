@@ -1,5 +1,5 @@
 // Home
-import Section_Heading from "./Section_Heading";
+import { Section_Heading } from "./Section_Heading";
 import { Section_Paragraph } from "./Section_Paragraph";
 import { HeroSlider } from "./homepage/HeroBanner";
 import { Header } from "./navigation/Header";

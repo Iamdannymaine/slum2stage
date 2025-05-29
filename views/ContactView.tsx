@@ -1,6 +1,5 @@
 import React from 'react'
-import Section_Heading from '@/components/shared/Section_Heading'
-import { Section_Paragraph } from '@/components/shared/Section_Paragraph'
+import { Section_Heading, Section_Paragraph } from '@/components/shared'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { PhoneCall, Mail as Email } from 'lucide-react'
 import Image from 'next/image'

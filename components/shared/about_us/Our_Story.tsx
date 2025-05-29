@@ -1,11 +1,12 @@
 "use client"
 
 import React from 'react';
-import Section_Heading from '../Section_Heading';
+import { Section_Heading } from '../Section_Heading';
 import { Image } from '@heroui/image';
 import { PiStarFourFill } from "react-icons/pi";
 import { FaCertificate } from "react-icons/fa";
 import { PiPentagonFill } from "react-icons/pi";
+import NextImage from 'next/image';
 
 interface YearSectionProps {
   year: string;
@@ -41,7 +42,7 @@ const YearSection: React.FC<YearSectionProps> = ({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start order-2 lg:order-1">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
       <div>
         <h2 className="text-6xl font-bold mb-6 font-serif ">{year}.</h2>
         <ul className="space-y-3">
@@ -53,7 +54,7 @@ const YearSection: React.FC<YearSectionProps> = ({
           ))}
         </ul>
       </div>
-      <div className="relative w-full h-full overflow-visible order-1 lg:order-2">
+      <div className="relative w-full h-full overflow-visible">
         <div className={`absolute ${mobilePositionClasses[svgPositionMobile]}  lg:${positionClasses[svgPosition]} z-50`}>
           <Icon
             className={`icon h-12 w-12 text-${iconColor} z-50`}
@@ -63,8 +64,11 @@ const YearSection: React.FC<YearSectionProps> = ({
         </div>
         <Image
           loading='lazy'
+          as={NextImage}
           src={imageSrc}
           alt={imageAlt}
+          width={1000}
+          height={800}
           className="object-cover z-0"
         />
       </div>
@@ -141,7 +145,7 @@ const Our_Story: React.FC = () => {
   return (
     <section className='bg-white w-full py-20'>
       <div className='flex flex-col space-y-12 px-4 lg:px-0 items-center justify-center'>
-        <Section_Heading size='' title='Our Story' />
+        <Section_Heading lgSize='56px' title='Our Story' />
         <div className="max-w-6xl mx-auto py-8 space-y-20">
           {yearData.map((data, index) => (
             <YearSection key={index} {...data} />

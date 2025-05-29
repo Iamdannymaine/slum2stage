@@ -1,0 +1,22 @@
+{
+  "column1Images": [
+    { "src": "/assets/images/register/register-image-1.png" },
+    { "src": "/assets/images/register/register-image-3.png" },
+    { "src": "/assets/images/register/register-image-5.png" },
+    { "src": "/assets/images/register/register-image-8.png" },
+    { "src": "/assets/images/register/register-image-2.png" },
+    { "src": "/assets/images/register/register-image-4.png" },
+    { "src": "/assets/images/register/register-image-7.png" },
+    { "src": "/assets/images/register/register-image-9.png" }
+  ],
+  "column2Images": [
+    { "src": "/assets/images/register/register-image-2.png" },
+    { "src": "/assets/images/register/register-image-4.png" },
+    { "src": "/assets/images/register/register-image-7.png" },
+    { "src": "/assets/images/register/register-image-9.png" },
+    { "src": "/assets/images/register/register-image-1.png" },
+    { "src": "/assets/images/register/register-image-3.png" },
+    { "src": "/assets/images/register/register-image-5.png" },
+    { "src": "/assets/images/register/register-image-8.png" }
+  ]
+}

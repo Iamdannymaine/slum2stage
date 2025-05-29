@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import Section_Heading from '../Section_Heading'
+import { Section_Heading } from '../Section_Heading'
 import { Avatar_Flex } from '../Avatar_Flex'
 import { Section_Paragraph } from '../Section_Paragraph'
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
@@ -12,7 +12,7 @@ export const Why_We_Do_It = () => {
   return (
     <section className="w-full bg-black min-h-screen py-20 flex flex-col">
       <div className='max-w-7xl mx-auto px-4 lg:px-0'>
-        <Section_Heading color='white' title='Why do it' />
+        <Section_Heading lgSize='56px' color='white' title='Why we do it' />
 
         <div
           className={`flex flex-col lg:flex-row w-full items-start justify-between gap-x-20 mt-8 lg:mt-16 `}
@@ -20,7 +20,7 @@ export const Why_We_Do_It = () => {
           {/* blockquote */}
           <div className="w-full lg:w-1/2 items-start justify-start space-y-12 pt-12">
             <div className="relative mx-auto">
-              <blockquote className="relative text-lg font-serif italic text-primary leading-relaxed flex">
+              <blockquote className="relative text-xl font-serif italic text-primary leading-relaxed flex">
                 {/* Left quote (superscript) */}
                 <sup className="mr-0 lg:mr-1">
                   <FaQuoteLeft className="w-2 h-2 lg:w-4 lg:h-4 text-primary opacity-70 flex-shrink-0" />

@@ -5,6 +5,7 @@ import FormField from "@/components/shared/form/Form_Field"
 import Button from "@/components/shared/Slum_Button"
 import { Label } from "@/components/ui/label"
 import { PinterestMasonry } from "@/components/shared/Mansory_Grid"
+import { Section_Heading, Section_Paragraph } from "@/components/shared"
 
 
 export function DanceRegistrationForm() {
@@ -52,16 +53,19 @@ export function DanceRegistrationForm() {
   ]
 
   return (
-    <div className="flex flex-col lg:flex-row w-full  pt-24 justify-between">
+    <div className="flex flex-col lg:flex-row w-full pt-24 justify-between">
       {/* Form Section */}
-      <div className="w-full lg:w-1/2 px-4 pt-36 bg-white pb-20 lg:px-12">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Tiny Feet, Big Moves</h1>
-        <p className="text-gray-600 mb-10">
-          Join our dance school and give your child the opportunity to learn, grow, and perform. Classes available for
-          all ages and skill levels.
-        </p>
+      <div className="w-full lg:w-1/2 px-4 pt-20 bg-white pb-4 lg:px-12">
+        <div className="space-y-4 mb-10">
+          <Section_Heading lgSize="56px" title="Tiny Feet, Big Moves" />
+          <p className={`font-sans font-normal text-slum_gray_900 text-sm lg:text-lg leading-[36px] lg:leading-[32px]`}>
+            Join our dance school and give your child the opportunity to learn, grow, and perform. Classes available for
+            all ages and skill levels."
+          </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        </div>
+        <form onSubmit={handleSubmit}
+          className="space-y-6">
           <div className="space-y-2">
 
             <FormField
@@ -192,32 +196,7 @@ export function DanceRegistrationForm() {
         </form>
       </div>
 
-      <PinterestMasonry
-        column1Images={[
-          {
-            src: "/assets/images/register/register-image-1.png"
-          },
-          { src: "/assets/images/register/register-image-3.png" },
-          { src: "/assets/images/register/register-image-5.png" },
-          { src: "/assets/images/register/register-image-8.png" },
-          { src: "/assets/images/register/register-image-2.png" },
-          { src: "/assets/images/register/register-image-4.png" },
-          { src: "/assets/images/register/register-image-7.png" },
-          { src: "/assets/images/register/register-image-9.png" }
-        ]}
-        column2Images={[
-          { src: "/assets/images/register/register-image-2.png" },
-          { src: "/assets/images/register/register-image-4.png" },
-          { src: "/assets/images/register/register-image-7.png" },
-          { src: "/assets/images/register/register-image-9.png" },
-          {
-            src: "/assets/images/register/register-image-1.png"
-          },
-          { src: "/assets/images/register/register-image-3.png" },
-          { src: "/assets/images/register/register-image-5.png" },
-          { src: "/assets/images/register/register-image-8.png" },
-        ]}
-      />
+      <PinterestMasonry />
       {/* <ImageGrid /> */}
     </div>
   )

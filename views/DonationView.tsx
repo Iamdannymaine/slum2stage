@@ -38,7 +38,7 @@ export const DonationView = () => {
       {/* Donation Section */}
       <div className="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto px-6 bg-white pt-40 lg:pt-20 pb-40 gap-20">
         <div className="space-y-4 lg:w-1/2 ">
-          <Section_Heading title='Make a donation' />
+          <Section_Heading lgSize='56px' title='Make a donation' />
           <Section_Paragraph paragraph="Slum to Stage uses dance to retain the interest of 290 children in schools." />
         </div>
 

@@ -1,5 +1,5 @@
 import { Triangle } from "lucide-react";
-import Section_Heading from "../Section_Heading";
+import { Section_Heading } from "../Section_Heading";
 import { BiSolidCircleHalf } from "react-icons/bi";
 import { FaCertificate } from "react-icons/fa";
 import { PiStarFourFill } from "react-icons/pi";
@@ -9,7 +9,7 @@ export default function We_Do_This() {
   return (
     <section className="w-full bg-snow_white min-h-screen py-20">
       <div className="px-4 lg:px-0 items-center justify-center flex flex-col space-y-8 lg:space-y-20">
-        <Section_Heading size="48" title="We do this by" />
+        <Section_Heading lgSize="56px" title="We do this by" />
         {/* Training Programs */}
         <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-start md:items-center justify-between">
           <div className="md:w-1/2 order-2 md:order-1"></div>

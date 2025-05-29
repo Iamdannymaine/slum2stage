@@ -1,56 +1,150 @@
+"use client";
+
+import React, { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+} from "framer-motion";
+import { wrap } from "@motionone/utils";
 import Image from "next/image";
+import { imageGridData } from "@/json"
 
 interface ImageData {
   src: string;
   alt?: string;
 }
 
-interface PinterestMasonryProps {
+interface ParallaxImageColumnProps {
+  images: ImageData[];
+  baseVelocity: number;
+}
+
+function ParallaxImageColumn({
+  images,
+  baseVelocity = 100,
+}: ParallaxImageColumnProps) {
+  const baseX = useMotionValue(0);
+  const baseY = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400,
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false,
+  });
+
+
+  const imageHeight = 350;
+
+
+  const visibleCount = 4;
+
+  const desktopTotalHeight = images.length * 2 * imageHeight;
+
+
+  const y = useTransform(baseY, (v) => `${wrap(-desktopTotalHeight, 0, v)}px`);
+  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+
+
+  const directionFactor = useRef<number>(1);
+  useAnimationFrame((_, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+
+    if (velocityFactor.get() < 0) directionFactor.current = -1;
+    else if (velocityFactor.get() > 0) directionFactor.current = 1;
+
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+
+    baseY.set(baseY.get() + moveBy);
+
+    baseX.set(baseX.get() + moveBy);
+  });
+
+
+  return (
+    <>
+      <div
+        className="w-64 overflow-hidden rounded-md"
+        style={{ height: imageHeight * visibleCount }}
+      >
+        <motion.div className="hidden lg:flex flex-col gap-4 ml-4" style={{ y }}>
+          {Array(3)
+            .fill(0)
+            .map((_, repeatIndex) => (
+              <React.Fragment key={repeatIndex}>
+                {images.map((image, index) => (
+                  <div key={index} className="w-64 overflow-hidden">
+                    <Image
+                      src={image.src}
+                      alt="gallery-image"
+                      width={700}
+                      height={800}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
+        </motion.div>
+      </div>
+
+      <div
+        className="w-full h-1/2 overflow-hidden rounded-md lg:hidden flex mt-12"
+      >
+        <motion.div className="flex flex-row gap-4 mb-4" style={{ x }}>
+          {Array(3)
+            .fill(0)
+            .map((_, repeatIndex) => (
+              <React.Fragment key={repeatIndex}>
+                {images.map((image, index) => (
+                  <div key={index} className="w-64 overflow-hidden">
+                    <Image
+                      src={image.src}
+                      alt={image.alt || `Image ${index}`}
+                      width={700}
+                      height={800}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
+        </motion.div>
+
+      </div>
+    </>
+  );
+}
+
+
+interface ImageGridData {
   column1Images: ImageData[];
   column2Images: ImageData[];
 }
 
-export const PinterestMasonry = ({ column1Images, column2Images }: PinterestMasonryProps) => {
-  return (
-    <div className="flex justify-center bg-[#FFEEE5]">
-      <div className="flex group relative mx-auto w-full
-      overflow-hidden overflow-y-visible before:absolute before:left-0
-       before:top-0 before:z-[2] before:h-full after:content-['']">
-        {/* Column 1 - will scroll up */}
-        <div className="flex flex-col ml-4">
-          {column1Images.map((image, index) => (
-            <div
-              key={`col1-img-${index}`}
-              className={`mb-4 overflow-hidden w-80 `}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt || `Image ${index}`}
-                width={700}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-500"
-              />
-            </div>
-          ))}
-        </div>
+const typedImageData = imageGridData as ImageGridData;
 
-        {/* Column 2 - will scroll down */}
-        <div className="flex flex-col ml-4">
-          {column2Images.map((image, index) => (
-            <div
-              key={`col2-img-${index}`}
-              className={`mb-4 overflow-hidden w-80 `}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt || `Image ${index}`}
-                width={700}
-                height={800}
-                className="w-full h-full object-cover transition-transform duration-500"
-              />
-            </div>
-          ))}
-        </div>
+export const PinterestMasonry = () => {
+
+  const column1Images = typedImageData.column1Images;
+  const column2Images = typedImageData.column2Images;
+
+  return (
+    <div className="flex lg:justify-center bg-[#FFEEE5] lg:min-h-screen items-center">
+      <div className="flex flex-col lg:flex-row ">
+
+        <ParallaxImageColumn images={column1Images} baseVelocity={-5} />
+
+        <ParallaxImageColumn images={column2Images} baseVelocity={5} />
+
+        <ParallaxImageColumn images={column1Images} baseVelocity={-5} />
       </div>
     </div>
   );

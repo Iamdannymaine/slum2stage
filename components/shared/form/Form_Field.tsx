@@ -37,7 +37,7 @@ const FormField: React.FC<FormFieldProps> = ({ label, htmlFor, type, id, isInval
         id={id}
         variant="bordered"
         classNames={{
-          inputWrapper: ["data-[hover=true]:border-slum_gray_300 group-data-[focus=true]:border-slum_gray_300 rounded-[8px]"],
+          inputWrapper: ["data-[hover=true]:border-slum_gray_300 group-data-[focus=true]:border-slum_gray_300 rounded-[8px] font-sans"],
         }}
         aria-label={label}
         size="md"

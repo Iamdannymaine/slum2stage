@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import Section_Heading from '../Section_Heading'
+import { Section_Heading } from '../Section_Heading'
 import { Program_Card } from '../Card'
 
 // import { Swiper, SwiperSlide } from 'swiper/react';

@@ -1,5 +1,5 @@
 import React from 'react'
-import Section_Heading from '../Section_Heading'
+import { Section_Heading } from '../Section_Heading'
 import Image from 'next/image'
 
 
@@ -23,7 +23,7 @@ const Presently = () => {
         />
       </div>
       <div className='flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto py-12 px-4 lg:px-0'>
-        <div className='mb-4 lg:mb-0'><Section_Heading title='Presently' /></div>
+        <div className='mb-4 lg:mb-0'><Section_Heading lgSize='56px' title='Presently' /></div>
         <div className='ps-4 lg:ps-[33.3%]'>
           <ol className='space-y-6 list-decimal'>
             {lists.map((list, index) => (

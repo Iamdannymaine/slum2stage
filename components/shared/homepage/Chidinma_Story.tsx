@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { Image } from '@heroui/image'
 import { Chidinma_Paragraph } from './Chidinma_Paragraph'
@@ -33,10 +35,10 @@ const Chidinma_Story = () => {
       </div>
 
 
-      <div className="flex flex-col col-span-2 p-4 lg:p-8 pt-0 lg:py-32 items-start justify-start">
+      <div className="flex flex-col col-span-2 px-4 lg:p-8 pt-0 lg:py-32 items-start justify-start">
         <div className="flex flex-col space-y-2 lg:space-y-8">
           <h3 className="font-sans font-bold text-sm lg:text-xl text-white">Why we do it?</h3>
-          <p className="font-serif font-bold text-lg lg:text-[56px] text-white">Chidinma&apos;s story</p>
+          <p className="font-serif font-bold text-3xl lg:text-[56px] text-white">Chidinma&apos;s story</p>
           <p className="font-sans font-normal text-sm lg:text-xl text-white">- a student in the program</p>
         </div>
 

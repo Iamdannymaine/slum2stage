@@ -3,7 +3,7 @@
 import { Image } from "@heroui/react";
 import NextImage from "next/image";
 import React from 'react'
-import Section_Heading from '../Section_Heading'
+import { Section_Heading } from '../Section_Heading'
 import { Section_Paragraph } from '../Section_Paragraph'
 import Button from '../Slum_Button'
 
@@ -13,7 +13,7 @@ const About_Who_We_Are = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center relative">
 
         <div className="w-full lg:w-1/2 space-y-8 text-white py-10 px-4 lg:px-28 order-2 lg:order-1">
-          <Section_Heading color='white' title="Who we are!" />
+          <Section_Heading lgSize="56px" color='white' title="Who we are!" />
           <Section_Paragraph
             color='white'
             paragraph={`Slum to Stage creates preliminary and intermediate dance training for 

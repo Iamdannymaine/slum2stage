@@ -1,7 +1,7 @@
 import { Users, Paintbrush, Flag, Droplet, Diamond, CircleUser, Heart } from "lucide-react"
 import { PiUsersThree } from "react-icons/pi";
 import { TbBrush } from "react-icons/tb";
-import Section_Heading from "../Section_Heading"
+import { Section_Heading } from "../Section_Heading"
 
 export function CoreValues() {
   const values = [
@@ -21,7 +21,7 @@ export function CoreValues() {
 
   return (
     <section className="w-full py-20 flex flex-col items-center justify-center space-y-8">
-      <Section_Heading title='Our Values' />
+      <Section_Heading lgSize="56px" title='Our Values' />
       <div className="max-w-3xl mx-auto p-4 w-full">
         {/* Mobile view - 2 column grid with centered last item */}
         <div className="md:hidden">

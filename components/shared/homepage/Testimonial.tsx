@@ -7,7 +7,7 @@ import "swiper/css"
 import "swiper/css/effect-coverflow"
 
 import { EffectCoverflow } from "swiper/modules"
-import Section_Heading from "../Section_Heading"
+import { Section_Heading } from "../Section_Heading"
 import { Avatar } from "@heroui/react"
 
 
@@ -49,7 +49,7 @@ export const Testimonial_Carousel = () => {
   return (
     <section className="w-full bg-white py-20">
       <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-8 lg:space-y-12">
-        <Section_Heading size="56px" title="Testimonials" />
+        <Section_Heading lgSize="56px" title="Testimonials" />
 
         <Swiper
           ref={swiperRef}

@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react";
 import { TeamCard } from "./TeamCard";
 import { getAllTeamMembers } from "@/lib"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -10,9 +9,8 @@ import {
   CarouselItem,
 
 } from "@/components/ui/carousel"
-import Section_Heading from "../Section_Heading";
+import { Section_Heading } from "../Section_Heading";
 import { Section_Paragraph } from "../Section_Paragraph";
-import { TeamType } from "@/types";
 
 
 
@@ -27,7 +25,7 @@ export function TeamTabs() {
 
     <>
       <div className="mt-8 mb-4 ps-0 lg:ps-[8%] space-y-4">
-        <Section_Heading title="Meet the team" />
+        <Section_Heading lgSize="56px" title="Meet the team" />
         <Section_Paragraph paragraph="Get to know the passionate professionals behind our program" />
       </div>
       <div className="flex items-center justify-center">
