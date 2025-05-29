@@ -1,13 +1,15 @@
 "use client"
 
-import { useState } from "react"
-import { RadioGroup } from "@/components/shared/form/Radio_Group"
+import { useState, useEffect } from "react"
 import FormField from "@/components/shared/form/Form_Field"
 import Button from "@/components/shared/Slum_Button"
-import { ImageGrid } from "@/components/shared"
 import { Label } from "@/components/ui/label"
+import { PinterestMasonry } from "@/components/shared/Mansory_Grid"
+
 
 export function DanceRegistrationForm() {
+  const [shuffledColumns, setShuffledColumns] = useState<[any[], any[]]>([[], []]);
+
   const [formData, setFormData] = useState({
     fullName: "",
     dateOfBirth: "",
@@ -34,6 +36,7 @@ export function DanceRegistrationForm() {
     console.log("Form submitted:", formData)
   }
 
+
   const categoryOptions = [
     { id: "adult", value: "Adult", label: "Adult" },
     { id: "kids", value: "Kids and Teens", label: "Kids and Teens" },
@@ -49,9 +52,9 @@ export function DanceRegistrationForm() {
   ]
 
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-screen pt-40">
+    <div className="flex flex-col lg:flex-row w-full  pt-24 justify-between">
       {/* Form Section */}
-      <div className="w-full lg:w-1/2 px-4 py-8 lg:p-8 bg-white pb-20 lg:px-12">
+      <div className="w-full lg:w-1/2 px-4 pt-36 bg-white pb-20 lg:px-12">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">Tiny Feet, Big Moves</h1>
         <p className="text-gray-600 mb-10">
           Join our dance school and give your child the opportunity to learn, grow, and perform. Classes available for
@@ -189,8 +192,33 @@ export function DanceRegistrationForm() {
         </form>
       </div>
 
-      {/* Image Grid Section */}
-      <ImageGrid />
+      <PinterestMasonry
+        column1Images={[
+          {
+            src: "/assets/images/register/register-image-1.png"
+          },
+          { src: "/assets/images/register/register-image-3.png" },
+          { src: "/assets/images/register/register-image-5.png" },
+          { src: "/assets/images/register/register-image-8.png" },
+          { src: "/assets/images/register/register-image-2.png" },
+          { src: "/assets/images/register/register-image-4.png" },
+          { src: "/assets/images/register/register-image-7.png" },
+          { src: "/assets/images/register/register-image-9.png" }
+        ]}
+        column2Images={[
+          { src: "/assets/images/register/register-image-2.png" },
+          { src: "/assets/images/register/register-image-4.png" },
+          { src: "/assets/images/register/register-image-7.png" },
+          { src: "/assets/images/register/register-image-9.png" },
+          {
+            src: "/assets/images/register/register-image-1.png"
+          },
+          { src: "/assets/images/register/register-image-3.png" },
+          { src: "/assets/images/register/register-image-5.png" },
+          { src: "/assets/images/register/register-image-8.png" },
+        ]}
+      />
+      {/* <ImageGrid /> */}
     </div>
   )
 }

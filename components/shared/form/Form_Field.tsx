@@ -37,11 +37,10 @@ const FormField: React.FC<FormFieldProps> = ({ label, htmlFor, type, id, isInval
         id={id}
         variant="bordered"
         classNames={{
-          inputWrapper: ["data-[hover=true]:border-primary group-data-[focus=true]:border-primary"],
+          inputWrapper: ["data-[hover=true]:border-slum_gray_300 group-data-[focus=true]:border-slum_gray_300 rounded-[8px]"],
         }}
         aria-label={label}
-        size="lg"
-        radius="md"
+        size="md"
         required={required}
         placeholder={placeholder}
         startContent={startcnt}
