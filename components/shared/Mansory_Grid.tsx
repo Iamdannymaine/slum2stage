@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   motion,
   useScroll,
@@ -19,6 +19,8 @@ import {
   CarouselItem
 } from "@/components/ui/carousel";
 import { Image } from "@heroui/image";
+import type { EmblaCarouselType } from 'embla-carousel';
+
 
 interface ImageData {
   src: string;
@@ -82,14 +84,45 @@ function ParallaxImageColumn({ images, baseVelocity = 100 }: ParallaxImageColumn
   );
 }
 
-function MobileCarousel() {
-  const typedImageData = imageGridData as { column1Images: ImageData[], column2Images: ImageData[] };
+function MobileCarousel({ direction = "forward" }: { direction?: "forward" | "backward" }) {
+  const typedImageData = imageGridData as {
+    column1Images: ImageData[];
+    column2Images: ImageData[];
+  };
   const allImages = [...typedImageData.column1Images, ...typedImageData.column2Images];
+
+  const carouselRef = useRef<EmblaCarouselType | null | undefined>(null);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!carouselRef.current) return;
+
+      if (direction === "forward") {
+        if (!carouselRef.current.canScrollNext()) {
+          carouselRef.current.scrollTo(0);
+        } else {
+          carouselRef.current.scrollNext();
+        }
+      } else {
+        if (!carouselRef.current.canScrollPrev()) {
+          carouselRef.current.scrollTo(allImages.length - 1); // go to end
+        } else {
+          carouselRef.current.scrollPrev();
+        }
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [direction, allImages.length]);
 
   return (
     <Carousel
-
-      className="lg:hidden w-full max-w-md mx-auto">
+      setApi={(api) => {
+        carouselRef.current = api;
+      }}
+      className="lg:hidden w-full max-w-md mx-auto"
+    >
       <CarouselContent className="-ml-0">
         {allImages.map((image, index) => (
           <CarouselItem key={index} className="basis-1/2 gap-0 pl-2">
@@ -109,6 +142,8 @@ function MobileCarousel() {
     </Carousel>
   );
 }
+
+
 
 interface ImageGridData {
   column1Images: ImageData[];

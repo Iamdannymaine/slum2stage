@@ -4,10 +4,6 @@ import { Image } from '@heroui/image';
 import NextImage from 'next/image';
 import React from 'react'
 import Marquee from "react-fast-marquee"
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-
 
 
 const partners: { image: string }[] = [
