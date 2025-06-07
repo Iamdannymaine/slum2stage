@@ -1,10 +1,15 @@
-"use client"
+"use client";
 
+import React, { useState } from "react";
 import { CldImage } from "next-cloudinary";
 
 import { CloudinaryImageOptions } from "@/types";
-
 import { CloudinaryResource } from "@/types/CloudinaryRescourceType";
+
+interface CloudinaryImageProps extends CloudinaryResource, CloudinaryImageOptions {
+  fallbackSrc?: string;
+  alt?: string;
+}
 
 export function CloudinaryImage({
   public_id,
@@ -14,11 +19,15 @@ export function CloudinaryImage({
   transformations = {},
   overlays = [],
   effects = [],
-}: CloudinaryResource & CloudinaryImageOptions) {
+  fallbackSrc,
+  alt = "image",
+}: CloudinaryImageProps) {
+  const [src, setSrc] = useState(public_id);
+
   return (
     <CldImage
-      src={public_id}
-      alt="team-member"
+      src={src}
+      alt={alt}
       width={width}
       height={height}
       className={className}
@@ -28,6 +37,11 @@ export function CloudinaryImage({
       quality="auto"
       crop="fill"
       {...transformations}
+      onError={() => {
+        if (fallbackSrc && src !== fallbackSrc) {
+          setSrc(fallbackSrc);
+        }
+      }}
     />
   );
 }

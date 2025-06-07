@@ -30,9 +30,9 @@ const YearSection: React.FC<YearSectionProps> = ({
   svgPositionMobile = 'bottom-right'
 }) => {
   const positionClasses = {
-    'top-right': '-top-4 -right-5',
+    'top-right': '-top-4 right-5',
     'top-left': '-top-4 -left-2',
-    'bottom-right': '-bottom-16 -right-2',
+    'bottom-right': 'bottom-64 right-1',
   };
 
   const mobilePositionClasses = {
@@ -68,8 +68,8 @@ const YearSection: React.FC<YearSectionProps> = ({
           src={imageSrc}
           alt={imageAlt}
           width={1000}
-          height={800}
-          className="object-cover z-0"
+          height={500}
+          className="object-contain z-0"
         />
       </div>
     </div>

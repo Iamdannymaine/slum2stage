@@ -16,11 +16,10 @@ import { imageGridData } from "@/json";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem
+  CarouselItem,
 } from "@/components/ui/carousel";
 import { Image } from "@heroui/image";
-import type { EmblaCarouselType } from 'embla-carousel';
-
+import type { EmblaCarouselType } from "embla-carousel";
 
 interface ImageData {
   src: string;
@@ -33,7 +32,6 @@ interface ParallaxImageColumnProps {
 }
 
 function ParallaxImageColumn({ images, baseVelocity = 100 }: ParallaxImageColumnProps) {
-  const baseX = useMotionValue(0);
   const baseY = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -50,10 +48,9 @@ function ParallaxImageColumn({ images, baseVelocity = 100 }: ParallaxImageColumn
   const desktopTotalHeight = images.length * 2 * imageHeight;
   const y = useTransform(baseY, (v) => `${wrap(-desktopTotalHeight, 0, v)}px`);
 
-  const directionFactor = useRef<number>(1);
+  const directionFactor = useRef(1);
   useAnimationFrame((_, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
     if (velocityFactor.get() < 0) directionFactor.current = -1;
     else if (velocityFactor.get() > 0) directionFactor.current = 1;
 
@@ -62,18 +59,22 @@ function ParallaxImageColumn({ images, baseVelocity = 100 }: ParallaxImageColumn
   });
 
   return (
-    <div className="w-64 overflow-hidden rounded-md" style={{ height: imageHeight * visibleCount }}>
+    <div
+      className="w-64 overflow-hidden"
+      style={{ height: imageHeight * visibleCount }}
+    >
       <motion.div className="hidden lg:flex flex-col gap-4 ml-4" style={{ y }}>
         {Array(3).fill(0).map((_, repeatIndex) => (
           <React.Fragment key={repeatIndex}>
             {images.map((image, index) => (
-              <div key={index} className="w-64 overflow-hidden">
+              <div key={index} className="w-64 overflow-hidden rounded-none">
                 <Image
                   src={image.src}
                   alt={image.alt || "gallery-image"}
-                  width={700}
-                  height={800}
-                  className="w-full h-full object-cover"
+                  width={512}
+                  height={300}
+                  loading="lazy"
+                  className="w-64 h-[300px] object-cover rounded-none"
                 />
               </div>
             ))}
@@ -90,8 +91,7 @@ function MobileCarousel({ direction = "forward" }: { direction?: "forward" | "ba
     column2Images: ImageData[];
   };
   const allImages = [...typedImageData.column1Images, ...typedImageData.column2Images];
-
-  const carouselRef = useRef<EmblaCarouselType | null | undefined>(null);
+  const carouselRef = useRef<EmblaCarouselType | null>(null);
 
 
   useEffect(() => {
@@ -106,7 +106,7 @@ function MobileCarousel({ direction = "forward" }: { direction?: "forward" | "ba
         }
       } else {
         if (!carouselRef.current.canScrollPrev()) {
-          carouselRef.current.scrollTo(allImages.length - 1); // go to end
+          carouselRef.current.scrollTo(allImages.length - 1);
         } else {
           carouselRef.current.scrollPrev();
         }
@@ -117,33 +117,33 @@ function MobileCarousel({ direction = "forward" }: { direction?: "forward" | "ba
   }, [direction, allImages.length]);
 
   return (
+
     <Carousel
       setApi={(api) => {
-        carouselRef.current = api;
+        if (api) carouselRef.current = api;
       }}
       className="lg:hidden w-full max-w-md mx-auto"
     >
       <CarouselContent className="-ml-0">
         {allImages.map((image, index) => (
           <CarouselItem key={index} className="basis-1/2 gap-0 pl-2">
-            <div className="overflow-hidden rounded-none">
+            <div className="overflow-hidden">
               <Image
                 src={image.src}
                 as={NextImage}
                 alt={image.alt || "gallery-image"}
                 width={600}
-                height={200}
-                className="w-full h-auto object-cover rounded-none"
+                height={400}
+                quality={90}
+                className="w-full h-auto object-cover rounded-xl"
               />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-    </Carousel>
+    </Carousel >
   );
 }
-
-
 
 interface ImageGridData {
   column1Images: ImageData[];

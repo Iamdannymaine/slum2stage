@@ -45,7 +45,8 @@ export function SingleTeamView({ team }: BlogPostPageProps) {
               alt={team.name}
               width={535}
               height={500}
-              className={`w-full h-[380px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`w-full h-[380px] sm:h-[300px] md:h-[400px] lg:h-[500px] 
+                object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0 bg-gray-200 animate-pulse'}`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               format="webp"
               quality="auto:best"

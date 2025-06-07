@@ -4,16 +4,25 @@ import Link from "next/link"
 import { TeamType } from "@/types"
 import { Card, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CloudinaryImage, generateOgImageUrl } from "@/utils"
+import { CloudinaryImage, generateOgImageUrl, getCldImageUrl } from "@/utils"
+import { useState } from "react"
 
 interface TeamCardProps {
   team: TeamType
 }
 
 export function TeamCard({ team }: TeamCardProps) {
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   const cleanPublicId = team.image_public_id.replace('Slum2Stage_Website/', '');
 
+  const placeholderUrl = getCldImageUrl({
+    src: cleanPublicId,
+    width: 200,
+    quality: 10,
+    blur: 1000,
+    effect: 'colorize:50'
+  })
 
   const ogImageUrl = generateOgImageUrl({
     src: cleanPublicId,
@@ -49,8 +58,8 @@ export function TeamCard({ team }: TeamCardProps) {
             public_id={cleanPublicId}
             width={313}
             height={420}
-            className="w-full h-[420px] object-cover transition-transform duration-300 rounded-xl
-            group-hover:scale-105 filter grayscale group-hover:grayscale-0 group-hover:filter-none"
+            className={`w-full h-[420px] object-cover transition-transform duration-300 rounded-xl
+            group-hover:scale-105 filter grayscale group-hover:grayscale-0 group-hover:filter-none`}
           />
         </div>
       </Link>

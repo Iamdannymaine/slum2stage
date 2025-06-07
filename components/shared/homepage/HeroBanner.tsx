@@ -13,15 +13,12 @@ import { useRouter } from 'next/navigation';
 
 
 
-
-
 export const HeroSlider = () => {
   const router = useRouter();
 
   const handleDonation = () => {
     router.push("/donate")
   }
-
 
   return (
     <section>

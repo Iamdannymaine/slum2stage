@@ -6,16 +6,22 @@ import React from 'react'
 import { Section_Heading } from '../Section_Heading'
 import { Section_Paragraph } from '../Section_Paragraph'
 import Button from '../Slum_Button'
+import { useRouter } from "next/navigation";
 
 const About_Who_We_Are = () => {
-  return (
-    <section className='w-full bg-secondary'>
-      <div className="flex flex-col lg:flex-row items-center justify-center relative">
+  const router = useRouter();
 
-        <div className="w-full lg:w-1/2 space-y-8 text-white py-10 px-4 lg:px-28 order-2 lg:order-1">
-          <Section_Heading lgSize="56px" color='white' title="Who we are!" />
+  const handleLearMore = () => {
+    router.push("/about-us")
+  }
+  return (
+    <section className='w-full bg-white'>
+      <div className="flex flex-col lg:flex-row items-center justify-center relative py-16">
+
+        <div className="w-full lg:w-1/2 space-y-8 text-slum_gray_800 py-10 px-4 lg:px-28 order-2 lg:order-1">
+          <Section_Heading lgSize="56px" color='primary' title="Who we are!" />
           <Section_Paragraph
-            color='white'
+            color='slum_gray_900'
             paragraph={`Slum to Stage creates preliminary and intermediate dance training for 
           children and young adults in developing areas in Abuja through performing and creative arts programs that enhance both their academic and artistic performance, in cooperation with the Local Education Authority and Universal Basic Education Board in Abuja.
 
@@ -23,7 +29,8 @@ const About_Who_We_Are = () => {
           while improving their socio-behavioural skills in class and at home.`} />
 
           <div className='md:hidden block'>
-            <Button variant='pill-ghost' text='Learn more' />
+            <Button variant='circular-filled' text='Learn more' onClick={handleLearMore}
+            />
           </div>
 
         </div>

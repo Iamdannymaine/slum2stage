@@ -7,6 +7,8 @@ import Button from "../Slum_Button"
 import { Menu, X } from "lucide-react"
 import logo from "../../../public/assets/images/Logo.svg"
 import { useRouter } from "next/navigation"
+import { motion } from "framer-motion"
+import clsx from "clsx"
 
 const navigation = [
   { title: "About us", route: "/about-us" },
@@ -23,29 +25,28 @@ export function Header() {
   const headerRef = useRef<HTMLDivElement>(null)
   const menuRef = useRef<HTMLDivElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   const toggleMenu = (e: React.MouseEvent) => {
     e.preventDefault()
     if (isAnimating) return
-
     setIsAnimating(true)
     setIsMenuOpen(prev => !prev)
   }
 
-  const router = useRouter();
 
-  // Prevent scrolling when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = ""
     }
 
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.overflow = ""
     }
   }, [isMenuOpen])
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +58,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Handle animation end
+
   useEffect(() => {
     if (!menuRef.current || !overlayRef.current) return
 
@@ -68,14 +69,15 @@ export function Header() {
       setIsAnimating(false)
     }
 
-    menuElement.addEventListener('transitionend', handleAnimationEnd)
-    overlayElement.addEventListener('transitionend', handleAnimationEnd)
+    menuElement.addEventListener("transitionend", handleAnimationEnd)
+    overlayElement.addEventListener("transitionend", handleAnimationEnd)
 
     return () => {
-      menuElement.removeEventListener('transitionend', handleAnimationEnd)
-      overlayElement.removeEventListener('transitionend', handleAnimationEnd)
+      menuElement.removeEventListener("transitionend", handleAnimationEnd)
+      overlayElement.removeEventListener("transitionend", handleAnimationEnd)
     }
   }, [])
+
 
   const handleDonate = () => {
     router.push("/donate")
@@ -86,16 +88,19 @@ export function Header() {
       {/* Overlay */}
       <div
         ref={overlayRef}
-        className={`fixed inset-0 bg-black z-40 transition-opacity duration-300 ${isMenuOpen
-          ? 'opacity-50 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
-          }`}
+        className={clsx(
+          "fixed inset-0 bg-black z-40 transition-opacity duration-300",
+          isMenuOpen ? "opacity-50 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
         onClick={toggleMenu}
       />
 
       <div
         ref={headerRef}
-        className={`mx-auto max-w-[80%] lg:max-w-4xl w-full px-4 py-2 flex items-center justify-between bg-white rounded-[40px] border border-gray-100 mt-8 transition-all duration-300 ${isScrolled ? "header_shadow" : ""}`}
+        className={clsx(
+          "mx-auto max-w-[80%] lg:max-w-4xl w-full px-4 py-2 flex items-center justify-between bg-white rounded-[40px] border border-gray-100 mt-8 transition-all duration-300",
+          isScrolled && "header_shadow"
+        )}
       >
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -128,22 +133,42 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile menu - with animations */}
-      <div
+      {/* Mobile Menu */}
+      <motion.div
         ref={menuRef}
-        className={`lg:hidden fixed left-0 w-full bg-white border-t border-gray-200 shadow-lg z-50 transition-all duration-300 ease-in-out ${isMenuOpen
-          ? 'opacity-100 translate-y-0 mt-4'
-          : 'opacity-0 -translate-y-4 pointer-events-none'
-          }`}
-        style={{
-          top: `calc(${(headerRef.current?.offsetHeight || 0) + 32 + 16}px)`, // Added 16px for spacing
+        initial={{ translateY: -20, opacity: 0 }}
+        animate={{
+          translateY: isMenuOpen ? 0 : -20,
+          opacity: isMenuOpen ? 1 : 0,
         }}
+        transition={{ duration: 0.25 }}
+        className={clsx(
+          "fixed inset-0 z-50 bg-white w-full h-screen overflow-y-auto transition-all duration-300",
+          isMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+        )}
       >
-        <ul className="flex flex-col items-start gap-4 p-6">
+        {/* Top Bar: Logo & Close Button */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
+            <Image
+              loading="lazy"
+              src={logo}
+              alt="slum2stage logo"
+              className="w-20 sm:w-24"
+            />
+          </Link>
+          <button onClick={toggleMenu}>
+            <X size={28} />
+            <span className="sr-only">Close menu</span>
+          </button>
+        </div>
+
+        {/* Navigation Links */}
+        <ul className="flex flex-col items-start gap-4 px-6 pt-6">
           {navigation.map((item, index) => (
             <li
               key={index}
-              className="uppercase text-sm text-slum_gray_800 font-sans font-normal w-full transition-all duration-200 hover:bg-gray-50 rounded-md"
+              className="uppercase text-sm text-slum_gray_800 font-sans font-normal w-full transition-all duration-200 hover:bg-gray-100 rounded-md"
             >
               <Link
                 href={item.route}
@@ -154,11 +179,12 @@ export function Header() {
               </Link>
             </li>
           ))}
-          <li className="w-full mt-2 px-4">
+          <li className="w-full mt-4 px-4">
             <Button variant="circular-filled" text="DONATE" onClick={handleDonate} />
           </li>
         </ul>
-      </div>
+      </motion.div>
+
     </header>
   )
 }
