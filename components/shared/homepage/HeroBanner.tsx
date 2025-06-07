@@ -88,7 +88,7 @@ export const HeroSlider = () => {
           <div className='sliderImage w-full'>
             <Image
               loading="lazy"
-              src="/assets/images/slide-2.png"
+              src="/assets/images/slide-4.png"
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
