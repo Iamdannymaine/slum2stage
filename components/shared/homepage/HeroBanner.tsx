@@ -1,11 +1,11 @@
 "use client"
 
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Autoplay, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import Button from '../Slum_Button';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
@@ -15,6 +15,8 @@ import { useRouter } from 'next/navigation';
 
 export const HeroSlider = () => {
   const router = useRouter();
+  const swiperRef = useRef<SwiperClass | null>(null);
+
 
   const handleDonation = () => {
     router.push("/donate")
@@ -23,10 +25,13 @@ export const HeroSlider = () => {
   return (
     <section>
       <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween={0}
         centeredSlides={true}
+        loop={true}
+        allowTouchMove={false}
         autoplay={{
-          delay: 2000,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
@@ -40,7 +45,7 @@ export const HeroSlider = () => {
           <div className='sliderImage w-full'>
             <Image
               loading="lazy"
-              src="/assets/images/slide-1.jpg"
+              src="/assets/images/slide-4.jpg"
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
