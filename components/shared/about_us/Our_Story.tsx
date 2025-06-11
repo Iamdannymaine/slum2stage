@@ -144,7 +144,7 @@ const Our_Story: React.FC = () => {
     <section className='bg-white w-full py-20'>
       <div className='flex flex-col space-y-12 px-4 lg:px-0 items-center justify-center'>
         <Section_Heading lgSize='56px' title='Our Story' />
-        <div className="max-w-6xl mx-auto py-8 space-y-20">
+        <div className="max-w-7xl mx-auto py-8 space-y-20 px-4 md:px-8 lg:px-16">
           {yearData.map((data, index) => (
             <YearSection key={index} {...data} />
           ))}

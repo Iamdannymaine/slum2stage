@@ -21,7 +21,8 @@ export const Who_We_Are = () => {
   return (
     <section className="min-h-screen bg-smoke_white w-full" ref={containerRef}>
 
-      <div className="flex flex-col md:flex-row relative px-4 lg:px-0 lg:ps-[12%]">
+      <div className="flex flex-col md:flex-row relative px-4 max-w-7xl mx-auto 
+      py-12 md:py-16 gap-8 md:gap-12 mb-8 md:px-8 lg:px-16">
 
         <div className="w-full md:w-1/2 space-y-8 lg:gap-16 py-8 md:py-24">
 

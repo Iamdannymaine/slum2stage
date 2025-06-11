@@ -22,7 +22,6 @@ type Program = {
   image?: string
   title: string
   description?: string
-  bgColor?: string
 }
 
 // Sample slides data
@@ -44,7 +43,6 @@ const programs: Program[] = [
     title: "Home Visits",
     image: "/assets/images/our-program/our-program-3.png",
     description: "Our Visit programs help to establish strong, positive communications between our team members, coordinators and our sponsored children’s parents",
-    bgColor: "#44B5D0"
   }
 ]
 
@@ -62,7 +60,6 @@ const Our_programs = () => {
             <Program_Card key={program.id}
               image={program.image}
               title={program.title}
-              bgColor={program.bgColor}
               description={program.description}
             />
           ))}
@@ -76,7 +73,6 @@ const Our_programs = () => {
                 <Program_Card key={program.id}
                   image={program.image}
                   title={program.title}
-                  bgColor={program.bgColor}
                   description={program.description}
                 />
               </CarouselItem>

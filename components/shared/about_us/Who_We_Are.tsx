@@ -16,9 +16,10 @@ const About_Who_We_Are = () => {
   }
   return (
     <section className='w-full bg-white'>
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center relative py-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center
+       justify-center relative py-16 px-4 md:px-8 lg:px-16">
 
-        <div className="w-full lg:w-1/2 space-y-8 text-slum_gray_800 py-10 px-4 lg:px-28 order-2 lg:order-1">
+        <div className="w-full lg:w-1/2 space-y-8 text-slum_gray_800 py-10 order-2 lg:order-1">
           <Section_Heading lgSize="56px" color='primary' title="Who we are!" />
           <Section_Paragraph
             color='slum_gray_900'

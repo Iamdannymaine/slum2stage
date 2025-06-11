@@ -22,7 +22,8 @@ const Presently = () => {
           height={1000}
         />
       </div>
-      <div className='flex flex-col lg:flex-row items-start justify-between max-w-7xl mx-auto py-12 px-4 lg:px-0'>
+      <div className='max-w-7xl flex flex-col lg:flex-row items-center justify-between 
+       mx-auto py-12 px-4 md:px-8 lg:px-16'>
         <div className='mb-4 lg:mb-0'><Section_Heading lgSize='56px' title='Presently' /></div>
         <div className='ps-4 lg:ps-[33.3%]'>
           <ol className='space-y-6 list-decimal'>

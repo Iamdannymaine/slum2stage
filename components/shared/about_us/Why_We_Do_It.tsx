@@ -11,7 +11,7 @@ import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 export const Why_We_Do_It = () => {
   return (
     <section className="w-full bg-black min-h-screen py-20 flex flex-col">
-      <div className='max-w-7xl mx-auto px-4 lg:px-0'>
+      <div className='max-w-7xl mx-auto px-4 md:px-8 lg:px-16 items-center justify-center flex flex-col space-y-8 lg:space-y-12'>
         <Section_Heading lgSize='56px' color='white' title='Why we do it' />
 
         <div

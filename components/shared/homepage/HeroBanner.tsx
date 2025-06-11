@@ -49,13 +49,13 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[100vh] rounded-none border-none"
+              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
 
           <div className="flex items-start justify-start">
             <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col 
-            md:flex-row gap-8 md:gap-16 mb-8 px-4 lg:px-0">
+            md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
               <div className="w-full lg:w-1/2">
 
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal
@@ -92,11 +92,12 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[100vh] rounded-none border-none"
+              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
           <div className="flex items-start justify-start">
-            <div className="container max-w-7xl mx-auto py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-0">
+            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col
+             md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-0">
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal leading-tight whitespace-pre-line text-start text-slum_gray_800">
                   Bring dance & joy
@@ -134,11 +135,12 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[100vh] rounded-none border-none"
+              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
           <div className="flex items-start justify-start">
-            <div className="container max-w-7xl mx-auto py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-0">
+            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col 
+            md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal
                    leading-tight whitespace-pre-line text-start text-slum_gray_800">
@@ -172,11 +174,12 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[100vh] rounded-none border-none"
+              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
           <div className="flex items-start justify-start">
-            <div className="container max-w-7xl mx-auto py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-0">
+            <div className="container max-w-7xl mx-auto py-12 md:py-16 flex flex-col
+             md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal
                    leading-tight whitespace-pre-line text-start text-slum_gray_800">

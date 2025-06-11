@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { CloudinaryImage } from '@/utils';
+import { Image } from '@heroui/image';
+
 interface MissionProps {
   cloudinaryPublicId: string;
   fallbackImage: string;
@@ -35,19 +37,26 @@ const content: MissionProps[] = [
 export const Mission_Vision: React.FC = () => {
   return (
     <section className="hidden lg:flex w-full bg-smoke_white min-h-screen py-20 flex-col space-y-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto py-12 gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center">
         {content.map((item, index) => (
           <div
             key={index}
-            className={`flex w-full items-start justify-between gap-20 mb-20 ${item.position === 'right' ? 'flex-row' : 'flex-row-reverse'
+            className={`flex w-full items-center justify-between gap-10 mb-10 ${item.position === 'right' ? 'flex-row' : 'flex-row-reverse'
               }`}
           >
             <div className="w-1/2">
-              <CloudinaryImage
+              <Image
+                loading="lazy"
+                src={item.fallbackImage}
+                alt={`${item.title} image`}
+                className={`w-full h-auto object-cover rounded-none ${item.imagePosition === 'top' ? 'mb-0' : 'mt-4'
+                  }`}
+              />
+              {/* <CloudinaryImage
                 public_id={item.cloudinaryPublicId}
                 fallbackSrc={item.fallbackImage}
                 alt={`${item.title} image`}
-              />
+              /> */}
             </div>
 
             <div className="w-1/2 text-start pt-10">
