@@ -31,8 +31,7 @@ export const AboutHero = () => {
             alt="About Us Hero"
             width={1400}
             height={680}
-            className={`w-full h-full object-cover transition-opacity duration-500 hidden md:block ${imageLoaded ? 'opacity-100' : 'opacity-0 bg-gray-200 animate-pulse'
-              }`}
+            className={`w-full h-full object-cover transition-opacity duration-500 hidden md:block`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             format="webp"
             quality="auto:best"
@@ -70,8 +69,8 @@ export const AboutHero = () => {
             loading="lazy"
             placeholder="blur"
             blurDataURL={placeholderUrl}
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageFailed(true)}
+          //onLoad={() => setImageLoaded(true)}
+          //onError={() => setImageFailed(true)}
           />
         ) : (
           <Image
