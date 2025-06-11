@@ -16,7 +16,7 @@ const About_Who_We_Are = () => {
   }
   return (
     <section className='w-full bg-white'>
-      <div className="flex flex-col lg:flex-row items-center justify-center relative py-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center relative py-16">
 
         <div className="w-full lg:w-1/2 space-y-8 text-slum_gray_800 py-10 px-4 lg:px-28 order-2 lg:order-1">
           <Section_Heading lgSize="56px" color='primary' title="Who we are!" />
@@ -43,7 +43,7 @@ const About_Who_We_Are = () => {
             alt="Dancers in colorful traditional attire in an artistic pose"
             width={500}
             height={500}
-            className="w-full h-[100px] md:h-[400px] lg:h-full object-cover rounded-none items-center justify-center"
+            className="w-full h-[200px] md:h-[500px] lg:h-full object-contain rounded-none items-center justify-center"
             style={{ maxWidth: "100%" }}
           />
         </div>

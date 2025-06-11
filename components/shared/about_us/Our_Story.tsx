@@ -93,11 +93,9 @@ const Our_Story: React.FC = () => {
     {
       year: "2022",
       items: [
-        "The Heartbeat Launch. This cultural marketplace of Nigeria is something even I didn't foresee but after all, our 2022 at The Heartbeat was a year of many firsts.",
-        "SXSW, Afrotech, Afrochella, Homecoming, Felabration, Mainland Block Party, Vibes on the Beach, Jollof and Afrobeats, and all events/shows that we partnered with artists under, supporting the growth of African music from Nigeria to the world.",
-        "Our partnership with Davido Worldwide and Martell Flair.",
-        "Winning the Martell Cognac Global Challenger Award. Design agency works for companies I can't ever not be proud of.",
-        "Davido Worldwide, in collaboration with Martell Nigeria, trusted us to design the set used at Davido's 02 Arena concert using graffiti in Lagos. I'll be forever grateful for the Heartbeat Family's creative courage."
+        "The Maiden Event Launch.The initiative was kicked off through a fundraising event which held on the 24th of July, 2022 at the Transcorp Hilton.This event encompassed of performances from child and adult ballet dancers, including beneficiaries of the STS training program, and an art exhibition / charity auction with photo prints illustrating the beauty of ballet, in conjunction with professional beauty and dance photographers like Seun Oderinde and Habila Sani",
+        "Arts Exhibition.Exhibited original artistic artworks at the African Creative Market Global, raising funds for children to have free dance trainings. ",
+        "Dance Workshops.In collaboration with Adila Dance Acrobatics, Slum to Stage has successful trained over fifty children and young adults in Abuja.Furthermore, a special, free, intensive 3-month training program for more beneficiaries of the STS initiative will launch in January 2023"
       ],
       imageSrc: "/assets/images/about-us/2022.png",
       imageAlt: "2022 accomplishments",
@@ -109,11 +107,10 @@ const Our_Story: React.FC = () => {
     {
       year: "2023",
       items: [
-        "FEVE Winery Tour, as part of the post-Grammy Victory concert and wine experience that helped to establish a brand new Winery in the heart of Lagos, Nigeria.",
-        "Partnered with Martell Nigeria to create a first of its kind entertainment space, built to serve arts management & guidance to young artists across the West of Africa. The Heartbeat House.",
-        "We took our Davido DWWT's Stage work to Martell Cognac through the Timini Egbuson.",
-        "We partnered with the Femme It Forward to help a friend's vision in activism against GBV, using arts. It was common sense to join.",
-        "We built our first live lighting design."
+        "First School Tour.As part of the goal develop the key cognitive and social - emotional skills vital to success in school and work, Slum to Stage embarked on a dance tour, visiting schools across Abuja to create enlightenment and work hand in hand with management & guardians to provide dance training for the students.The School tour started in October 2022, and will continue all the way to the first quarter of 2023.",
+        "We had our second Slum to Stage Event, themed Dance through the Eyes of Humanity ",
+        "We partnered with the French Embassy and the French Institut in activism against SGBV, during the 16 days activism against SGBV.",
+        "We lost our physical training space "
       ],
       imageSrc: "/assets/images/about-us/2023.png",
       imageAlt: "2023 accomplishments",
@@ -125,12 +122,13 @@ const Our_Story: React.FC = () => {
     {
       year: "2024",
       items: [
+        "We performed at TEDx Maitama",
+        "We partnered with SHUSHI to provide a space for the children and young adults to train in.",
+        "We hosted our third annual event at the congress hall of Transcop Hilton Abuja, opening our doors and giving 30 dancers the chance to perform at the reimagination of Chinua Achebe’s Things Fall Apart. ",
+        "We performed to Ty Bello’s “Africa Awake” on invitation by the Olu of Warri to The Kings Banquet, a ceremony that marked the end of the grand opening of Elevate Africa.",
+        "Our Executive Director taught dance through the Slum to Stage program to young adults from underserved areas in Benin Republic.",
+        "We performed at the Transcorp Hilton Lighting Ceremony.",
         "We partnered with TDL Solutions.",
-        "We partnered with SARO to provide a space for the creatives and young artists to live in.",
-        "We founded our first cultural event as the creatives lead of Deserves More Think, opening our doors and giving a chance to young artists to showcase their talents through our platform 'Deserves More Talk'.",
-        "We partnered with Martell 'Wild Hustler' as invited by the City of Kent to The Pinga Festival, a ceremony that marked the end of Ramadan opening in Banana Island.",
-        "Our Heartbeat House Design Course through our Studio in Ikoyi began to give young talents from Lekki, Ikeja and Mainland the opportunity.",
-        "We performed at the Paramount Hotel's Lighting Ceremony."
       ],
       imageSrc: "/assets/images/about-us/2024.png",
       imageAlt: "2024 accomplishments",

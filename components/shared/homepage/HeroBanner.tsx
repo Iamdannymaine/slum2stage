@@ -88,7 +88,7 @@ export const HeroSlider = () => {
           <div className='sliderImage w-full'>
             <Image
               loading="lazy"
-              src="/assets/images/slide-4.jpg"
+              src="/assets/images/slide-1.jpg"
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
@@ -130,7 +130,7 @@ export const HeroSlider = () => {
           <div className='sliderImage w-full'>
             <Image
               loading="lazy"
-              src="/assets/images/slide-3.png"
+              src="/assets/images/slide-6.jpg"
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
@@ -168,7 +168,7 @@ export const HeroSlider = () => {
           <div className='sliderImage w-full'>
             <Image
               loading="lazy"
-              src="/assets/images/slide-4.jpg"
+              src="/assets/images/slide-5.jpg"
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
