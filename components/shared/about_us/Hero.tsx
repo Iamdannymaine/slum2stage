@@ -83,32 +83,7 @@ export const AboutHero = () => {
           />
         )}
 
-        {/* Text Overlay with Animation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-white text-center bg-black/5"
-        >
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, type: 'spring', stiffness: 80 }}
-            className="text-3xl md:text-8xl font-bold px-4"
-          >
-            About Slum2Stage
-          </motion.h1>
 
-          <motion.p
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, type: 'spring', stiffness: 80 }}
-            className="mt-4 text-base md:text-4xl max-w-5xl px-6"
-          >
-            <span className='text-primary font-semibold font-sans'>We utilize the power of dance</span> to create safe creative communities,
-            providing access to artistic opportunities, and life skills development.
-          </motion.p>
-        </motion.div>
       </div>
     </section>
   )

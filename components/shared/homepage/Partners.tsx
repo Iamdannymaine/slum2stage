@@ -33,7 +33,7 @@ export const Partners = () => {
         </h1>
 
         {/* Desktop Grids */}
-        <div className='hidden sm:grid grid-cols-4 gap-12 mb-20 items-center justify-center mx-auto'>
+        <div className='hidden sm:grid grid-cols-4 gap-8 mb-20 items-center justify-center mx-auto'>
           {firstFour.map((partner, index) => (
             <Image
               loading='lazy'
@@ -41,9 +41,9 @@ export const Partners = () => {
               key={`partner-first-${index}`}
               src={partner.image}
               alt='partner-logo'
-              width={100}
-              height={120}
-              className='object-contain w-full h-full'
+              width={150}
+              height={150}
+              className='object-contain lg:object-cover w-full h-full'
             />
           ))}
         </div>
