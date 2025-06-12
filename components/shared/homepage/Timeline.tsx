@@ -21,7 +21,7 @@ const stats = [
   },
   {
     number: 25,
-    description: "",
+    description: "Volunteers actively participated in our programs",
     position: "left",
   },
 ]
@@ -93,13 +93,13 @@ const Timeline = () => {
 
         <div className=" hidden lg:block relative w-full max-w-4xl mx-auto py-16 px-4">
           {/* Vertical line */}
-          <div className="absolute left-1/2 top-[9rem] bottom-[7.5rem] w-px border-l border-dashed border-secondary -translate-x-1/2" />
+          <div className="absolute left-1/2 top-[8rem] bottom-[9.5rem] w-px border-l border-dashed border-secondary -translate-x-1/2" />
 
           <div className="relative space-y-32">
             {stats.map((stat, index) => (
               <div key={index} className="relative">
                 {/* Dot */}
-                <div className="absolute left-1/2 top-1/2 w-3 h-3 bg-secondary rounded-full -translate-x-1/2 -translate-y-1/2 z-10" />
+                <div className="absolute left-1/2 top-[40%] w-3 h-3 bg-secondary rounded-full -translate-x-1/2 -translate-y-1/2 z-10" />
 
                 <div className={`group relative flex ${stat.position === "left" ? "flex-row-reverse" : "flex-row"}`}>
                   <div className="w-1/2" />

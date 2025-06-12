@@ -35,7 +35,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col px-4">
         <div className="flex flex-col md:flex-row justify-between py-16">
           {/* Logo */}
-          <div className="flex items-start -pl-3 lg:-pl-0 pt-8">
+          <div className="flex items-start -pl-3 lg:-pl-0 pt-8 lg:pt-0 -mt-0 lg:-mt-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 loading="lazy"

@@ -11,10 +11,10 @@ const Chidinma_Story = () => {
   const router = useRouter();
 
   const handleFullStory = () => {
-    router.push("/")
+    router.push("/news")
   }
   return (
-    <section className="w-full bg-secondary grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 overflow-hidden">
+    <section className="w-full bg-secondary grid grid-cols-1 lg:grid-cols-3 lg:gap-x-8 overflow-hidden -mt-8">
 
       <div className="block lg:hidden relative w-full aspect-square -top-2">
         <Image
@@ -25,12 +25,14 @@ const Chidinma_Story = () => {
         />
       </div>
 
-      <div className="hidden lg:flex relative w-full overflow-hidden -mt-4 -ml-4 -mb-10">
+      <div className="hidden lg:flex relative w-full overflow-hidden -mt-4 -ml-4 -mb-20">
         <Image
           src="/assets/images/chidinma.png"
           radius="lg"
-          className="object-cover h-[80%]"
-          alt="chidinma-mobile h-auto"
+          alt="chidinma-mobile"
+          width={1000}
+          height={900}
+          className="object-cover w-full max-w-[800px] h-auto"
         />
       </div>
 
@@ -38,7 +40,7 @@ const Chidinma_Story = () => {
       <div className="flex flex-col col-span-2 px-4 lg:p-8 pt-0 lg:py-32 items-start justify-start">
         <div className="flex flex-col space-y-2 lg:space-y-8">
           <h3 className="font-sans font-bold text-sm lg:text-xl text-white">Why we do it?</h3>
-          <p className="font-serif font-bold text-3xl lg:text-[56px] text-white">Chidinma&apos;s story</p>
+          <p className="font-serif font-bold text-3xl lg:text-[56px] text-white capitalize">Read Chidinma&apos;s Story</p>
           <p className="font-sans font-normal text-sm lg:text-xl text-white">- a student in the program</p>
         </div>
 

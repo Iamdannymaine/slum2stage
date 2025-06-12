@@ -85,8 +85,8 @@ export const Testimonial_Carousel = () => {
 
             return (
               <SwiperSlide key={index} className="testimonial-slide">
-                <div className="p-4">
-                  <div className={`testimonial-card ${position}-position shadow-md`}>
+                <div className="p-4 h-full">
+                  <div className={`testimonial-card ${position}-position shadow-md h-[300px] md:h-[320px] lg:h-[380px] flex flex-col justify-between`}>
                     <div className="testimonial-content">
                       {testimonial.content.split("\n\n").map((paragraph, i) => (
                         <p key={i} className="mb-4 font-sans font-normal text-sm lg:text-base text-slum_gray_600 leading-8">
@@ -94,13 +94,14 @@ export const Testimonial_Carousel = () => {
                         </p>
                       ))}
                     </div>
-                    <div className="testimonial-author flex space-x-4">
+                    <div className="testimonial-author flex space-x-4 mt-4">
                       <Avatar
                         size="sm"
                         isBordered
                         src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-                        name={testimonial.author.slice(0, 4)} />
-                      <span> {testimonial.author}</span>
+                        name={testimonial.author.slice(0, 4)}
+                      />
+                      <span>{testimonial.author}</span>
                     </div>
                   </div>
                 </div>
@@ -117,32 +118,25 @@ export const Testimonial_Carousel = () => {
 const testimonials = [
   {
     content:
-      "Here is a huge thank you for the positive impact you have had on my daughter, Alice. I have been meaning to let you know that in the last year, she has grown in confidence, grace, determination, and strength.\n\nHer growth extends beyond ballet and even unto her academics. Alice came 1st position in her class. I am super proud of her especially when I see how much fun she has dancing and how much she has grown in the last year.\n\nShe has a great deal of regard for you. Your approach with your students while professional and courteous, has earned you a great deal of respect from them.",
+      "A huge thank you for the incredible impact you’ve had on my daughter, Alice. Over the past year, I’ve watched her grow in confidence, grace, determination, and strength. Her transformation extends beyond ballet—even her academics have improved. She came 1st in her class! \nI’m so proud of her, especially seeing how much joy she finds in dancing and how far she’s come.Alice holds you in such high regard.Your professional and caring approach has earned you deep respect from your students—and from parents like me.",
     author: "Ada's Mum",
   },
   {
     content:
-      "Here is a huge thank you for the positive impact you have had on my daughter, Alice. I have been meaning to let you know that in the last year, she has grown in confidence, grace, determination, and strength.\n\nHer growth extends beyond ballet and even unto her academics. Alice came 1st position in her class. I am super proud of her especially when I see how much fun she has dancing and how much she has grown in the last year.\n\nShe has a great deal of regard for you. Your approach with your students while professional and courteous, has earned you a great deal of respect from them.",
-    author: "John's Parent",
+      "The Slum to Stage program helps children connect with their creative and artistic essence. It gives them the opportunity to transcend limitations—and the freedom to become.",
+    author: "Dr Kaffy Shafau (DANCE BOSS)",
+  },
+  {
+    content: "Slum to Stage is bridging the gap between aspiring dancers and the captivating world of ballet. They deserve commendation for their inclusive approach to training. Unlike many traditional ballet schools, Slum to Stage actively encourages participation from all backgrounds regardless of gender, socio-economic status, or previous dance experience making ballet accessible to a much wider audience",
+    author: "Temitayo Ogunsusi",
+  },
+  {
+    content: "Thank you for bringing out the best in Ada.",
+    author: "Ada's Mum",
   },
   {
     content:
-      "Here is a huge thank you for the positive impact you have had on my daughter, Alice. I have been meaning to let you know that in the last year, she has grown in confidence, grace, determination, and strength.\n\nHer growth extends beyond ballet and even unto her academics. Alice came 1st position in her class. I am super proud of her especially when I see how much fun she has dancing and how much she has grown in the last year.\n\nShe has a great deal of regard for you. Your approach with your students while professional and courteous, has earned you a great deal of respect from them.",
-    author: "Sarah's Guardian",
-  },
-  {
-    content:
-      "Here is a huge thank you for the positive impact you have had on my daughter, Alice. I have been meaning to let you know that in the last year, she has grown in confidence, grace, determination, and strength.\n\nHer growth extends beyond ballet and even unto her academics. Alice came 1st position in her class. I am super proud of her especially when I see how much fun she has dancing and how much she has grown in the last year.\n\nShe has a great deal of regard for you. Your approach with your students while professional and courteous.",
-    author: "Michael's Dad",
-  },
-  {
-    content:
-      "Here is a huge thank you for the positive impact you have had on my daughter, Alice. I have been meaning to let you know that in the last year, she has grown in confidence, grace, determination, and strength.\n\nHer growth extends beyond ballet and even unto her academics. Alice came 1st position in her class. I am super proud of her especially when I see how much fun she has dancing and how much she has grown in the last year.\n\nShe has a great deal of regard for you. Your approach with your students while professional and courteous.",
-    author: "Emma's Mother",
-  },
-  {
-    content:
-      "Here is a huge thank you for the positive impact you have had on my daughter, Alice. I have been meaning to let you know that in the last year, she has grown in confidence, grace, determination, and strength.\n\nHer growth extends beyond ballet and even unto her academics. Alice came 1st position in her class. I am super proud of her especially when I see how much fun she has dancing and how much she has grown in the last year.\n\nShe has a great deal of regard for you. Your approach with your students while professional and courteous, has earned you a great deal of respect from them.",
-    author: "David's Parent",
+      "Ballet is rarely accessible in this part of the world. It’s truly commendable that Slum to Stage is giving children the opportunity to experience and learn this captivating dance style",
+    author: "Anonymous",
   },
 ]

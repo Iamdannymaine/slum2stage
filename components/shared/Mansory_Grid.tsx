@@ -155,13 +155,12 @@ export const PinterestMasonry = () => {
   const { column1Images, column2Images } = typedImageData;
 
   return (
-    <div className="bg-[#FFEEE5] lg:min-h-screen flex items-center justify-center">
+    <div className="bg-[#FFEEE5] lg:min-h-screen flex items-end justify-end">
       {/* Desktop View */}
       <div className="hidden lg:flex">
         <div className="flex flex-col lg:flex-row">
           <ParallaxImageColumn images={column1Images} baseVelocity={-5} />
           <ParallaxImageColumn images={column2Images} baseVelocity={5} />
-          <ParallaxImageColumn images={column1Images} baseVelocity={-5} />
         </div>
       </div>
 

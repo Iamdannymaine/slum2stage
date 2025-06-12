@@ -11,19 +11,19 @@ const lists = [
 
 const Presently = () => {
   return (
-    <section className='w-full flex flex-col space-y-8 lg:space-y-12'>
-      <div className='w-full h-full px-0'>
+    <section className='w-full flex flex-col'>
+      <div className='w-full  px-0'>
         <Image
           loading='lazy'
           src="/assets/images/about-us/illimi-danc-education.png"
           alt='presntly'
-          className='w-full rounded-none'
+          className='w-full rounded-none h-full lg:h-[80vh]'
           width={1000}
-          height={1000}
+          height={800}
         />
       </div>
       <div className='max-w-7xl flex flex-col lg:flex-row items-start justify-between 
-       mx-auto py-12 px-4 md:px-8 lg:px-16'>
+       mx-auto py-12 px-4 md:px-8 lg:px-16 pt-12'>
         <div className='mb-4 lg:mb-0'><Section_Heading lgSize='56px' title='Presently' /></div>
         <div className='ps-4 lg:ps-[33.3%]'>
           <ol className='space-y-6 list-decimal'>

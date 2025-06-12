@@ -16,6 +16,7 @@ const navigation = [
   { title: "Program", route: "/our-program" },
   { title: "News", route: "/news" },
   { title: "Contact Us", route: "/contact-us" },
+  { title: "Become a Student", route: "/auth/register" }
 ]
 
 export function Header() {
@@ -98,7 +99,7 @@ export function Header() {
       <div
         ref={headerRef}
         className={clsx(
-          "mx-auto max-w-[80%] lg:max-w-4xl w-full px-4 py-2 flex items-center justify-between bg-white rounded-[40px] border border-gray-100 mt-8 transition-all duration-300",
+          "mx-auto max-w-[80%] lg:max-w-6xl w-full px-4 py-2 flex items-center justify-between bg-white rounded-[40px] border border-gray-100 mt-8 transition-all duration-300",
           isScrolled && "header_shadow"
         )}
       >

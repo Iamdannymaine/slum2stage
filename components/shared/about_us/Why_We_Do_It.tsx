@@ -39,7 +39,9 @@ export const Why_We_Do_It = () => {
               </blockquote>
             </div>
 
-            <div className='hidden lg:block'> <Avatar_Flex avatar='/assets/images/about-us/avatar.png' name='Emmanuel C. Osahor' /></div>
+            <div className='hidden lg:block mr-0 lg:mr-1'>
+              <Avatar_Flex avatar='/assets/images/about-us/avatar.png' name='Emmanuel C. Osahor' />
+            </div>
 
           </div>
           {/* 

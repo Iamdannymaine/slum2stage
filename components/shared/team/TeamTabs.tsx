@@ -43,12 +43,12 @@ export function TeamTabs() {
 
   return (
     <>
-      <div className="mt-8 mb-4 ps-0 space-y-4 md:ps-[10%]">
+      <div className="mt-8 mb-4 space-y-4 ps-0 lg:ps-[8%]">
         <Section_Heading lgSize="56px" title="Meet the team" />
         <Section_Paragraph paragraph="Get to know the passionate professionals behind our program" />
       </div>
 
-      <div className="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-center px-0 lg:px-2">
         <Tabs
           aria-label="Dynamic tabs"
           items={tabs}

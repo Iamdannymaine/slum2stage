@@ -30,16 +30,16 @@ const YearSection: React.FC<YearSectionProps> = ({
   svgPositionMobile = 'bottom-right'
 }) => {
   const positionClasses = {
-    'top-right': '-top-4 right-5',
+    'top-right': '-top-2 -right-5',
     'top-left': '-top-4 -left-2',
-    'bottom-right': 'bottom-64 right-1',
+    'bottom-right': 'lg:top-2 -top-2 -right-2'
   };
 
-  const mobilePositionClasses = {
-    'top-right': '-top-4 -right-5',
-    'bottom-right': '-bottom-4 -right-2',
-    'bottom-left': '-bottom-4 -left-2',
-  };
+  // const mobilePositionClasses = {
+  //   'top-right': '-top-4 -right-5',
+  //   'bottom-right': '-bottom-4 -right-2',
+  //   'bottom-left': 'bottom-[5rem] -left-2',
+  // };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
@@ -55,7 +55,7 @@ const YearSection: React.FC<YearSectionProps> = ({
         </ul>
       </div>
       <div className="relative w-full h-full overflow-visible">
-        <div className={`absolute ${mobilePositionClasses[svgPositionMobile]}  lg:${positionClasses[svgPosition]} z-50`}>
+        <div className={`absolute lg:${positionClasses[svgPosition]} z-50`}>
           <Icon
             className={`icon h-12 w-12 text-${iconColor} z-50`}
             fill={iconColor}

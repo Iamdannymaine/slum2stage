@@ -40,7 +40,7 @@ export const Our_Program: React.FC<ProgrmProps> = ({
             </h2>
           </div>
 
-          <p className={`font-sans font-normal text-slum_gray_800 text-sm lg:text-base leading-[36px] lg:leading-[32px]`}>
+          <p className={`text-justify font-sans font-normal text-slum_gray_800 text-sm lg:text-base leading-[36px] lg:leading-[32px]`}>
             {description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}

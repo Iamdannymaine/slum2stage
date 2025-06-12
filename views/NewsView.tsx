@@ -8,7 +8,7 @@ export function NewsView() {
 
   return (
     <section className="w-full mx-auto py-40">
-      <div className="max-w-7xl mx-auto px-4 lg:px-0">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         <div className="py-10">
           <Section_Heading lgSize="56px" title="Our News" />
         </div>

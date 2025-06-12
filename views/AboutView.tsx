@@ -2,7 +2,7 @@
 
 import {
   AboutHero,
-  //AfterHero,
+  AfterHero,
   About_Who_We_Are,
   We_Do_This,
   Mission_Vision,
@@ -19,7 +19,7 @@ const AboutView = () => {
     <>
       <div className='min-h-screen'>
         <AboutHero />
-        {/* <AfterHero /> */}
+        <AfterHero />
         <About_Who_We_Are />
         <We_Do_This />
         <Mission_Vision />

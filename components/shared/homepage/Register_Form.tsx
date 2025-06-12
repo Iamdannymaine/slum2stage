@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
-import Image from 'next/image';
+import { Image } from '@heroui/image';
 import { useForm } from 'react-hook-form';
 import { FormOneData } from '@/types/formType';
 import { sendEmail } from '@/utils';
@@ -60,7 +60,7 @@ const Register_Form = () => {
         <div className="absolute inset-0 bg-black/10"></div>
         <Image
           loading="lazy"
-          src="/assets/images/volunteer.png"
+          src="/assets/images/bottom.jpg"
           alt="Children at school"
           className="object-cover w-full h-full rounded-none"
           width={100}
@@ -69,13 +69,13 @@ const Register_Form = () => {
       </div>
 
 
-      <div className="relative z-10 flex flex-col md:flex-row pt-12 lg:pt-10">
+      <div className="relative z-10 flex flex-col md:flex-row pt-12 lg:pt-0">
 
-        <div className="w-full md:w-1/2 flex items-center justify-center p-4 lg:p-6">
+        <div className="w-full md:w-1/2 flex items-center justify-center p-4 lg:p-6 mt-6 ps-[2%]">
           <div className="w-full max-w-md bg-white text-black rounded-xl p-8 md:bg-opacity-100 bg-opacity-90">
             <h1 className="flex flex-col lg:hidden text-3xl font-serif mb-8 text-slum_gray-800">
-              Become a
-              <span className='font-semibold'>Dancer | Teacher</span>
+              Become a Slum2Stage
+              <span className='font-semibold'>Dancer | Volunter</span>
             </h1>
 
             <div className='mb-4'>
@@ -159,11 +159,11 @@ const Register_Form = () => {
 
         <div className="hidden md:flex w-full md:w-1/2 relative h-full">
           <Image
-            src="/assets/images/volunteer.png"
+            src="/assets/images/bottom.jpg"
             alt="Children at school"
-            className="object-cover w-full h-full"
-            width={100}
-            height={100}
+            className="object-cover w-full h-full rounded-none"
+          // width={100}
+          // height={500}
           />
         </div>
       </div>

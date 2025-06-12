@@ -49,12 +49,12 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
+              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
 
           <div className="flex items-start justify-start">
-            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col 
+            <div className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col 
             md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
               <div className="w-full lg:w-1/2">
 
@@ -76,7 +76,7 @@ export const HeroSlider = () => {
                 </p>
                 <div className="flex gap-4">
                   <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={handleDonation} />
+                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
                 </div>
               </div>
             </div>
@@ -92,12 +92,12 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
+              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
           <div className="flex items-start justify-start">
-            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col
-             md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-0">
+            <div className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col
+             md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-16">
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal leading-tight whitespace-pre-line text-start text-slum_gray_800">
                   Bring dance & joy
@@ -120,7 +120,7 @@ export const HeroSlider = () => {
                 </p>
                 <div className="flex gap-4">
                   <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={handleDonation} />
+                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
                 </div>
               </div>
             </div>
@@ -135,11 +135,11 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
+              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
           <div className="flex items-start justify-start">
-            <div className="max-w-7xl mx-auto py-12 md:py-16 flex flex-col 
+            <div className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col 
             md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal
@@ -155,11 +155,11 @@ export const HeroSlider = () => {
               </div>
               <div className="md:w-1/2">
                 <p className="text-[16px] md:text-lg lg:text-xl font-normal mb-6 text-start font-sans">
-                  Slum to Stage Partners with the French Embassy in Nigeria in Activism Against SGB.
+                  Slum to Stage Partners with the French Embassy in Nigeria in Activism Against Sexual Gender-Based Violence(sGGB).
                 </p>
                 <div className="flex gap-4">
                   <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={handleDonation} />
+                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
                 </div>
               </div>
             </div>
@@ -174,11 +174,11 @@ export const HeroSlider = () => {
               alt="Every child deserves to be happy!"
               width={1280}
               height={600}
-              className="object-cover w-full h-[80vh] md:h-[80vh] rounded-none border-none"
+              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
             />
           </div>
           <div className="flex items-start justify-start">
-            <div className="container max-w-7xl mx-auto py-12 md:py-16 flex flex-col
+            <div className="container max-w-7xl mx-auto py-12 md:py-10 flex flex-col
              md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
               <div className="w-full lg:w-1/2">
                 <h1 className="block lg:hidden text-[32px] font-serif font-normal
@@ -199,7 +199,7 @@ export const HeroSlider = () => {
                 </p>
                 <div className="flex gap-4">
                   <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={handleDonation} />
+                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
                 </div>
               </div>
             </div>

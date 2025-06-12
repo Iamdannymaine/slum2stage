@@ -56,7 +56,7 @@ export const ContactView = () => {
         </div>
       </div>
 
-      <div className='lg:w-2/5 overflow-hidden lg:flex'>
+      <div className='lg:w-2/5 overflow-hidden lg:flex hidden'>
         <div className='w-full h-full aspect-[10/12]'>
           <Image
             src='/assets/images/contact-us.png'

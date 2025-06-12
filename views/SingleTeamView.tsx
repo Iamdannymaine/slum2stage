@@ -28,7 +28,7 @@ export function SingleTeamView({ team }: BlogPostPageProps) {
 
   return (
     <section className="bg-white py-40 w-full flex flex-col items-center justify-center">
-      <div className="max-w-7xl mx-auto items-start space-y-8 px-4 lg:px-0">
+      <div className="max-w-7xl mx-auto items-start space-y-8 px-4 lg:px-16">
         <Link
           href="/team"
           className="flex space-x-2 text-primary items-center justify-start capitalize font-sans font-normal text-sm lg:text-lg"
@@ -38,7 +38,7 @@ export function SingleTeamView({ team }: BlogPostPageProps) {
         </Link>
 
         <div className="flex flex-col lg:flex-row items-start justify-between gap-20">
-          <Card className="w-full h-full overflow-hidden rounded-[20px] border-b-5 border-r-5 border-r-secondary border-b-secondary"
+          <Card className="lg:w-2/5 w-full h-full overflow-hidden rounded-[20px] border-b-5 border-r-5 border-r-secondary border-b-secondary"
             style={{ maxWidth: "100%" }}>
             <CldImage
               src={cleanPublicId}
@@ -59,12 +59,14 @@ export function SingleTeamView({ team }: BlogPostPageProps) {
             />
           </Card>
 
-          <div className="flex flex-col gap-4">
-            <h1 className="font-serif text-start text-slum_gray_800 text-xl md:text-2xl lg:text-5xl font-bold mb-3 uppercase leading-snug">
+          <div className="w-full lg:w-3/5 flex flex-col gap-4 lg:pt-2 pt-0">
+            <h1 className="font-serif text-start text-slum_gray_800 text-xl w-full
+             md:text-2xl lg:text-5xl font-bold mb-3 uppercase">
               {team.name}
             </h1>
             <div
-              className="text-sm md:text-base leading-[40px] text-slum_gray_800 [&>p]:mb-6"
+              className="text-sm md:text-base leading-[40px]
+               text-slum_gray_800 [&>p]:mb-6 max-w-[620px] font-sans text-justify"
               dangerouslySetInnerHTML={{ __html: team.content }}
             />
           </div>
