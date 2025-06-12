@@ -11,7 +11,6 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import NextImage from "next/image";
 import { imageGridData } from "@/json";
 import {
   Carousel,
@@ -74,7 +73,7 @@ function ParallaxImageColumn({ images, baseVelocity = 100 }: ParallaxImageColumn
                   width={512}
                   height={300}
                   loading="lazy"
-                  className="w-64 h-[300px] object-cover rounded-none"
+                  className="w-64 h-[300px] object-cover rounded-none hover:grayscale"
                 />
               </div>
             ))}
@@ -126,22 +125,23 @@ function MobileCarousel({ direction = "forward" }: { direction?: "forward" | "ba
     >
       <CarouselContent className="-ml-0">
         {allImages.map((image, index) => (
-          <CarouselItem key={index} className="basis-1/2 gap-0 pl-2">
-            <div className="overflow-hidden">
+          <CarouselItem key={index} className="basis-1/2">
+            <div className="w-[200px] h-[200px] overflow-hidden rounded-none mx-auto
+             bg-gray-100 flex items-center justify-center">
               <Image
+                loading="lazy"
                 src={image.src}
-                as={NextImage}
                 alt={image.alt || "gallery-image"}
-                width={600}
-                height={400}
-                quality={90}
-                className="w-full h-auto object-cover rounded-xl"
+                width={200}
+                height={200}
+                className="w-full h-full rounded-none object-cover hover:grayscale transition-all duration-300"
               />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-    </Carousel >
+    </Carousel>
+
   );
 }
 

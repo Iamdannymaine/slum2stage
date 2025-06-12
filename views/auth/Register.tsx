@@ -71,10 +71,14 @@ export function DanceRegistrationForm() {
   return (
     <>
       <div className="flex flex-col lg:flex-row w-full pt-24 justify-between lg:h-screen lg:overflow-hidden">
-        <div className="w-full lg:w-3/5 px-4 pt-20 bg-white pb-4 lg:pb-10 lg:px-12 
+        <div className="w-full lg:w-3/5 px-4 pt-20 bg-white pb-4 lg:pb-20 lg:px-12 
         lg:overflow-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <div className="space-y-4 mb-10 lg:px-20">
-            <Section_Heading lgSize="56px" title="Tiny Feet, Big Moves" />
+          <div className="space-y-4 mb-10 lg:px-32">
+            <h2
+              className={`font-serif font-bold text-[28px] md:text-[32px] lg:text-[48px]`}
+            >
+              Tiny Feets, Big Moves.
+            </h2>
             <p className="font-sans font-normal text-slum_gray_900 text-sm lg:text-lg leading-[36px] lg:leading-[32px]">
               Join our dance school and give your child the opportunity to learn, grow, and perform.
             </p>
@@ -228,7 +232,7 @@ export function DanceRegistrationForm() {
           </form>
         </div>
 
-        <div className="w-full lg:w-[35%] h-full flex-wrap">
+        <div className="w-full lg:w-[34%] h-full flex-wrap">
           <PinterestMasonry />
         </div>
       </div>
