@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
-import { Header, Providers, Footer } from '@/components/shared';
-
-
+import { Header, Providers, Footer, GSAPLoader } from '@/components/shared';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,7 +33,6 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-
       </head>
       <body className={`${libreBaskerville.variable} ${inter.variable} antialiased`}>
         <Providers>
@@ -47,6 +44,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </Providers>
+        <GSAPLoader />
       </body>
     </html>
   )

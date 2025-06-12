@@ -20,6 +20,7 @@ function Button({
   type,
   disabled = false
 }: ButtonProps) {
+
   return (
     <button
       type={type}

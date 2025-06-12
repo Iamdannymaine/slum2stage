@@ -3,7 +3,7 @@ import React from "react";
 
 export const Chidinma_Paragraph = ({ paragraph }: { paragraph: string }) => {
   return (
-    <div className="w-full flex">
+    <div className="w-full flex text">
       <p className="font-sans 
       font-normal text-sm 
       lg:text-base leading-[32px]

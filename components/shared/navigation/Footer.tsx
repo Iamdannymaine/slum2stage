@@ -93,7 +93,7 @@ const Footer = () => {
         <hr className="hidden md:block border-t border-[#26272B] border-opacity-20" />
         <div className="hidden md:flex justify-between py-16">
           <div>
-            <p className="font-sans text-sm font-normal text-slum_gray_200">© 2025 Slum2stage· All rights reserved</p>
+            <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Slum2Stage. All rights reserved.</p>
           </div>
           <div className="flex gap-x-4 ">
             <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">

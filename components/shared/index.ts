@@ -36,6 +36,8 @@ import { ImagesPlacement } from "./news/FormattedImages";
 import { TeamCard } from "./team/TeamCard";
 import { TeamTabs } from "./team/TeamTabs";
 
+import { GSAPLoader } from "./GsapLoader";
+
 export {
   Section_Heading,
   Section_Paragraph,
@@ -65,4 +67,5 @@ export {
   ImagesPlacement,
   TeamCard,
   TeamTabs,
+  GSAPLoader,
 };

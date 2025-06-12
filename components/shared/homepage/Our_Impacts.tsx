@@ -7,9 +7,7 @@ const Our_Impacts = () => {
       <div className="max-w-5xl mx-auto flex flex-col items-center justify-center space-y-12">
         <Section_Heading lgSize='56px' title="Our Impact" />
         <Section_Heading lgSize='56px' title="in numbers" />
-
         <div>
-
         </div>
       </div>
     </section>

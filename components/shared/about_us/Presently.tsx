@@ -17,7 +17,7 @@ const Presently = () => {
           loading='lazy'
           src="/assets/images/about-us/illimi-danc-education.png"
           alt='presntly'
-          className='w-full rounded-none h-full lg:h-[80vh]'
+          className='w-full rounded-none h-full object-cover'
           width={1000}
           height={800}
         />

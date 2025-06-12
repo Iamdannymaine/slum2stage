@@ -74,8 +74,8 @@ const Register_Form = () => {
         <div className="w-full md:w-1/2 flex items-center justify-center p-4 lg:p-6 mt-6 ps-[2%]">
           <div className="w-full max-w-md bg-white text-black rounded-xl p-8 md:bg-opacity-100 bg-opacity-90">
             <h1 className="flex flex-col lg:hidden text-3xl font-serif mb-8 text-slum_gray-800">
-              Become a Slum2Stage
-              <span className='font-semibold'>Dancer | Volunter</span>
+              Become a
+              <span className='font-semibold'>Volunter</span>
             </h1>
 
             <div className='mb-4'>
