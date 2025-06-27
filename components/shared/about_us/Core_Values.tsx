@@ -36,15 +36,10 @@ export function CoreValues() {
                 className={`flex items-start gap-6 p-2 
                   ${values.length % 2 !== 0 && value === values[values.length - 1] ? 'col-span-2' : ''}`}
               >
-<<<<<<< Updated upstream
-                {value.icon}
-                <span className="text-gray-800 font-medium font-sans text-base lg:text-[28px]">{value.name}</span>
-=======
                 <Copy>
                   {value.icon}
                   <span className="text-gray-800 font-medium font-sans text-[28px]">{value.name}</span>
                 </Copy>
->>>>>>> Stashed changes
               </div>
             ))}
           </div>

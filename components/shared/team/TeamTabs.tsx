@@ -15,11 +15,11 @@ export function TeamTabs() {
 
   const executives = useMemo(
     () => allMembers.filter((member) => member.role === "executive"),
-    [allMembers]
+    []
   );
   const advisors = useMemo(
     () => allMembers.filter((member) => member.role === "advisor"),
-    [allMembers]
+    []
   );
 
   const tabs = [

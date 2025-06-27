@@ -51,7 +51,7 @@ const YearSection: React.FC<YearSectionProps> = ({
         </Copy>
         <div className="space-y-3">
           {items.map((item, index) => (
-            <Copy delay={0.2}>
+            <Copy delay={0.2} key={index}>
               <p key={index} className="flex items-start font-sf-display font-medium text-sm lg:text-base leading-[36px] lg:leading-[32px]">
                 {item}
               </p>

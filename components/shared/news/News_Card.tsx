@@ -28,7 +28,7 @@ export function NewsCard({ description, image, slug, linkText = "View more" }: N
         </div>
         <div className="p-4 flex flex-col flex-grow">
           <div className="flex-grow">
-            <p className="font-sf-text text-sm font-semibold lg:text-base leading-[32px] lg:leading-[32px] text-slum_gray_800">
+            <p className="font-sf-text text-sm font-semibold lg:text-base leading-[32px] lg:leading-[32px] text-slum_gray_800 text-start">
               {description}
             </p>
           </div>

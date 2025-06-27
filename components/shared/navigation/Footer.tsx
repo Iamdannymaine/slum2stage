@@ -32,11 +32,11 @@ const contact = [
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-12 lg:pb-4 w-full" >
+    <footer className="bg-black text-white lg:pt-12 lg:pb-4 w-full" >
       <div className="max-w-7xl mx-auto flex flex-col px-4">
         <div className="flex flex-col md:flex-row justify-between py-16">
           {/* Logo */}
-          <div className="flex items-start -pl-3 lg:-pl-0 pt-8 lg:pt-0 -mt-0 lg:-mt-4">
+          <div className="flex items-start -pl-3 lg:-pl-0 pt-4 lg:pt-0 -mt-0 lg:-mt-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 loading="lazy"
@@ -48,15 +48,15 @@ const Footer = () => {
           <div className="flex md:hidden pt-24">
             {/* Company links */}
             <ul className="flex flex-col space-y-4 uppercase">
-              <Copy>
-                {mobileLink.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className='text-white font-sans font-normal text-sm'>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </Copy>
+
+              {mobileLink.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className='text-white font-sans font-normal text-sm'>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+
             </ul>
           </div>
 

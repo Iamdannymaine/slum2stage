@@ -33,7 +33,7 @@ export const News_Section = () => {
         <Carousel className="w-full">
           <CarouselContent className="-ml-2 md:-ml-4">
             {NewsData.map((item) => (
-              <CarouselItem key={item.id} className="pl-2 md:pl-8 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <CarouselItem key={item.id} className="pl-2 md:pl-8 basis-10/12 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                 <NewsCard
                   description={item.excerpt}
                   image={item.imageUrl}
