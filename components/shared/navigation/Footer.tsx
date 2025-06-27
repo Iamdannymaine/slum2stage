@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import { Image } from '@heroui/image'
+import Copy from './Text_Reveal_Animation'
 
 
 const company = [
@@ -47,13 +48,15 @@ const Footer = () => {
           <div className="flex md:hidden pt-24">
             {/* Company links */}
             <ul className="flex flex-col space-y-4 uppercase">
-              {mobileLink.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className='text-white font-sans font-normal text-sm'>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <Copy>
+                {mobileLink.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className='text-white font-sans font-normal text-sm'>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </Copy>
             </ul>
           </div>
 
@@ -61,31 +64,35 @@ const Footer = () => {
           <div className="hidden md:grid md:grid-cols-2 gap-4">
             {/* Company links */}
             <div>
-              <h3 className="text-sm font-sans font-normal mb-4 text-white">COMPANY</h3>
-              <ul className="space-y-4">
-                {company.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className='text-[#667085] hover:text-white 
+              <Copy>
+                <h3 className="text-sm font-sans font-normal mb-4 text-white">COMPANY</h3>
+                <ul className="space-y-4">
+                  {company.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className='text-[#667085] hover:text-white 
                     font-sans font-normal text-sm'>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Copy>
             </div>
 
             {/* Contact info */}
             <div>
-              <h3 className="text-sm font-normal mb-4 font-sans text-white">CONTACT</h3>
-              <ul className="space-y-2">
-                {contact.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} className='text-[#667085] hover:text-white font-sans font-normal text-sm'>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <Copy>
+                <h3 className="text-sm font-normal mb-4 font-sans text-white">CONTACT</h3>
+                <ul className="space-y-2">
+                  {contact.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} className='text-[#667085] hover:text-white font-sans font-normal text-sm'>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Copy>
             </div>
           </div>
 
@@ -93,7 +100,9 @@ const Footer = () => {
         <hr className="hidden md:block border-t border-[#26272B] border-opacity-20" />
         <div className="hidden md:flex justify-between py-16">
           <div>
+
             <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Slum2Stage. All rights reserved.</p>
+
           </div>
           <div className="flex gap-x-4 ">
             <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
