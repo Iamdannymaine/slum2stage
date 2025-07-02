@@ -7,6 +7,8 @@ import { PiStarFourFill } from "react-icons/pi";
 import { FaCertificate } from "react-icons/fa";
 import { PiPentagonFill } from "react-icons/pi";
 import NextImage from 'next/image';
+import Copy from '../navigation/Text_Reveal_Animation';
+
 
 interface YearSectionProps {
   year: string;
@@ -42,17 +44,20 @@ const YearSection: React.FC<YearSectionProps> = ({
   // };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start lg:bg-[#D9D9D9] lg:rounded-lg lg:p-8">
       <div>
-        <h2 className="text-6xl font-bold mb-6 font-serif ">{year}.</h2>
-        <ul className="space-y-3">
+        <Copy>
+          <h2 className="text-6xl font-bold mb-6 font-sf-display text-[#1E1E1E]">{year}.</h2>
+        </Copy>
+        <div className="space-y-3">
           {items.map((item, index) => (
-            <li key={index} className="flex items-start font-sans font-normal text-sm lg:text-base leading-[36px] lg:leading-[32px]">
-              <span className="mr-2">•</span>
-              <p>{item}</p>
-            </li>
+            <Copy delay={0.2} key={index}>
+              <p key={index} className="flex items-start font-sf-display font-medium text-sm lg:text-base leading-[36px] lg:leading-[32px]">
+                {item}
+              </p>
+            </Copy>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="relative w-full h-full overflow-visible">
         <div className={`absolute lg:${positionClasses[svgPosition]} z-50`}>
@@ -117,7 +122,7 @@ const Our_Story: React.FC = () => {
       icon: FaCertificate,
       iconColor: "#95D5E4",
       svgPosition: "top-left",
-      svgPositionMobile: "top-right"
+      svgPositionMobile: "top-right",
     },
     {
       year: "2024",

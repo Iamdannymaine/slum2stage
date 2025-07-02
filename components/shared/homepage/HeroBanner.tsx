@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useRef, useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Autoplay, Pagination } from "swiper/modules"
 import Image from "next/image"
 import Button from "../Slum_Button"
@@ -11,145 +10,131 @@ import "swiper/css/pagination"
 import "swiper/css/autoplay"
 import { useRouter } from "next/navigation"
 
-
-declare global {
-  interface Window {
-    gsap: any
-    ScrollTrigger: any
-  }
+interface SlideData {
+  id: number
+  imageSrc: string
+  altText: string
+  mobileTitle: string
+  desktopTitle: React.ReactNode
+  description: string
+  underlineWidth?: string
 }
 
+
+const slides: SlideData[] = [
+  {
+    id: 1,
+    imageSrc: "/assets/images/slide-7.jpg",
+    altText: "Every child deserves to be happy!",
+    mobileTitle: "Every child deserves to be happy!",
+    desktopTitle: (
+      <>
+        Every child <br />
+        deserves <br /> to be happy!
+      </>
+    ),
+    description: "Slum to Stage Uses Dance to Retain the Interest of 290 Children in Schools.",
+    underlineWidth: "w-[21rem]"
+  },
+  {
+    id: 2,
+    imageSrc: "/assets/images/happy-school.jpg",
+    altText: "Bring dance & joy to government school",
+    mobileTitle: "Bring dance & joy to government school",
+    desktopTitle: (
+      <>
+        Bring{" "}
+        <span className="relative inline-block">
+          <span className="relative z-10">dance & joy</span>
+          <span className="absolute left-0 bottom-1 w-full h-4 bg-primary_border z-0"></span>
+        </span>
+        <br />
+        to government <br /> school.
+      </>
+    ),
+    description: "Inspiring Students Through Movement and in line with the UNESCO Happy Schools Program."
+  },
+  {
+    id: 3,
+    imageSrc: "/assets/images/french-embassy.png",
+    altText: "Partnership with French Embassy",
+    mobileTitle: "Partnership with \nFrench Embassy.",
+    desktopTitle: (
+      <>
+        Partnership with <br />
+        French Embassy.
+      </>
+    ),
+    description: "Slum to Stage Partners with the French Embassy in Nigeria in Activism Against Sexual Gender-Based Violence(sGGB).",
+    underlineWidth: "w-[30rem]"
+  },
+  {
+    id: 4,
+    imageSrc: "/assets/images/slide-4.jpg",
+    altText: "Slum 2 Stage dance production",
+    mobileTitle: "Slum 2 Stage dance production",
+    desktopTitle: (
+      <>
+        Slum 2 Stage <br />
+        dance production!
+      </>
+    ),
+    description: "Reimagines Chinua Achebe's 'THINGS FALL APART' in a Dance Production in Partnership with Transcorp Hilton Abuja",
+    underlineWidth: "w-[30rem]"
+  }
+]
 export const HeroSlider = () => {
   const router = useRouter()
   const swiperRef = useRef<SwiperClass | null>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
 
-  // Refs for GSAP animations
-  const slide1HeadingRef = useRef<HTMLHeadingElement>(null)
-  const slide1DescRef = useRef<HTMLParagraphElement>(null)
-  const slide1ButtonsRef = useRef<HTMLDivElement>(null)
 
-  const slide2HeadingRef = useRef<HTMLHeadingElement>(null)
-  const slide2DescRef = useRef<HTMLParagraphElement>(null)
-  const slide2ButtonsRef = useRef<HTMLDivElement>(null)
-
-  const slide3HeadingRef = useRef<HTMLHeadingElement>(null)
-  const slide3DescRef = useRef<HTMLParagraphElement>(null)
-  const slide3ButtonsRef = useRef<HTMLDivElement>(null)
-
-  const slide4HeadingRef = useRef<HTMLHeadingElement>(null)
-  const slide4DescRef = useRef<HTMLParagraphElement>(null)
-  const slide4ButtonsRef = useRef<HTMLDivElement>(null)
-
-  // Track if GSAP is loaded
-  const [isGsapLoaded, setIsGsapLoaded] = useState(false)
-
+  // Auto-play functionality
   useEffect(() => {
-    // Check if GSAP and ScrollTrigger are available
-    const checkGsapLoaded = () => {
-      if (typeof window !== "undefined" && window.gsap && window.ScrollTrigger) {
-        // Register ScrollTrigger plugin if not already registered
-        if (!window.ScrollTrigger.isRegistered) {
-          window.gsap.registerPlugin(window.ScrollTrigger)
-          window.ScrollTrigger.isRegistered = true
-        }
-        setIsGsapLoaded(true)
-      } else {
-        // If not loaded yet, check again in 100ms
-        setTimeout(checkGsapLoaded, 100)
-      }
-    }
+    if (!isPlaying) return
 
-    checkGsapLoaded()
-  }, [])
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 4000) // Change slide every 4 seconds
 
-  useEffect(() => {
-    // Only run animations if GSAP is loaded
-    if (!isGsapLoaded) return
+    return () => clearInterval(interval)
+  }, [isPlaying, slides.length])
 
-    const { gsap, ScrollTrigger } = window
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying)
+  }
 
-    // Animation function for each slide
-    const animateSlideElements = (
-      headingRef: React.RefObject<HTMLElement>,
-      descRef: React.RefObject<HTMLElement>,
-      buttonsRef: React.RefObject<HTMLElement>,
-      delay = 0,
-    ) => {
-      if (!headingRef.current || !descRef.current || !buttonsRef.current) return
+  const handleSlideChange = (index: number) => {
+    setCurrentSlide(index)
+    // Pause auto-play when user manually changes slide
+    setIsPlaying(false)
+  }
 
-      // Set initial states
-      gsap.set([headingRef.current, descRef.current, buttonsRef.current], {
-        opacity: 0,
-        y: 50,
-      })
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    // Pause auto-play when user manually navigates
+    setIsPlaying(false)
+  }
 
-      // Create timeline for this slide
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: headingRef.current.closest(".swiper-slide"),
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-          scrub: 1,
-        },
-      })
-
-      // Animate heading first
-      tl.to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-      })
-        // Then description
-        .to(
-          descRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out",
-          },
-          "-=0.7",
-        )
-        // Finally buttons
-        .to(
-          buttonsRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power2.out",
-          },
-          "-=0.5",
-        )
-    }
-
-    // Apply animations to all slides
-    animateSlideElements(slide1HeadingRef, slide1DescRef, slide1ButtonsRef)
-    animateSlideElements(slide2HeadingRef, slide2DescRef, slide2ButtonsRef)
-    animateSlideElements(slide3HeadingRef, slide3DescRef, slide3ButtonsRef)
-    animateSlideElements(slide4HeadingRef, slide4DescRef, slide4ButtonsRef)
-
-    // Refresh ScrollTrigger
-    ScrollTrigger.refresh()
-
-    return () => {
-      // Clean up all ScrollTrigger instances
-      if (ScrollTrigger && ScrollTrigger.getAll) {
-        ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill())
-      }
-    }
-  }, [isGsapLoaded])
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+    // Pause auto-play when user manually navigates
+    setIsPlaying(false)
+  }
 
   const handleDonation = () => {
     router.push("/donate")
   }
 
+
   return (
-    <section>
+    <section className="relative">
       <Swiper
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper
+          swiper.on("slideChange", () => setCurrentSlide(swiper.realIndex))
+        }}
         spaceBetween={0}
         centeredSlides={true}
         loop={true}
@@ -161,222 +146,110 @@ export const HeroSlider = () => {
         }}
         pagination={{
           clickable: true,
+          el: ".hero-pagination",
+          renderBullet: (index, className) => {
+            return `<span class="${className} w-2 h-2 mx-1 rounded-full bg-white opacity-70 transition-all duration-300"></span>`
+          },
         }}
         modules={[Autoplay, Pagination]}
-        className="heroBg"
+        className="hero-slider"
       >
-        <SwiperSlide className="swiper-slide1 group">
-          <div className="sliderImage w-full">
-            <Image
-              loading="lazy"
-              src="/assets/images/slide-7.jpg"
-              alt="Every child deserves to be happy!"
-              width={1280}
-              height={600}
-              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
-            />
-          </div>
-
-          <div className="flex items-start justify-start">
-            <div
-              className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col 
-            md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16"
-            >
-              <div className="w-full lg:w-1/2">
-                <h1
-                  ref={slide1HeadingRef}
-                  className="block lg:hidden text-[32px] font-serif font-normal
-                   leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Every child deserves to be happy!
-                  <span className="hidden lg:block h-4 w-[24rem] bg-primary_border -mt-4 ml-1"></span>
-                </h1>
-
-                <h1
-                  ref={slide1HeadingRef}
-                  className="hidden lg:block text-6xl font-serif font-normal
-                   leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Every child <br />
-                  deserves <br /> to be happy!
-                  <span className="hidden lg:block h-4 w-[21rem] bg-primary_border -mt-4 ml-1"></span>
-                </h1>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id} className={`swiper-slide${slide.id} group`}>
+            <div className="sliderImage w-full relative">
+              <Image
+                loading="lazy"
+                src={slide.imageSrc}
+                alt={slide.altText}
+                width={1280}
+                height={600}
+                className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
+              />
+              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-4">
+                <GlassPlayButton onClick={handlePlayPause} isPlaying={isPlaying} />
+                <GlassPagination totalSlides={slides.length} currentSlide={currentSlide} onSlideChange={handleSlideChange} />
               </div>
-              <div className="md:w-1/2">
-                <p
-                  ref={slide1DescRef}
-                  className="text-[16px] md:text-lg lg:text-xl font-normal mb-6 text-start font-sans"
-                >
-                  Slum to Stage Uses Dance to Retain the Interest of 290 Children in Schools.
-                </p>
-                <div ref={slide1ButtonsRef} className="flex gap-4">
-                  <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
+            </div>
+
+            <div className="flex items-start justify-start">
+              <div className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16">
+                <div className="w-full lg:w-1/2">
+                  <h1 className="block lg:hidden text-[32px] font-sf-display font-medium leading-tight whitespace-pre-line text-start text-slum_gray_800">
+                    {slide.mobileTitle}
+                    {slide.underlineWidth && (
+                      <span className={`hidden lg:block h-4 ${slide.underlineWidth} bg-primary_border -mt-4 ml-1`}></span>
+                    )}
+                  </h1>
+
+                  <h1 className="hidden lg:block text-6xl font-sf-display font-medium leading-tight whitespace-pre-line text-start text-slum_gray_800">
+                    {slide.desktopTitle}
+                    {slide.underlineWidth && (
+                      <span className={`hidden lg:block h-4 ${slide.underlineWidth} bg-primary_border -mt-4 ml-1`}></span>
+                    )}
+                  </h1>
+                </div>
+                <div className="md:w-1/2">
+                  <p className="text-[16px] md:text-lg lg:text-xl font-normal mb-6 text-start font-sf-text">
+                    {slide.description}
+                  </p>
+                  <div className="flex gap-4">
+                    <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
+                    <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="swiper-slide2">
-          <div className="sliderImage w-full">
-            <Image
-              loading="lazy"
-              src="/assets/images/happy-school.jpg"
-              alt="Every child deserves to be happy!"
-              width={1280}
-              height={600}
-              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
-            />
-          </div>
-          <div className="flex items-start justify-start">
-            <div
-              className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col
-             md:flex-row gap-8 md:gap-16 mb-8 px-6 lg:px-16"
-            >
-              <div className="w-full lg:w-1/2">
-                <h1
-                  ref={slide2HeadingRef}
-                  className="block lg:hidden text-[32px] font-serif font-normal leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Bring dance & joy to government school
-                </h1>
-
-                <h1
-                  ref={slide2HeadingRef}
-                  className="hidden lg:block text-6xl font-serif font-normal leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Bring{" "}
-                  <span className="relative inline-block">
-                    <span className="relative z-10">dance & joy</span>
-                    <span className="absolute left-0 bottom-1 w-full h-4 bg-primary_border z-0"></span>
-                  </span>
-                  <br />
-                  to government <br /> school.
-                </h1>
-              </div>
-              <div className="md:w-1/2">
-                <p
-                  ref={slide2DescRef}
-                  className="text-[16px] md:text-lg lg:text-xl font-normal mb-6 text-start font-sans"
-                >
-                  Inspiring Students Through Movement and in line with the UNESCO Happy Schools Program.
-                </p>
-                <div ref={slide2ButtonsRef} className="flex gap-4">
-                  <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="swiper-slide3">
-          <div className="sliderImage w-full">
-            <Image
-              loading="lazy"
-              src="/assets/images/french-embassy.png"
-              alt="Every child deserves to be happy!"
-              width={1280}
-              height={600}
-              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
-            />
-          </div>
-          <div className="flex items-start justify-start">
-            <div
-              className="max-w-7xl mx-auto py-12 md:py-10 flex flex-col 
-            md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16"
-            >
-              <div className="w-full lg:w-1/2">
-                <h1
-                  ref={slide3HeadingRef}
-                  className="block lg:hidden text-[32px] font-serif font-normal
-                   leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Partnership with <br />
-                  French Embassy.
-                </h1>
-
-                <h1
-                  ref={slide3HeadingRef}
-                  className="hidden lg:block text-6xl font-serif font-normal
-                   leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Partnership with <br />
-                  French Embassy.
-                  <span className={`hidden lg:block h-4 w-[30rem] bg-primary_border -mt-4 ml-1`}></span>
-                </h1>
-              </div>
-              <div className="md:w-1/2">
-                <p
-                  ref={slide3DescRef}
-                  className="text-[16px] md:text-lg lg:text-xl font-normal mb-6 text-start font-sans"
-                >
-                  Slum to Stage Partners with the French Embassy in Nigeria in Activism Against Sexual Gender-Based
-                  Violence(sGGB).
-                </p>
-                <div ref={slide3ButtonsRef} className="flex gap-4">
-                  <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="swiper-slide4">
-          <div className="sliderImage w-full">
-            <Image
-              loading="lazy"
-              src="/assets/images/slide-4.jpg"
-              alt="Every child deserves to be happy!"
-              width={1280}
-              height={600}
-              className="object-cover w-full h-[60vh] md:h-[80vh] rounded-none border-none"
-            />
-          </div>
-          <div className="flex items-start justify-start">
-            <div
-              className="container max-w-7xl mx-auto py-12 md:py-10 flex flex-col
-             md:flex-row gap-8 md:gap-16 mb-8 px-4 md:px-8 lg:px-16"
-            >
-              <div className="w-full lg:w-1/2">
-                <h1
-                  ref={slide4HeadingRef}
-                  className="block lg:hidden text-[32px] font-serif font-normal
-                   leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Slum 2 Stage dance production
-                  <span className={`hidden lg:block h-4 w-[34rem] bg-primary_border -mt-4 ml-1`}></span>
-                </h1>
-
-                <h1
-                  ref={slide4HeadingRef}
-                  className="hidden lg:block text-6xl font-serif font-normal
-                   leading-tight whitespace-pre-line text-start text-slum_gray_800"
-                >
-                  Slum 2 Stage <br />
-                  dance production!
-                  <span className={`hidden lg:block h-4 w-[30rem] bg-primary_border -mt-4 ml-1`}></span>
-                </h1>
-              </div>
-              <div className="md:w-1/2">
-                <p
-                  ref={slide4DescRef}
-                  className="text-[16px] md:text-lg lg:text-xl font-normal mb-6 text-start font-sans"
-                >
-                  Reimagines Chinua Achebe&apos;s &ldquo;THINGS FALL APART&rdquo; in a Dance Production in Partnership
-                  with Transcorp Hilton Abuja
-                </p>
-                <div ref={slide4ButtonsRef} className="flex gap-4">
-                  <Button variant="circular-filled" text="Donate" onClick={handleDonation} />
-                  <Button variant="pill-outlined" text="Learn More" onClick={() => router.push("/about-us")} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </section>
+  )
+}
+
+interface GlassPaginationProps {
+  totalSlides: number
+  currentSlide: number
+  onSlideChange: (index: number) => void
+}
+
+function GlassPagination({ totalSlides, currentSlide, onSlideChange }: GlassPaginationProps) {
+  return (
+    <div className="flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg">
+      {Array.from({ length: totalSlides }).map((_, index) => (
+
+        <button
+          key={index}
+          onClick={() => onSlideChange(index)}
+          className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-cyan-400 w-8" : "bg-white/60 hover:bg-white/80"
+            }`}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  )
+}
+
+function GlassPlayButton({ onClick, isPlaying = false }: { onClick?: () => void; isPlaying?: boolean }) {
+  return (
+    <button
+      onClick={onClick}
+      className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-lg hover:bg-white/30 transition-all duration-300 hover:scale-110"
+      aria-label={isPlaying ? "Pause" : "Play"}
+    >
+      {isPlaying ? (
+        // Pause icon
+        <div className="flex gap-1">
+          <div className="w-1 h-4 bg-white rounded-sm" />
+          <div className="w-1 h-4 bg-white rounded-sm" />
+        </div>
+      ) : (
+        // Play icon
+        <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-0.5" />
+      )}
+
+      {/* Ripple effect */}
+      <div className="absolute inset-0 rounded-full border-2 border-white/40 animate-ping opacity-0 group-hover:opacity-100" />
+    </button>
   )
 }
