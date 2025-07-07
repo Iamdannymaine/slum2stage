@@ -60,9 +60,9 @@ const Chidinma_Story = () => {
             </Copy>
             <Copy delay={0.5}>
               <p className="font-sf-text font-normal text-sm lg:text-base leading-[32px] lg:leading-[38px] text-[#FFFCFB]">
-                <p className="text-sm lg:text-base leading-relaxed">
-                  {`This is often followed by a question asked for the sole purpose of humiliating her for 'lack of attention' in class.`}
-                </p>
+
+                {`This is often followed by a question asked for the sole purpose of humiliating her for 'lack of attention' in class.`}
+
               </p>
             </Copy>
 

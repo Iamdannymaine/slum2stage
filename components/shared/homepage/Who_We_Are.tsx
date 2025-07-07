@@ -63,7 +63,7 @@ export const Who_We_Are = () => {
 
             <div className=" mb-6 w-full lg:max-w-md lg:ps-[2%]">
               <Copy>
-                <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4 font-semibold font-sf-display">
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed font-semibold font-sf-display">
                   <strong> At Slum to Stage,</strong> we offer preliminary and intermediate dance training to children and young adults in{" "}
                   <span className="text-cyan-400 font-medium">underserved communities across Abuja</span>.
                 </p>
