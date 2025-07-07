@@ -14,8 +14,7 @@ const Our_Impacts = () => {
           </h1>
 
         </Copy>
-        <div>
-        </div>
+
       </div>
     </section>
   )

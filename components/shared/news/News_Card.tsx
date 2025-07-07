@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import Copy from "../navigation/Text_Reveal_Animation"
 
 interface NewsCardProps {
   slug: string
@@ -28,9 +29,11 @@ export function NewsCard({ description, image, slug, linkText = "View more" }: N
         </div>
         <div className="p-4 flex flex-col flex-grow">
           <div className="flex-grow">
-            <p className="font-sf-text text-sm font-semibold lg:text-base leading-[32px] lg:leading-[32px] text-slum_gray_800 text-start">
-              {description}
-            </p>
+            <Copy>
+              <p className="font-sf-text text-sm font-semibold lg:text-base leading-[32px] lg:leading-[32px] text-slum_gray_800 text-start">
+                {description}
+              </p>
+            </Copy>
           </div>
           <div className="mt-auto pt-3">
             <Button
