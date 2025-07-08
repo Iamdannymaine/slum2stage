@@ -3,9 +3,6 @@
 import React from 'react';
 import { Section_Heading } from '../Section_Heading';
 import { Image } from '@heroui/image';
-import { PiStarFourFill } from "react-icons/pi";
-import { FaCertificate } from "react-icons/fa";
-import { PiPentagonFill } from "react-icons/pi";
 import NextImage from 'next/image';
 import Copy from '../navigation/Text_Reveal_Animation';
 
@@ -15,10 +12,6 @@ interface YearSectionProps {
   items: string[];
   imageSrc: string;
   imageAlt: string;
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  iconColor?: string;
-  svgPosition?: 'top-right' | 'top-left' | 'bottom-right';
-  svgPositionMobile?: 'bottom-right' | 'top-right' | 'bottom-left';
 }
 
 const YearSection: React.FC<YearSectionProps> = ({
@@ -26,71 +19,50 @@ const YearSection: React.FC<YearSectionProps> = ({
   items,
   imageSrc,
   imageAlt,
-  icon: Icon = PiStarFourFill,
-  iconColor = "#EC3BC0",
-  svgPosition = 'top-right',
-  svgPositionMobile = 'bottom-right'
 }) => {
-  const positionClasses = {
-    'top-right': '-top-2 -right-5',
-    'top-left': '-top-4 -left-2',
-    'bottom-right': 'lg:top-2 -top-2 -right-2'
-  };
-
-  // const mobilePositionClasses = {
-  //   'top-right': '-top-4 -right-5',
-  //   'bottom-right': '-bottom-4 -right-2',
-  //   'bottom-left': 'bottom-[5rem] -left-2',
-  // };
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start lg:bg-[#D9D9D9] lg:rounded-lg lg:p-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start lg:bg-[#D9D9D9] lg:rounded-lg lg:p-10">
+      {/* Text Column */}
       <div>
         <Copy>
-          <h2 className="text-6xl font-bold mb-6 font-sf-display text-[#1E1E1E]">{year}.</h2>
+          <h2 className="text-2xl lg:text-[56px] font-bold font-sf-display text-[#1E1E1E]">
+            {year}.
+          </h2>
         </Copy>
         <div className="space-y-3">
           {items.map((item, index) => (
             <Copy delay={0.2} key={index}>
-              <p key={index} className="flex items-start font-sf-display font-medium text-sm lg:text-base leading-[36px] lg:leading-[32px]">
+              <p className="flex items-start font-sf-display font-medium text-sm lg:text-[23px] leading-[36px] lg:leading-[32px]">
                 {item}
               </p>
             </Copy>
           ))}
         </div>
       </div>
-      <div className="relative w-full h-full overflow-visible">
-        <div className={`absolute lg:${positionClasses[svgPosition]} z-50`}>
-          <Icon
-            className={`icon h-12 w-12 text-${iconColor} z-50`}
-            fill={iconColor}
-            stroke="currentColor"
-          />
-        </div>
+
+      {/* Image Column */}
+      <div className="relative w-full self-stretch overflow-visible flex items-start justify-start pt-[2px]">
         <Image
-          loading='lazy'
+          loading="lazy"
           as={NextImage}
           src={imageSrc}
           alt={imageAlt}
           width={1000}
-          height={500}
-          className="object-contain z-0"
+          height={700}
+          className="object-contain w-full h-full"
         />
       </div>
     </div>
   );
 };
 
+
+
 interface YearData {
   year: string;
   items: string[];
   imageSrc: string;
-  imageAlt: string;
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  iconColor?: string;
-  svgPosition: "top-right" | "top-left" | "bottom-right";
-  svgPositionMobile: "bottom-right" | "top-right" | "bottom-left";
-  badgeText?: string;
+  imageAlt: string
 }
 
 const Our_Story: React.FC = () => {
@@ -104,10 +76,6 @@ const Our_Story: React.FC = () => {
       ],
       imageSrc: "/assets/images/about-us/2022.png",
       imageAlt: "2022 accomplishments",
-      icon: PiStarFourFill,
-      iconColor: "#EC3BC0",
-      svgPosition: "top-right",
-      svgPositionMobile: "bottom-right"
     },
     {
       year: "2023",
@@ -119,10 +87,6 @@ const Our_Story: React.FC = () => {
       ],
       imageSrc: "/assets/images/about-us/2023.png",
       imageAlt: "2023 accomplishments",
-      icon: FaCertificate,
-      iconColor: "#95D5E4",
-      svgPosition: "top-left",
-      svgPositionMobile: "top-right",
     },
     {
       year: "2024",
@@ -136,12 +100,7 @@ const Our_Story: React.FC = () => {
         "We partnered with TDL Solutions.",
       ],
       imageSrc: "/assets/images/about-us/2024.png",
-      imageAlt: "2024 accomplishments",
-      svgPosition: "bottom-right",
-      svgPositionMobile: "bottom-left",
-      icon: PiPentagonFill,
-      iconColor: "#9747FF",
-      badgeText: "Deserves More"
+      imageAlt: "2024 accomplishments"
     }
   ];
 

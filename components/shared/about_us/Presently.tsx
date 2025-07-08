@@ -34,7 +34,7 @@ const Presently = () => {
         <div className='ps-4 lg:ps-[33.3%]'>
           <ol className='space-y-6 list-decimal'>
             {lists.map((list, index) => (
-              <li key={index} className='font-sf-display font-medium text-sm lg:text-base leading-[32px]'>
+              <li key={index} className='font-sf-display font-normal text-sm lg:text-[25px] leading-[32px]'>
                 {list}
               </li>
             ))}

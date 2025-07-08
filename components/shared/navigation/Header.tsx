@@ -120,7 +120,7 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center space-x-6">
             {navigation.map((item, index) => (
-              <li key={index} className="uppercase text-sm text-slum_gray_800 font-sans font-normal">
+              <li key={index} className="uppercase text-sm text-slum_gray_800 font-sf-display font-normal">
                 <Link href={item.route}>{item.title}</Link>
               </li>
             ))}
@@ -161,7 +161,7 @@ export function Header() {
           {navigation.map((item, index) => (
             <li
               key={index}
-              className="menu-link-item uppercase text-sm text-slum_gray_800 font-sans font-normal w-full opacity-0"
+              className="menu-link-item uppercase text-sm text-slum_gray_800 font-sf-display font-normal w-full opacity-0"
             >
               <Link
                 href={item.route}
