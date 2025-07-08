@@ -77,8 +77,8 @@ export function SingleTeamView({ team }: BlogPostPageProps) {
               {team.name}
             </h1>
             <div
-              className="text-sm md:text-base lg:text-[25px] leading-[36px]
-               text-slum_gray_800 [&>p]:mb-6 max-w-[620px] font-sf-display font-normal text-justify"
+              className="text-sm md:text-base lg:text-[25px] text-slum_gray_800 max-w-[620px] font-sf-display font-normal text-justify
+             [&>p]:mb-6 [&>p]:leading-[40px]"
               dangerouslySetInnerHTML={{ __html: team.content }}
             />
           </div>
