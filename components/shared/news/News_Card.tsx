@@ -19,7 +19,8 @@ export function NewsCard({ description, image, slug, linkText = "View more" }: N
   return (
     <Card className="w-full max-w-sm bg-white h-full shadow-none border-none flex flex-col">
       <CardContent className="p-0 h-full flex flex-col">
-        <div className="aspect-square relative overflow-hidden rounded-lg">
+        <div className="relative overflow-hidden rounded-lg aspect-[10/12]">
+
           <Image
             src={image || "/placeholder.svg"}
             alt={slug}
@@ -27,13 +28,14 @@ export function NewsCard({ description, image, slug, linkText = "View more" }: N
             className="object-cover"
           />
         </div>
-        <div className="p-4 flex flex-col flex-grow">
+
+        <div className="py-4 flex flex-col flex-grow">
           <div className="flex-grow">
-            <Copy>
-              <p className="font-sf-text text-sm font-semibold lg:text-base leading-[32px] lg:leading-[32px] text-slum_gray_800 text-start">
-                {description}
-              </p>
-            </Copy>
+
+            <p className="font-sf-text text-sm font-semibold lg:text-base leading-[32px] lg:leading-[32px] text-slum_gray_800 text-start">
+              {description}
+            </p>
+
           </div>
           <div className="mt-auto pt-3">
             <Button
@@ -46,6 +48,6 @@ export function NewsCard({ description, image, slug, linkText = "View more" }: N
           </div>
         </div>
       </CardContent>
-    </Card>
+    </Card >
   )
 }

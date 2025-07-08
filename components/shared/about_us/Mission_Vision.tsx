@@ -50,19 +50,24 @@ export const Mission_Vision: React.FC = () => {
                 loading="lazy"
                 src={item.fallbackImage}
                 alt={`${item.title} image`}
-                className={`w-full h-auto object-cover rounded-none ${item.imagePosition === 'top' ? 'mb-0' : 'mt-4'
+                className={`w-full h-auto object-cover rounded-lg ${item.imagePosition === 'top' ? 'mb-0' : 'mt-4'
                   }`}
               />
             </div>
 
             <div className="w-1/2 text-start pt-10">
-              <h2 className="text-5xl font-semibold capitalize mb-6 font-sf-display text-slum_gray_800">
-                {item.title}
-              </h2>
+              <Copy>
+                <h2 className="text-5xl lg:text-[64px] font-sf-display font-semibold capitalize mb-6 font-sf-display text-slum_gray_800">
+                  {item.title}
+                </h2>
+              </Copy>
 
-              <p className="text-lg leading-[36px] text-slum_gray_600 font-sf-display font-normal w-[80%]">
-                {item.description}
-              </p>
+              <Copy>
+                <p className="text-lg lg:text-[25px] leading-[32px] text-slum_gray_600 font-sf-display font-normal w-[80%]">
+                  {item.description}
+                </p>
+              </Copy>
+
             </div>
           </div>
         ))}

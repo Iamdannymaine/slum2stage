@@ -19,7 +19,7 @@ import FormField from '../form/Form_Field';
 
 
 const Register_Form = () => {
-  const { register, handleSubmit, reset, formState: { isSubmitting, errors } } = useForm<FormOneData>();
+  const { register, handleSubmit, reset, setValue, formState: { isSubmitting, errors } } = useForm<FormOneData>();
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmittingLocal, setIsSubmittingLocal] = useState(false);
@@ -120,7 +120,10 @@ const Register_Form = () => {
                 <label className="block text-sm text-slum_gray_700 font-normal font-sans">
                   Number of Kids
                 </label>
-                <Select onValueChange={setSelectedKids}>
+                <Select onValueChange={(val) => {
+                  setSelectedKids(val)
+                  setValue("kids", val)
+                }}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select number of kids" />
                   </SelectTrigger>

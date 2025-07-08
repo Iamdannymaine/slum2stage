@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import { Image } from '@heroui/image'
-import Copy from './Text_Reveal_Animation'
+
 
 
 const company = [
@@ -33,10 +33,10 @@ const contact = [
 const Footer = () => {
   return (
     <footer className="bg-black text-white lg:pt-12 lg:pb-4 w-full" >
-      <div className="max-w-7xl mx-auto flex flex-col px-4">
+      <div className="max-w-7xl mx-auto flex flex-col px-4 lg:px-16">
         <div className="flex flex-col md:flex-row justify-between py-16">
           {/* Logo */}
-          <div className="flex items-start -pl-3 lg:-pl-0 pt-4 lg:pt-0 -mt-0 lg:-mt-4">
+          <div className="flex items-start -pl-3 lg:-pl-0 pt-4 lg:pt-0 -mt-0 lg:-mt-6">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 loading="lazy"
@@ -48,10 +48,9 @@ const Footer = () => {
           <div className="flex md:hidden pt-24">
             {/* Company links */}
             <ul className="flex flex-col space-y-4 uppercase">
-
               {mobileLink.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className='text-white font-sans font-normal text-sm'>
+                  <Link href={link.href} className='text-whitefont-sf-display font-normal text-sm'>
                     {link.label}
                   </Link>
                 </li>
@@ -64,35 +63,35 @@ const Footer = () => {
           <div className="hidden md:grid md:grid-cols-2 gap-4">
             {/* Company links */}
             <div>
-              <Copy>
-                <h3 className="text-sm font-sans font-normal mb-4 text-white">COMPANY</h3>
-                <ul className="space-y-4">
-                  {company.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} className='text-[#667085] hover:text-white 
+
+              <h3 className="text-sm font-sf-display font-normal mb-4 text-white">COMPANY</h3>
+              <ul className="space-y-4">
+                {company.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className='text-[#667085] hover:text-white 
                     font-sans font-normal text-sm'>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </Copy>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
             </div>
 
             {/* Contact info */}
             <div>
-              <Copy>
-                <h3 className="text-sm font-normal mb-4 font-sans text-white">CONTACT</h3>
-                <ul className="space-y-2">
-                  {contact.map((link) => (
-                    <li key={link.label}>
-                      <Link href={link.href} className='text-[#667085] hover:text-white font-sans font-normal text-sm'>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </Copy>
+
+              <h3 className="text-sm font-normal mb-4 font-sans text-white">CONTACT</h3>
+              <ul className="space-y-2">
+                {contact.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className='text-[#667085] hover:text-white font-sf-display font-normal text-sm'>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
             </div>
           </div>
 
@@ -101,16 +100,16 @@ const Footer = () => {
         <div className="hidden md:flex justify-between py-16">
           <div>
 
-            <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Slum2Stage. All rights reserved.</p>
+            <p className="text-gray-500 text-sm font-sf-display">&copy; {new Date().getFullYear()} Slum2Stage. All rights reserved.</p>
 
           </div>
           <div className="flex gap-x-4 ">
-            <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
+            <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sf-display text-sm font-normal rounded-full">
               <FaInstagram size={20} />
               <span>Instagram</span>
             </Link>
 
-            <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sans text-sm font-normal rounded-full">
+            <Link href="#" className="p-2 px-4 flex space-x-2 border border-slum_gray_800 text-slum_gray_200 font-sf-display text-sm font-normal rounded-full">
               <FaYoutube size={20} />
               <span>Youtube</span>
             </Link>

@@ -1,7 +1,6 @@
 "use client"
 
 import { Image } from "@heroui/react";
-import NextImage from "next/image";
 import React from 'react'
 import { Section_Heading } from '../Section_Heading'
 import Button from '../Slum_Button'
@@ -41,8 +40,8 @@ const About_Who_We_Are = () => {
         <div className="w-full lg:w-1/2 h-full order-1 lg:order-2">
           <Image
             loading="lazy"
-            as={NextImage}
-            src="/assets/images/about-us/who-we-are.png"
+            //as={NextImage}
+            src="/assets/images/about-us/who.png"
             alt="Dancers in colorful traditional attire in an artistic pose"
             width={800}
             height={500}
